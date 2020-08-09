@@ -1,0 +1,3839 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>[应用]分布式爬虫设计原理及其实现 | 课程整体概要</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../day15/2_框架升级--增量爬虫设计原理及其实现.html" />
+    
+    
+    <link rel="prev" href="../day15/0_框架升级.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="15.1"
+        data-chapter-title="[应用]分布式爬虫设计原理及其实现"
+        data-filepath="day15/1_框架升级--分布式爬虫设计原理及其实现.md"
+        data-basepath=".."
+        data-revision="Mon Aug 13 2018 21:05:44 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="day01/课程内容概述.html">
+            
+                
+                    <a href="../day01/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        第一天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="day01/爬虫概述.html">
+            
+                
+                    <a href="../day01/爬虫概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        爬虫概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="day01/爬虫的分类.html">
+            
+                
+                    <a href="../day01/爬虫的分类.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        爬虫的分类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="day01/爬虫工作流程.html">
+            
+                
+                    <a href="../day01/爬虫工作流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        爬虫工作流程(重点)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="day01/HTTP与HTTPS.html">
+            
+                
+                    <a href="../day01/HTTP与HTTPS.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        复习HTTP与HTTPS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="day01/字符串复习.html">
+            
+                
+                    <a href="../day01/字符串复习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        字符串复习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="day01/requests基本使用.html">
+            
+                
+                    <a href="../day01/requests基本使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        requests基本使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="day01/requests发送带有header的请求.html">
+            
+                
+                    <a href="../day01/requests发送带有header的请求.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        requests发送带有headers的请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="day01/requests发送带有参数的请求.html">
+            
+                
+                    <a href="../day01/requests发送带有参数的请求.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        requests发送带有参数的请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="day01/贴吧爬虫.html">
+            
+                
+                    <a href="../day01/贴吧爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        贴吧爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="day01/作业.html">
+            
+                
+                    <a href="../day01/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        今日学习目标和作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="day02/课程内容概述.html">
+            
+                
+                    <a href="../day02/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        第二天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="day02/requests发送POST请求.html">
+            
+                
+                    <a href="../day02/requests发送POST请求.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        requests发送POST请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="day02/百度翻译爬虫.html">
+            
+                
+                    <a href="../day02/百度翻译爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        百度翻译爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="day02/requests使用代理.html">
+            
+                
+                    <a href="../day02/requests使用代理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        requests使用代理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="day02/随机代理.html">
+            
+                
+                    <a href="../day02/随机代理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        随机代理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="day02/requests使用cookie和session.html">
+            
+                
+                    <a href="../day02/requests使用cookie和session.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        requests访问登录后才能访问的资源
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="day02/如何找POST请求的URL.html">
+            
+                
+                    <a href="../day02/如何找POST请求的URL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        js逆向-找出POST请求的URL
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="day02/如何定位生成js的位置.html">
+            
+                
+                    <a href="../day02/如何定位生成js的位置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        js逆向-定位和调试js
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="day02/人人手机端登录.html">
+            
+                
+                    <a href="../day02/人人手机端登录.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        js逆向-人人手机端登录
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="day02/requests模块其他知识点.html">
+            
+                
+                    <a href="../day02/requests模块其他知识点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        requests模块其他知识点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="day02/作业.html">
+            
+                
+                    <a href="../day02/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.10.</b>
+                        
+                        今日学习目标和作业
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="day02/chrome浏览器使用方法介绍.html">
+            
+                
+                    <a href="../day02/chrome浏览器使用方法介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.11.</b>
+                        
+                        扩展阅读-chrome浏览器使用方法介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="day02/urllib的介绍.html">
+            
+                
+                    <a href="../day02/urllib的介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.12.</b>
+                        
+                        扩展阅读-urllib的介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="day02/代理神器Fiddler.html">
+            
+                
+                    <a href="../day02/代理神器Fiddler.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.13.</b>
+                        
+                        扩展阅读-代理神器Fiddler
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="day03/课程内容概述.html">
+            
+                
+                    <a href="../day03/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        第三天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="day03/数据提取概念与分类.html">
+            
+                
+                    <a href="../day03/数据提取概念与分类.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        数据提取概念与分类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="day03/json数据提取-json概述.html">
+            
+                
+                    <a href="../day03/json数据提取-json概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        json数据提取-json概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="day03/json数据提取-json模块.html">
+            
+                
+                    <a href="../day03/json数据提取-json模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        json数据提取-json模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="day03/豆瓣电影.html">
+            
+                
+                    <a href="../day03/豆瓣电影.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        json数据提取-豆瓣电影
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="day03/json数据提取-jsonpath模块.html">
+            
+                
+                    <a href="../day03/json数据提取-jsonpath模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        json数据提取-jsonpath模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="day03/正则表达式.html">
+            
+                
+                    <a href="../day03/正则表达式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        正则表达式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="day03/36氪练习.html">
+            
+                
+                    <a href="../day03/36氪练习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        36氪练习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="day03/作业.html">
+            
+                
+                    <a href="../day03/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                        今日学习目标和作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="day04/课程内容概述.html">
+            
+                
+                    <a href="../day04/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        第四天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="day04/XPATH.html">
+            
+                
+                    <a href="../day04/XPATH.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        数据提取-XPATH
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="day04/lxml库.html">
+            
+                
+                    <a href="../day04/lxml库.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        数据提取-lxml库
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="day04/贴吧爬虫.html">
+            
+                
+                    <a href="../day04/贴吧爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        数据提取-贴吧爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="day04/数据提取-BeautifulSoup.html">
+            
+                
+                    <a href="../day04/数据提取-BeautifulSoup.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        数据提取-BeautifulSoup
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="day04/糗事百科爬虫.html">
+            
+                
+                    <a href="../day04/糗事百科爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        糗事百科爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="day04/作业.html">
+            
+                
+                    <a href="../day04/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        作业
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="day04/作业讲解_获取上所有电视剧信息.html">
+            
+                
+                    <a href="../day04/作业讲解_获取上所有电视剧信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        作业答案_获取上所有电视剧信息
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="day04/内涵吧.html">
+            
+                
+                    <a href="../day04/内涵吧.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                        作业答案_内涵吧爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="day04/果壳爬虫.html">
+            
+                
+                    <a href="../day04/果壳爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.</b>
+                        
+                        作业答案_果壳爬虫
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="day05/课程内容概述.html">
+            
+                
+                    <a href="../day05/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        第五天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="day05/多线程爬虫.html">
+            
+                
+                    <a href="../day05/多线程爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        多线程爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="day05/多进程爬虫.html">
+            
+                
+                    <a href="../day05/多进程爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        多进程爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="day05/线程池爬虫.html">
+            
+                
+                    <a href="../day05/线程池爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        线程池爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="day05/协程池池爬虫.html">
+            
+                
+                    <a href="../day05/协程池池爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        协程池爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="day05/Selenium概述.html">
+            
+                
+                    <a href="../day05/Selenium概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        Selenium概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="day05/Selenium入门.html">
+            
+                
+                    <a href="../day05/Selenium入门.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        Selenium入门
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="day05/Selenium常用方法.html">
+            
+                
+                    <a href="../day05/Selenium常用方法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        Selenium常用方法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="day05/58租房爬虫.html">
+            
+                
+                    <a href="../day05/58租房爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        58租房爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="day05/作业.html">
+            
+                
+                    <a href="../day05/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="day05/写爬虫的套路.html">
+            
+                
+                    <a href="../day05/写爬虫的套路.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.10.</b>
+                        
+                        写爬虫的套路(扩展阅读)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="day06/课程内容概述.html">
+            
+                
+                    <a href="../day06/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        第六天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="day06/webdriver等待.html">
+            
+                
+                    <a href="../day06/webdriver等待.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        webdriver等待
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="day06/斗鱼爬虫.html">
+            
+                
+                    <a href="../day06/斗鱼爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        斗鱼爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="day06/如何处理页面在iframe的情况.html">
+            
+                
+                    <a href="../day06/如何处理页面在iframe的情况.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        如何处理页面在iframe的情况
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="day06/打码平台的使用.html">
+            
+                
+                    <a href="../day06/打码平台的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        打码平台的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="day06/登录豆瓣.html">
+            
+                
+                    <a href="../day06/登录豆瓣.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        登录豆瓣
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="day05/常见的反爬手段和解决思路.html">
+            
+                
+                    <a href="../day05/常见的反爬手段和解决思路.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        常见的反爬手段和解决思路
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="day07/MongoDB概述.html">
+            
+                
+                    <a href="../day07/MongoDB概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        MongoDB概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="day07/MongoDB安装与配置.html">
+            
+                
+                    <a href="../day07/MongoDB安装与配置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        MongoDB安装与配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="day07/MongoDB基础命令.html">
+            
+                
+                    <a href="../day07/MongoDB基础命令.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.9.</b>
+                        
+                        MongoDB基础命令
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="day07/MongoDB中的数据类型.html">
+            
+                
+                    <a href="../day07/MongoDB中的数据类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.10.</b>
+                        
+                        MongoDB中的数据类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="day07/MongoDB数据的增删改查.html">
+            
+                
+                    <a href="../day07/MongoDB数据的增删改查.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.11.</b>
+                        
+                        MongoDB数据的增删改查
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="day06/作业.html">
+            
+                
+                    <a href="../day06/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.12.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="day06/去哪儿手机版反爬处理.html">
+            
+                
+                    <a href="../day06/去哪儿手机版反爬处理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.13.</b>
+                        
+                        扩展阅读(字体反爬反爬处理-去哪儿手机版)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="day06/后续爬虫代码建议.html">
+            
+                
+                    <a href="../day06/后续爬虫代码建议.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.14.</b>
+                        
+                        扩展阅读(后续爬虫代码建议)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="day07/课程内容概述.html">
+            
+                
+                    <a href="../day07/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        第七天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="day07/MongoDB的高级查询.html">
+            
+                
+                    <a href="../day07/MongoDB的高级查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        MongoDB的高级查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="day07/MongoDB管道与聚合.html">
+            
+                
+                    <a href="../day07/MongoDB管道与聚合.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        MongoDB管道与聚合
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="day07/MongoDB 操作索引.html">
+            
+                
+                    <a href="../day07/MongoDB 操作索引.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        MongoDB 操作索引
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="day07/MongoDB数据备份与恢复.html">
+            
+                
+                    <a href="../day07/MongoDB数据备份与恢复.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        MongoDB数据备份与恢复
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="day07/mongodb的权限管理.html">
+            
+                
+                    <a href="../day07/mongodb的权限管理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                        mongodb的权限管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="day07/MongoDB和python的交互之pymongo.html">
+            
+                
+                    <a href="../day07/MongoDB和python的交互之pymongo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.6.</b>
+                        
+                        MongoDB和python的交互
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="day07/作业.html">
+            
+                
+                    <a href="../day07/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.7.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="day08/00_课程内容概述.html">
+            
+                
+                    <a href="../day08/00_课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        第八天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="day08/01_scrapy框的概念.html">
+            
+                
+                    <a href="../day08/01_scrapy框的概念.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        [理解]Scrapy的概念
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="day08/02_scrapy框架的工作流程.html">
+            
+                
+                    <a href="../day08/02_scrapy框架的工作流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        [理解]Scrapy的工作流程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="day08/03_scrapy框架的安装.html">
+            
+                
+                    <a href="../day08/03_scrapy框架的安装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        [应用]Scrapy的安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="day08/04_0_scrapy框架使用入门.html">
+            
+                
+                    <a href="../day08/04_0_scrapy框架使用入门.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        [应用]Scrapy入门
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.4.1" data-path="day08/04_1_创建一个scrapy爬虫项目.html">
+            
+                
+                    <a href="../day08/04_1_创建一个scrapy爬虫项目.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.1.</b>
+                        
+                        [应用]创建一个scrapy爬虫项目
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.2" data-path="day08/04_2_生成一个爬虫.html">
+            
+                
+                    <a href="../day08/04_2_生成一个爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.2.</b>
+                        
+                        [应用]生成一个爬虫(Spider)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.3" data-path="day08/04_3_完善爬虫.html">
+            
+                
+                    <a href="../day08/04_3_完善爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.3.</b>
+                        
+                        [应用]完善爬虫(Spider)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.4" data-path="day08/04_4_处理保存数据.html">
+            
+                
+                    <a href="../day08/04_4_处理保存数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.4.</b>
+                        
+                        [应用]处理保存数据(Pipeline)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.5" data-path="day08/04_5_运行Scrapy项目.html">
+            
+                
+                    <a href="../day08/04_5_运行Scrapy项目.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.5.</b>
+                        
+                        [应用]运行Scrapy项目
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.6" data-path="day08/04_6_总结.html">
+            
+                
+                    <a href="../day08/04_6_总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.6.</b>
+                        
+                        总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="day08/05_腾讯招聘案例.html">
+            
+                
+                    <a href="../day08/05_腾讯招聘案例.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        [应用]腾讯招聘案例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="day08/06_Item类的使用.html">
+            
+                
+                    <a href="../day08/06_Item类的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        [应用]Item类的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="day08/07_翻页处理.html">
+            
+                
+                    <a href="../day08/07_翻页处理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.7.</b>
+                        
+                        [应用]翻页处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="day08/08_详情页处理.html">
+            
+                
+                    <a href="../day08/08_详情页处理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.8.</b>
+                        
+                        [应用]详情页处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="day08/09_管道的使用.html">
+            
+                
+                    <a href="../day08/09_管道的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.9.</b>
+                        
+                        [应用]管道的深入使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="day08/作业.html">
+            
+                
+                    <a href="../day08/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.10.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="day09/00_课程内容概述.html">
+            
+                
+                    <a href="../day09/00_课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        第九天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="day09/01_苏宁易购图书爬虫.html">
+            
+                
+                    <a href="../day09/01_苏宁易购图书爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        [应用]苏宁易购电子书爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="day09/02_0_scrapy的深入使用.html">
+            
+                
+                    <a href="../day09/02_0_scrapy的深入使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        [应用]scrapy的深入使用
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="day09/02_1_Scrapy的debug信息.html">
+            
+                
+                    <a href="../day09/02_1_Scrapy的debug信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.1.</b>
+                        
+                        [了解]Scrapy的debug信息
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="day09/02_2_scrapyShell.html">
+            
+                
+                    <a href="../day09/02_2_scrapyShell.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.2.</b>
+                        
+                        [了解]ScrapyShell
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.3" data-path="day09/02_3_settings.py中的设置信息.html">
+            
+                
+                    <a href="../day09/02_3_settings.py中的设置信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.3.</b>
+                        
+                        [应用]settings.py中的设置信息
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.4" data-path="day09/02_4_深入理解Spider.html">
+            
+                
+                    <a href="../day09/02_4_深入理解Spider.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.4.</b>
+                        
+                        [理解]深入理解Spider
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.5" data-path="day09/02_5_ scrapy的深入使用总结.html">
+            
+                
+                    <a href="../day09/02_5_ scrapy的深入使用总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.5.</b>
+                        
+                        Scrapy的深入使用总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="day09/03_crawlspider类的使用.html">
+            
+                
+                    <a href="../day09/03_crawlspider类的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        [应用]crawlspider类的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="day09/作业.html">
+            
+                
+                    <a href="../day09/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="day10/00_课程内容概述.html">
+            
+                
+                    <a href="../day10/00_课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        第十天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1" data-path="day10/01_豆瓣电影.html">
+            
+                
+                    <a href="../day10/01_豆瓣电影.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                        [应用]豆瓣电影
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="day10/02_scrapy中间件.html">
+            
+                
+                    <a href="../day10/02_scrapy中间件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                        [应用]scrapy中间件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="day10/03_scrapy模拟登陆.html">
+            
+                
+                    <a href="../day10/03_scrapy模拟登陆.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.</b>
+                        
+                        [应用]scrapy模拟登陆
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="day10/04.小结.html">
+            
+                
+                    <a href="../day10/04.小结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.</b>
+                        
+                        [理解]scrapy框架小结
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="day10/作业.html">
+            
+                
+                    <a href="../day10/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.5.</b>
+                        
+                        [理解]学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="day11/00_课程内容概述.html">
+            
+                
+                    <a href="../day11/00_课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        第十一天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.1" data-path="day11/01_scrapy_redis的概念.html">
+            
+                
+                    <a href="../day11/01_scrapy_redis的概念.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                        [理解]scrapy_redis的概念
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="day11/02_scrapy_redis实现分布式的原理.html">
+            
+                
+                    <a href="../day11/02_scrapy_redis实现分布式的原理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.</b>
+                        
+                        [理解]scrapy_redis实现分布式的原理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="day11/03_Redis简单复习.html">
+            
+                
+                    <a href="../day11/03_Redis简单复习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.3.</b>
+                        
+                        [理解]Redis简单复习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="day11/04_运行domz爬虫.html">
+            
+                
+                    <a href="../day11/04_运行domz爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.4.</b>
+                        
+                        [理解]scrapy_redis的例子domz爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="day11/05_scrapy_redis的源码分析.html">
+            
+                
+                    <a href="../day11/05_scrapy_redis的源码分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.</b>
+                        
+                        [理解]scrapy_redis的源码分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6" data-path="day11/06_京东图书爬虫.html">
+            
+                
+                    <a href="../day11/06_京东图书爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.</b>
+                        
+                        [应用]京东图书爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.7" data-path="day11/作业.html">
+            
+                
+                    <a href="../day11/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.7.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="day12/00_课程内容概述.html">
+            
+                
+                    <a href="../day12/00_课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        第十二天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="day12/01_RedisSpider.html">
+            
+                
+                    <a href="../day12/01_RedisSpider.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        [应用]RedisSpider
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="day12/02_RedisCrawlSpider.html">
+            
+                
+                    <a href="../day12/02_RedisCrawlSpider.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        [应用]RedisCrawlSpider.
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="day12/03_scrapy_redis_小结.html">
+            
+                
+                    <a href="../day12/03_scrapy_redis_小结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                        [应用]scrapy_redis_小结
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="day12/05_爬虫的部署.html">
+            
+                
+                    <a href="../day12/05_爬虫的部署.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                        [应用]爬虫的部署
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.4.1" data-path="day12/05_1_scrapyd的使用.html">
+            
+                
+                    <a href="../day12/05_1_scrapyd的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.1.</b>
+                        
+                        [了解]scrapyd的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4.2" data-path="day12/05_2_pycharm发布代码.html">
+            
+                
+                    <a href="../day12/05_2_pycharm发布代码.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.2.</b>
+                        
+                        [了解]pycharm发布代码
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4.3" data-path="day12/05_3_crontab实现定时任务.html">
+            
+                
+                    <a href="../day12/05_3_crontab实现定时任务.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.3.</b>
+                        
+                        [了解]crontab实现定时任务
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4.4" data-path="day12/05_4_爬虫部署小结.html">
+            
+                
+                    <a href="../day12/05_4_爬虫部署小结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.4.</b>
+                        
+                        爬虫部署小结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="day12/作业.html">
+            
+                
+                    <a href="../day12/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.5.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="day13/00_爬虫框架介绍.html">
+            
+                
+                    <a href="../day13/00_爬虫框架介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        第十三天-爬虫框架开发
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1" data-path="day13/1_0_爬虫框架分析.html">
+            
+                
+                    <a href="../day13/1_0_爬虫框架分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                        [理解]爬虫框架分析
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1.1" data-path="day13/1_1_了解框架.html">
+            
+                
+                    <a href="../day13/1_1_了解框架.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.1.</b>
+                        
+                        [了解]了解框架
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.1.2" data-path="day13/1_2_框架设计思路分析.html">
+            
+                
+                    <a href="../day13/1_2_框架设计思路分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.2.</b>
+                        
+                        [理解]框架设计思路分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.1.3" data-path="day13/1_3_框架代码雏形结构.html">
+            
+                
+                    <a href="../day13/1_3_框架代码雏形结构.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.3.</b>
+                        
+                        [应用]框架代码雏形结构
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2" data-path="day13/2_0_框架雏形.html">
+            
+                
+                    <a href="../day13/2_0_框架雏形.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.</b>
+                        
+                        [应用]框架雏形
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.2.1" data-path="day13/2_1_框架雏形--http模块和item模块.html">
+            
+                
+                    <a href="../day13/2_1_框架雏形--http模块和item模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.1.</b>
+                        
+                        [应用]http模块和item模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2.2" data-path="day13/2_2_框架雏形--核心模块.html">
+            
+                
+                    <a href="../day13/2_2_框架雏形--核心模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.2.</b>
+                        
+                        [应用]核心模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2.3" data-path="day13/2_3_框架安装.html">
+            
+                
+                    <a href="../day13/2_3_框架安装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.3.</b>
+                        
+                        [应用]框架安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2.4" data-path="day13/2_4_框架运行--main.py.html">
+            
+                
+                    <a href="../day13/2_4_框架运行--main.py.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.4.</b>
+                        
+                        [应用]框架运行--main.py
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2.5" data-path="day13/2_5_框架雏形--中间件模块.html">
+            
+                
+                    <a href="../day13/2_5_框架雏形--中间件模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.5.</b>
+                        
+                        [应用]中间件模块
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13.3" data-path="day13/3_0_框架完善.html">
+            
+                
+                    <a href="../day13/3_0_框架完善.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.3.</b>
+                        
+                        [应用]框架完善
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.3.1" data-path="day13/3_1_框架完善--日志模块使用.html">
+            
+                
+                    <a href="../day13/3_1_框架完善--日志模块使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.3.1.</b>
+                        
+                        [应用]日志模块使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.3.2" data-path="day13/3_2_框架完善--配置文件实现.html">
+            
+                
+                    <a href="../day13/3_2_框架完善--配置文件实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.3.2.</b>
+                        
+                        [应用]配置文件实现
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13.4" data-path="day13/作业.html">
+            
+                
+                    <a href="../day13/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.4.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="day14/爬虫框架完善.html">
+            
+                
+                    <a href="../day14/爬虫框架完善.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        第十四天-框架完善
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="14.1" data-path="day14/3_框架完善--多爬虫实现之一--多请求.html">
+            
+                
+                    <a href="../day14/3_框架完善--多爬虫实现之一--多请求.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.1.</b>
+                        
+                        [应用]多爬虫实现之一--多请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.2" data-path="day14/4_框架完善--多爬虫实现之二--多个解析函数.html">
+            
+                
+                    <a href="../day14/4_框架完善--多爬虫实现之二--多个解析函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.2.</b>
+                        
+                        [应用]多爬虫实现之二--多个解析函数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.3" data-path="day14/5_框架完善--多爬虫实现之三--多爬虫文件.html">
+            
+                
+                    <a href="../day14/5_框架完善--多爬虫实现之三--多爬虫文件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.3.</b>
+                        
+                        [应用]多爬虫实现之三--多爬虫文件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.4" data-path="day14/6_框架完善--实现多个管道.html">
+            
+                
+                    <a href="../day14/6_框架完善--实现多个管道.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.</b>
+                        
+                        [应用]实现多个管道
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.5" data-path="day14/7_框架完善--实现多个中间件.html">
+            
+                
+                    <a href="../day14/7_框架完善--实现多个中间件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.5.</b>
+                        
+                        [应用]实现多个中间件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.6" data-path="day14/8_框架完善--实现动态模块导入.html">
+            
+                
+                    <a href="../day14/8_框架完善--实现动态模块导入.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.6.</b>
+                        
+                        [应用]实现动态模块导入
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.7" data-path="day14/9_框架完善--实现请求去重.html">
+            
+                
+                    <a href="../day14/9_框架完善--实现请求去重.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.7.</b>
+                        
+                        [应用]实现请求去重
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.8" data-path="day14/10_框架完善--使用线程池实现异步以及并发控制.html">
+            
+                
+                    <a href="../day14/10_框架完善--使用线程池实现异步以及并发控制.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.8.</b>
+                        
+                        [应用]使用线程池实现异步以及并发控制
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.9" data-path="day14/11_框架完善--使用协程池实现异步以及并发控制.html">
+            
+                
+                    <a href="../day14/11_框架完善--使用协程池实现异步以及并发控制.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.9.</b>
+                        
+                        [应用]使用协程池实现异步以及并发控制
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.10" data-path="day14/作业.html">
+            
+                
+                    <a href="../day14/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.10.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="day15/0_框架升级.html">
+            
+                
+                    <a href="../day15/0_框架升级.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        第十五天-框架升级
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="15.1" data-path="day15/1_框架升级--分布式爬虫设计原理及其实现.html">
+            
+                
+                    <a href="../day15/1_框架升级--分布式爬虫设计原理及其实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.1.</b>
+                        
+                        [应用]分布式爬虫设计原理及其实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15.2" data-path="day15/2_框架升级--增量爬虫设计原理及其实现.html">
+            
+                
+                    <a href="../day15/2_框架升级--增量爬虫设计原理及其实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.2.</b>
+                        
+                        [应用]增量爬虫设计原理及其实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15.3" data-path="day15/3_框架升级--断点续爬设计原理及其实现.html">
+            
+                
+                    <a href="../day15/3_框架升级--断点续爬设计原理及其实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.3.</b>
+                        
+                        [应用]断点续爬设计原理及其实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15.4" data-path="day15/4_0_项目实战.html">
+            
+                
+                    <a href="../day15/4_0_项目实战.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.4.</b>
+                        
+                        [扩展阅读]项目实战
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="15.4.1" data-path="day15/4_1_案例1-scrapy_plus实现腾讯招聘爬虫.html">
+            
+                
+                    <a href="../day15/4_1_案例1-scrapy_plus实现腾讯招聘爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.4.1.</b>
+                        
+                        [扩展阅读]scrapy_plus实现腾讯招聘爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15.4.2" data-path="day15/4_2_案例2-scrapy_plus实现新浪新闻爬虫.html">
+            
+                
+                    <a href="../day15/4_2_案例2-scrapy_plus实现新浪新闻爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.4.2.</b>
+                        
+                        [扩展阅读]scrapy_plus实现新浪新闻爬虫
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="15.5" data-path="day15/作业.html">
+            
+                
+                    <a href="../day15/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.5.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >课程整体概要</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="&#x6846;&#x67B6;&#x5347;&#x7EA7;----&#x5206;&#x5E03;&#x5F0F;&#x722C;&#x866B;&#x8BBE;&#x8BA1;&#x539F;&#x7406;&#x53CA;&#x5176;&#x5B9E;&#x73B0;">&#x6846;&#x67B6;&#x5347;&#x7EA7;  --  &#x5206;&#x5E03;&#x5F0F;&#x722C;&#x866B;&#x8BBE;&#x8BA1;&#x539F;&#x7406;&#x53CA;&#x5176;&#x5B9E;&#x73B0;</h2>
+<h5 id="&#x5B66;&#x4E60;&#x76EE;&#x6807;">&#x5B66;&#x4E60;&#x76EE;&#x6807;</h5>
+<ol>
+<li>&#x7406;&#x89E3;&#x5206;&#x5E03;&#x5F0F;&#x722C;&#x866B;&#x7684;&#x539F;&#x7406;</li>
+<li>&#x7406;&#x89E3;&#x5982;&#x4F55;&#x901A;&#x8FC7;redis&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x961F;&#x5217;</li>
+<li>&#x5B8C;&#x6210;&#x4EE3;&#x7406;&#x7684;&#x91CD;&#x6784;&#xFF0C;&#x5B9E;&#x73B0;&#x5206;&#x5E03;&#x5F0F;</li>
+</ol>
+<h3 id="1-&#x5206;&#x5E03;&#x5F0F;&#x722C;&#x866B;&#x539F;&#x7406;">1 &#x5206;&#x5E03;&#x5F0F;&#x722C;&#x866B;&#x539F;&#x7406;</h3>
+<p>&#x5206;&#x5E03;&#x5F0F;&#x722C;&#x866B;&#x8BBE;&#x8BA1;&#x539F;&#x7406;&#xFF1A;</p>
+<p>&#x591A;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x540C;&#x65F6;&#x6293;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x8BF7;&#x6C42;&#x548C;&#x6307;&#x7EB9;&#x5B58;&#x50A8;&#x5728;&#x540C;&#x4E00;&#x4E2A;redis&#x4E2D;</p>
+<p><img src="images/&#x5206;&#x5E03;&#x5F0F;&#x722C;&#x866B;&#x8BBE;&#x8BA1;&#x539F;&#x7406;.jpg" alt=""></p>
+<h3 id="2-&#x5B9E;&#x73B0;&#x65B9;&#x6848;">2 &#x5B9E;&#x73B0;&#x65B9;&#x6848;</h3>
+<p>&#x5229;&#x7528;redis&#x5B9E;&#x73B0;&#x961F;&#x5217;</p>
+<ol>
+<li>&#x6CE8;&#x610F;pickle&#x6A21;&#x5757;&#x7684;&#x4F7F;&#x7528;&#xFF1A;&#x5982;&#x679C;&#x5C06;&#x5BF9;&#x8C61;&#x5B58;&#x5165;redis&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x5C06;&#x5176;&#x5E8F;&#x5217;&#x5316;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#xFF0C;&#x53D6;&#x51FA;&#x540E;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x5C31;&#x53EF;&#x4EE5;&#x518D;&#x5F97;&#x5230;&#x539F;&#x59CB;&#x5BF9;&#x8C61;</li>
+<li>&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x4E00;&#x81F4;&#x6027;&#xFF1A;&#x5229;&#x7528;redis&#x4F7F;&#x7528;&#x4E00;&#x4E2A;Queue&#xFF0C;&#x4F7F;&#x5176;&#x63A5;&#x53E3;&#x540C;python&#x7684;&#x5185;&#x7F6E;&#x961F;&#x5217;&#x63A5;&#x53E3;&#x4E00;&#x81F4;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x65E0;&#x7F1D;&#x8F6C;&#x6362;</li>
+</ol>
+<p>&#x5728;scrapy_plus&#x5305;&#x4E0B;&#x7684;utils&#x4E2D;&#x6DFB;&#x52A0;queue.py&#x6587;&#x4EF6;&#xFF1A;&#xFF08;&#x8BE5;&#x6587;&#x4EF6;&#x7F51;&#x4E0A;&#x627E;&#x7684;&#x4FEE;&#x6539;&#x6210;&#x6211;&#x4EEC;&#x80FD;&#x7528;&#x7684;&#xFF09;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># scrapy_plus/utils/queue.py</span>
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> pickle
+<span class="hljs-keyword">import</span> redis <span class="hljs-comment"># &#x4FEE;&#x6539;requirements.txt</span>
+<span class="hljs-keyword">from</span> six.moves <span class="hljs-keyword">import</span> queue <span class="hljs-keyword">as</span> BaseQueue
+
+<span class="hljs-comment"># &#x5BFC;&#x5165;redis&#x914D;&#x7F6E;</span>
+<span class="hljs-keyword">from</span> scrapy_plus.conf.settings <span class="hljs-keyword">import</span> REDIS_QUEUE_NAME, REDIS_HOST, REDIS_PORT, REDIS_DB
+
+<span class="hljs-comment"># &#x5229;&#x7528;redis&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;Queue&#xFF0C;&#x4F7F;&#x5176;&#x63A5;&#x53E3;&#x540C;python&#x7684;&#x5185;&#x7F6E;&#x961F;&#x5217;&#x63A5;&#x53E3;&#x4E00;&#x81F4;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x65E0;&#x7F1D;&#x8F6C;&#x6362;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Queue</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    A Queue like message built over redis
+    &quot;&quot;&quot;</span>
+    Empty = BaseQueue.Empty
+    Full = BaseQueue.Full
+    max_timeout = <span class="hljs-number">0.3</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, maxsize=<span class="hljs-number">0</span>, name=REDIS_QUEUE_NAME, host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB,
+                lazy_limit=True, password=None)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Constructor for RedisQueue
+        maxsize:    an integer that sets the upperbound limit on the number of
+                    items that can be placed in the queue.
+        lazy_limit: redis queue is shared via instance, a lazy size limit is used
+                    for better performance.
+        &quot;&quot;&quot;</span>
+        self.name = name
+        self.redis = redis.StrictRedis(host=host, port=port, db=db, password=password)
+        self.maxsize = maxsize
+        self.lazy_limit = lazy_limit
+        self.last_qsize = <span class="hljs-number">0</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">qsize</span><span class="hljs-params">(self)</span>:</span>
+        self.last_qsize = self.redis.llen(self.name)
+        <span class="hljs-keyword">return</span> self.last_qsize
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">empty</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">if</span> self.qsize() == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">full</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">if</span> self.maxsize <span class="hljs-keyword">and</span> self.qsize() &gt;= self.maxsize:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">put_nowait</span><span class="hljs-params">(self, obj)</span>:</span>
+        <span class="hljs-keyword">if</span> self.lazy_limit <span class="hljs-keyword">and</span> self.last_qsize &lt; self.maxsize:
+            <span class="hljs-keyword">pass</span>
+        <span class="hljs-keyword">elif</span> self.full():
+            <span class="hljs-keyword">raise</span> self.Full
+        self.last_qsize = self.redis.rpush(self.name, pickle.dumps(obj)) <span class="hljs-comment"># pickle.dumps(obj)&#x628A;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">put</span><span class="hljs-params">(self, obj, block=True, timeout=None)</span>:</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> block:
+            <span class="hljs-keyword">return</span> self.put_nowait(obj)
+
+        start_time = time.time()
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            <span class="hljs-keyword">try</span>:
+                <span class="hljs-keyword">return</span> self.put_nowait(obj)
+            <span class="hljs-keyword">except</span> self.Full:
+                <span class="hljs-keyword">if</span> timeout:
+                    lasted = time.time() - start_time
+                    <span class="hljs-keyword">if</span> timeout &gt; lasted:
+                        time.sleep(min(self.max_timeout, timeout - lasted))
+                    <span class="hljs-keyword">else</span>:
+                        <span class="hljs-keyword">raise</span>
+                <span class="hljs-keyword">else</span>:
+                    time.sleep(self.max_timeout)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_nowait</span><span class="hljs-params">(self)</span>:</span>
+        ret = self.redis.lpop(self.name)
+        <span class="hljs-keyword">if</span> ret <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            <span class="hljs-keyword">raise</span> self.Empty
+        <span class="hljs-keyword">return</span> pickle.loads(ret) <span class="hljs-comment"># pickle.loads(ret)&#x628A;&#x4E8C;&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x4E3A;&#x5BF9;&#x8C61; &#x53CD;&#x5E8F;&#x5217;&#x5316;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self, block=True, timeout=None)</span>:</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> block:
+            <span class="hljs-keyword">return</span> self.get_nowait()
+
+        start_time = time.time()
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            <span class="hljs-keyword">try</span>:
+                <span class="hljs-keyword">return</span> self.get_nowait()
+            <span class="hljs-keyword">except</span> self.Empty:
+                <span class="hljs-keyword">if</span> timeout:
+                    lasted = time.time() - start_time
+                    <span class="hljs-keyword">if</span> timeout &gt; lasted:
+                        time.sleep(min(self.max_timeout, timeout - lasted))
+                    <span class="hljs-keyword">else</span>:
+                        <span class="hljs-keyword">raise</span>
+                <span class="hljs-keyword">else</span>:
+                    time.sleep(self.max_timeout)
+</code></pre>
+<h3 id="2-&#x901A;&#x8FC7;&#x9879;&#x76EE;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x9009;&#x62E9;&#x662F;&#x5426;&#x542F;&#x7528;&#x5206;&#x5E03;&#x5F0F;">2 &#x901A;&#x8FC7;&#x9879;&#x76EE;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x9009;&#x62E9;&#x662F;&#x5426;&#x542F;&#x7528;&#x5206;&#x5E03;&#x5F0F;</h3>
+<p>&#x5728;scrapy_plus&#x5305;&#x7684;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6DFB;&#x52A0;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># scrapy_plus/conf/default_settings.py</span>
+......
+<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x8981;&#x6301;&#x4E45;&#x5316;</span>
+<span class="hljs-comment"># &#x91CF;&#x4E2A;&#x503C;&#xFF1A;True&#x548C;False</span>
+<span class="hljs-comment"># &#x5982;&#x679C;&#x662F;True&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x5206;&#x5E03;&#x5F0F;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x662F;&#x57FA;&#x4E8E;&#x8BF7;&#x6C42;&#x7684;&#x589E;&#x91CF;&#x5F0F;&#x722C;&#x866B;</span>
+<span class="hljs-comment"># &#x5982;&#x679C;&#x662F;False, &#x4E0D;&#x4F7F;&#x7528;redis&#x961F;&#x5217;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528;python&#x7684;set&#x5B58;&#x50A8;&#x6307;&#x7EB9;&#x548C;&#x8BF7;&#x6C42;</span>
+SCHEDULER_PERSIST = <span class="hljs-keyword">False</span>
+
+<span class="hljs-comment"># redis&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;,&#x9ED8;&#x8BA4;&#x4E3A;&#x672C;&#x673A;&#x7684;redis</span>
+REDIS_SET_NAME = <span class="hljs-string">&apos;scrapy_plus_fp_set&apos;</span> <span class="hljs-comment"># fp&#x96C6;&#x5408;</span>
+REDIS_QUEUE_NAME = <span class="hljs-string">&apos;scrapy_plus_request_queue&apos;</span> <span class="hljs-comment"># request&#x961F;&#x5217;</span>
+REDIS_HOST = <span class="hljs-string">&apos;127.0.0.1&apos;</span>
+REDIS_PORT = <span class="hljs-number">6379</span>
+REDIS_DB = <span class="hljs-number">0</span>
+</code></pre>
+<h3 id="3-&#x5229;&#x7528;redis&#x7684;&#x96C6;&#x5408;&#x7C7B;&#x578B;&#x5B9E;&#x73B0;&#x53BB;&#x91CD;">3 &#x5229;&#x7528;Redis&#x7684;&#x96C6;&#x5408;&#x7C7B;&#x578B;&#x5B9E;&#x73B0;&#x53BB;&#x91CD;</h3>
+<p>&#x5982;&#x679C;&#x5206;&#x5E03;&#x5F0F;&#x4E2D;&#x8BF7;&#x6C42;&#x53BB;&#x91CD;&#x7684;&#x53BB;&#x91CD;&#x5BB9;&#x5668;&#x5404;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x7528;&#x7684;&#x4E0D;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x65E0;&#x6CD5;&#x8FBE;&#x5230;&#x53BB;&#x91CD;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x8FD9;&#x91CC;&#x540C;&#x6837;&#x7684;&#x9700;&#x8981;&#x4F7F;&#x7528;redis&#x6765;&#x5B9E;&#x73B0;&#x53BB;&#x91CD;&#x5BB9;&#x5668;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x628A;&#x6240;&#x6709;&#x7684;&#x53BB;&#x91CD;&#x6307;&#x7EB9;&#x90FD;&#x5B58;&#x50A8;&#x5728;redis&#x4E2D;</p>
+<p>&#x5728;scrapy_plus/utils/set.py&#x4E2D;&#xFF0C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;&#x7684;set&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># scrapy_plus/utils/set.py</span>
+<span class="hljs-keyword">import</span> redis
+<span class="hljs-keyword">from</span> scrapy_plus.conf <span class="hljs-keyword">import</span> settings
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BaseFilterContainer</span><span class="hljs-params">(object)</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_fp</span><span class="hljs-params">(self, fp)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x5F80;&#x53BB;&#x91CD;&#x5BB9;&#x5668;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6307;&#x7EB9;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exists</span><span class="hljs-params">(self, fp)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x5224;&#x65AD;&#x6307;&#x7EB9;&#x662F;&#x5426;&#x5728;&#x53BB;&#x91CD;&#x5BB9;&#x5668;&#x4E2D;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">pass</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NoramlFilterContainer</span><span class="hljs-params">(BaseFilterContainer)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;&#x5229;&#x7528;python&#x7684;&#x96C6;&#x5408;&#x7C7B;&#x578B;&apos;&apos;&apos;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self._filter_container = set()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_fp</span><span class="hljs-params">(self, fp)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&apos;&apos;&apos;</span>
+        self._filter_container.add(fp)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exists</span><span class="hljs-params">(self, fp)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x5224;&#x65AD;&#x6307;&#x7EB9;&#x662F;&#x5426;&#x5728;&#x53BB;&#x91CD;&#x5BB9;&#x5668;&#x4E2D;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">if</span> fp <span class="hljs-keyword">in</span> self._filter_container:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RedisFilterContainer</span><span class="hljs-params">(BaseFilterContainer)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;&#x5229;&#x7528;redis&#x7684;&#x6307;&#x7EB9;&#x96C6;&#x5408;&apos;&apos;&apos;</span>
+    REDIS_SET_NAME = settings.REDIS_SET_NAME
+    REDIS_SET_HOST = settings.REDIS_HOST
+    REDIS_SET_PORT = settings.REDIS_PORT
+    REDIS_SET_DB = settings.REDIS_DB
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self._redis = redis.StrictRedis(host=self.REDIS_SET_HOST, port=self.REDIS_SET_PORT ,db=self.REDIS_SET_DB)
+        self._name = self.REDIS_SET_NAME
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_fp</span><span class="hljs-params">(self, fp)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x5F80;&#x53BB;&#x91CD;&#x5BB9;&#x5668;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6307;&#x7EB9;&apos;&apos;&apos;</span>
+        self._redis.sadd(self._name, fp)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exists</span><span class="hljs-params">(self, fp)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x5224;&#x65AD;&#x6307;&#x7EB9;&#x662F;&#x5426;&#x5728;&#x53BB;&#x91CD;&#x5BB9;&#x5668;&#x4E2D;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self._redis.sismember(self._name, fp) <span class="hljs-comment"># &#x5B58;&#x5728;&#x8FD4;&#x56DE;1 &#x4E0D;&#x5B58;&#x5728;&#x8FD4;&#x56DE;0</span>
+</code></pre>
+<p>&#x4FEE;&#x6539;scheduler.py&#xFF0C;&#x5728;&#x8C03;&#x5EA6;&#x5668;&#x4E2D;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;<code>set.py</code>&#xFF0C; &#x4F7F;&#x5F97;&#x5206;&#x5E03;&#x5F0F;&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x53BB;&#x91CD;&#x529F;&#x80FD;&#x6B63;&#x5E38;&#x8FD0;&#x4F5C;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># scrapy_plus/core/scheduler.py</span>
+......
+<span class="hljs-comment"># &#x6B64;&#x5904;&#x65B0;&#x589E;</span>
+<span class="hljs-keyword">from</span> scrapy_plus.utils.queue <span class="hljs-keyword">import</span> Queue <span class="hljs-keyword">as</span> ReidsQueue
+<span class="hljs-keyword">from</span> scrapy_plus.conf.settings <span class="hljs-keyword">import</span> SCHEDULER_PERSIST
+<span class="hljs-keyword">from</span> scrapy_plus.utils.set <span class="hljs-keyword">import</span> NoramlFilterContainer, RedisFilterContainer
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Scheduler</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x7F13;&#x5B58;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;(Request)&#xFF0C;&#x5E76;&#x4E3A;&#x4E0B;&#x8F7D;&#x5668;&#x63D0;&#x4F9B;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#xFF0C;&#x5B9E;&#x73B0;&#x8BF7;&#x6C42;&#x7684;&#x8C03;&#x5EA6;&#xFF1A;
+    &#x5BF9;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x53BB;&#x91CD;&#x5224;&#x65AD;&#xFF1A;&#x5B9E;&#x73B0;&#x53BB;&#x91CD;&#x65B9;&#x6CD5;_filter_request&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x5BF9;&#x5185;&#x63D0;&#x4F9B;&#xFF0C;&#x56E0;&#x6B64;&#x8BBE;&#x7F6E;&#x4E3A;&#x79C1;&#x6709;&#x65B9;&#x6CD5;
+    &quot;&quot;&quot;</span>
+    <span class="hljs-comment"># &#x6B64;&#x5904;&#x4FEE;&#x6539;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, collector)</span>:</span>
+        <span class="hljs-keyword">if</span> SCHEDULER_PERSIST: <span class="hljs-comment">#&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5206;&#x5E03;&#x5F0F;&#x6216;&#x8005;&#x662F;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x4F7F;&#x7528;redis&#x7684;&#x961F;&#x5217;</span>
+            self.queue = ReidsQueue()
+            self._filter_container = RedisFilterContainer() <span class="hljs-comment"># &#x4F7F;&#x7528;redis&#x4F5C;&#x4E3A;python&#x7684;&#x53BB;&#x91CD;&#x7684;&#x5BB9;&#x5668;</span>
+        <span class="hljs-keyword">else</span>:
+            self.queue = Queue()
+            self._filter_container = NoramlFilterContainer() <span class="hljs-comment"># &#x4F7F;&#x7528;Python&#x7684;set()&#x96C6;&#x5408;</span>
+        self.repeate_request_num = <span class="hljs-number">0</span>  <span class="hljs-comment"># &#x7EDF;&#x8BA1;&#x91CD;&#x590D;&#x7684;&#x6570;&#x91CF;</span>
+        <span class="hljs-comment"># &#x5728;engine&#x4E2D;&#x963B;&#x585E;&#x7684;&#x4F4D;&#x7F6E;&#x5224;&#x65AD;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;&#x7684;&#x6761;&#x4EF6;&#xFF1A;&#x6210;&#x529F;&#x7684;&#x54CD;&#x5E94;&#x6570;+&#x91CD;&#x590D;&#x7684;&#x6570;&#x91CF;&gt;=&#x603B;&#x7684;&#x8BF7;&#x6C42;&#x6570;&#x91CF;</span>
+        <span class="hljs-comment"># self._filter_container = set() # &#x53BB;&#x91CD;&#x5BB9;&#x5668;,&#x662F;&#x4E00;&#x4E2A;&#x96C6;&#x5408;,&#x5B58;&#x50A8;&#x5DF2;&#x7ECF;&#x53D1;&#x8FC7;&#x7684;&#x8BF7;&#x6C42;&#x7684;&#x7279;&#x5F81; url</span>
+
+    ......
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_filter_request</span><span class="hljs-params">(self, request)</span>:</span>        
+        <span class="hljs-string">&quot;&quot;&quot;&#x53BB;&#x91CD;&#x65B9;&#x6CD5;&quot;&quot;&quot;</span>
+        request.fp = self._gen_fp(request) <span class="hljs-comment"># &#x7ED9;request&#x5BF9;&#x8C61;&#x589E;&#x52A0;&#x4E00;&#x4E2A;fp&#x6307;&#x7EB9;&#x5C5E;&#x6027;</span>
+        <span class="hljs-comment"># if request.fp not in self._filter_container:</span>
+        <span class="hljs-comment"># &#x6B64;&#x5904;&#x4FEE;&#x6539;</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> self._filter_container.exists(request.fp):
+            <span class="hljs-comment"># &#x6B64;&#x5904;&#x4FEE;&#x6539;</span>
+            self._filter_container.add_fp(request.fp) <span class="hljs-comment"># &#x5411;&#x6307;&#x7EB9;&#x5BB9;&#x5668;&#x96C6;&#x5408;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6307;&#x7EB9;</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            self.repeate_request_num += <span class="hljs-number">1</span>
+            logger.info(<span class="hljs-string">&quot;&#x53D1;&#x73B0;&#x91CD;&#x590D;&#x7684;&#x8BF7;&#x6C42;&#xFF1A;&lt;{} {}&gt;&quot;</span>.format(request.method, request.url))
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+</code></pre>
+<h5 id="&#x6B64;&#x65F6;&#x8FD0;&#x884C;&#x9879;&#x76EE;&#x7A0B;&#x5E8F;&#x4F1A;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#xFF1A;">&#x6B64;&#x65F6;&#x8FD0;&#x884C;&#x9879;&#x76EE;&#x7A0B;&#x5E8F;&#x4F1A;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#xFF1A;</h5>
+<blockquote>
+<p>TypeError: put() missing 1 required positional argument: &apos;item&apos;</p>
+</blockquote>
+<p>&#x89E3;&#x51B3;&#xFF1A;</p>
+<ol>
+<li>&#x5F00;&#x542F;redis&#x670D;&#x52A1;</li>
+<li>&#x6B63;&#x786E;&#x914D;&#x7F6E;redis</li>
+<li>&#x5728;&#x9879;&#x76EE;&#x7684;settings.py&#x4E2D;&#x8BBE;&#x7F6E;SCHEDULER_PERSIST = True</li>
+</ol>
+<h3 id="5-&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;&#x7684;&#x6761;&#x4EF6;">5 &#x7A0B;&#x5E8F;&#x7ED3;&#x675F;&#x7684;&#x6761;&#x4EF6;</h3>
+<p>&#x5728;&#x4E4B;&#x524D;&#x7684;&#x5355;&#x673A;&#x7248;&#x672C;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x901A;&#x8FC7;&#xFF1A;&#x603B;&#x7684;&#x54CD;&#x5E94;+&#x603B;&#x7684;&#x91CD;&#x590D;&#x6570;&gt;=&#x603B;&#x7684;&#x8BF7;&#x6C42;&#x6765;&#x5224;&#x65AD;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x7248;&#x672C;&#x90A3;&#x79CD;&#xFF0C;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&#x548C;&#x54CD;&#x5E94;&#x6570;&#x91CF;&#x4E0D;&#x5728;&#x76F8;&#x540C;</p>
+<p>&#x56E0;&#x4E3A;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x5668;&#x5B58;&#x5165;&#x961F;&#x5217;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x548C;&#x6210;&#x529F;&#x53D1;&#x9001;&#x7684;&#x8BF7;&#x6C42;&#x4E2D;&#x95F4;&#x53EF;&#x80FD;&#x5F88;&#x591A;&#x8BF7;&#x6C42;&#x88AB;&#x5176;&#x4ED6;&#x7684;&#x670D;&#x52A1;&#x5668;&#x53D1;&#x9001;&#x4E86;&#xFF0C;&#x5BFC;&#x81F4;&#x6570;&#x91CF;&#x4E0D;&#x4E00;&#x81F4;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x628A;&#x603B;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x603B;&#x7684;&#x54CD;&#x5E94;&#xFF0C;&#x603B;&#x7684;&#x91CD;&#x590D;&#x7B49;&#x4FE1;&#x606F;&#x8BB0;&#x5F55;&#x5728;redis&#x4E2D;&#xFF0C;&#x90A3;&#x4E48;&#x6240;&#x6709;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;&#x7684;&#x4F4D;&#x7F6E;&#x662F;&#x540C;&#x4E00;&#x4E2A;redis&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x5224;&#x65AD;&#x9000;&#x51FA;&#x7684;&#x65F6;&#x5019;&#x4E5F;&#x662F;&#x901A;&#x8FC7;&#x6BD4;&#x8F83;&#x540C;&#x4E00;&#x4E2A;redis&#x4E2D;&#x7684;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x6765;&#x51B3;&#x5B9A;</p>
+<p>&#x6B64;&#x65F6;&#xFF0C;&#x5728;utils&#x4E2D;&#x65B0;&#x5EFA;stats_collector.py&#x6587;&#x4EF6;&#xFF0C;&#x6765;&#x5B9E;&#x73B0;&#x5BF9;&#x5404;&#x79CD;&#x6570;&#x91CF;&#x7684;&#x7EDF;&#x8BA1;&#xFF0C;&#x5305;&#x62EC;&#x603B;&#x7684;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&#xFF0C;&#x603B;&#x7684;&#x54CD;&#x5E94;&#x6570;&#x91CF;&#xFF0C;&#x603B;&#x7684;&#x91CD;&#x590D;&#x6570;&#x91CF;</p>
+<p>&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x5728;&#x4F7F;&#x7528;redis&#x548C;&#x672A;&#x4F7F;&#x7528;redis&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x7EDF;&#x8BA1;&#x6570;&#x91CF;&#x7684;&#x65B9;&#x6CD5;&#x76F8;&#x540C;&#xFF0C;&#x6545;&#x5C01;&#x88C5;&#x4E86;&#x4E24;&#x4E2A;&#x7248;&#x672C;&#x7684;StatsCollector&#x5BF9;&#x8C61;&#xFF0C;&#x5206;&#x522B;&#x4F7F;&#x7528;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#x5B57;&#x5178;&#x548C;redis&#x6765;&#x7EDF;&#x8BA1;&#x6570;&#x91CF;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># scrapy_plus/utils/stats_collector.py</span>
+
+<span class="hljs-keyword">import</span> redis
+<span class="hljs-keyword">from</span> scrapy_plus.conf.settings <span class="hljs-keyword">import</span> REDIS_HOST, REDIS_PORT, REDIS_DB, FP_PERSIST, REDIS_SET_NAME
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NormalStatsCollector</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, spider_names=[])</span>:</span>
+        <span class="hljs-comment">#&#x5B58;&#x50A8;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&#x7684;&#x952E;</span>
+        self.request_nums_key = <span class="hljs-string">&quot;_&quot;</span>.join(spider_names) + <span class="hljs-string">&quot;_request_nums&quot;</span>
+        <span class="hljs-comment">#&#x5B58;&#x50A8;&#x54CD;&#x5E94;&#x6570;&#x91CF;&#x7684;&#x952E;</span>
+        self.response_nums_key = <span class="hljs-string">&quot;_&quot;</span>.join(spider_names) + <span class="hljs-string">&quot;_response_nums&quot;</span>
+        <span class="hljs-comment">#&#x5B58;&#x50A8;&#x91CD;&#x590D;&#x8BF7;&#x6C42;&#x7684;&#x952E;</span>
+        self.repeat_request_nums_key = <span class="hljs-string">&quot;_&quot;</span>.join(spider_names) + <span class="hljs-string">&quot;_repeat_request_nums&quot;</span>
+        <span class="hljs-comment">#&#x5B58;&#x50A8;start_request&#x6570;&#x91CF;&#x7684;&#x952E;</span>
+        self.start_request_nums_key = <span class="hljs-string">&quot;_&quot;</span>.join(spider_names) + <span class="hljs-string">&quot;_start_request_nums&quot;</span>
+
+        <span class="hljs-comment">#&#x521D;&#x59CB;&#x5316;&#x6536;&#x96C6;&#x6570;&#x636E;&#x7684;&#x5B57;&#x5178;</span>
+        self.dict_collector = {
+            self.request_nums_key :<span class="hljs-number">0</span>,
+            self.response_nums_key:<span class="hljs-number">0</span>,
+            self.repeat_request_nums_key:<span class="hljs-number">0</span>,
+            self.start_request_nums_key:<span class="hljs-number">0</span>
+        }
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">incr</span><span class="hljs-params">(self, key)</span>:</span>
+        self.dict_collector[key] +=<span class="hljs-number">1</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self, key)</span>:</span>
+        <span class="hljs-keyword">return</span> self.dict_collector[key]
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clear</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">del</span> self.dict_collector
+
+<span class="hljs-decorator">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">request_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self.get(self.request_nums_key)
+
+<span class="hljs-decorator">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">response_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;&#x54CD;&#x5E94;&#x6570;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self.get(self.response_nums_key)
+
+<span class="hljs-decorator">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">repeat_request_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;&#x91CD;&#x590D;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self.get(self.repeat_request_nums_key)
+
+<span class="hljs-decorator">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">start_request_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;start_request&#x6570;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self.get(self.start_request_nums_key)
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ReidsStatsCollector</span><span class="hljs-params">(object)</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, spider_names=[],
+                 host=REDIS_HOST, port=REDIS_PORT,
+                 db=REDIS_DB, password=None)</span>:</span>
+
+        self.redis = redis.StrictRedis(host=host, port=port, db=db, password=password)
+        <span class="hljs-comment">#&#x5B58;&#x50A8;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&#x7684;&#x952E;</span>
+        self.request_nums_key = <span class="hljs-string">&quot;_&quot;</span>.join(spider_names) + <span class="hljs-string">&quot;_request_nums&quot;</span>
+        <span class="hljs-comment">#&#x5B58;&#x50A8;&#x54CD;&#x5E94;&#x6570;&#x91CF;&#x7684;&#x952E;</span>
+        self.response_nums_key = <span class="hljs-string">&quot;_&quot;</span>.join(spider_names) + <span class="hljs-string">&quot;_response_nums&quot;</span>
+        <span class="hljs-comment">#&#x5B58;&#x50A8;&#x91CD;&#x590D;&#x8BF7;&#x6C42;&#x7684;&#x952E;</span>
+        self.repeat_request_nums_key = <span class="hljs-string">&quot;_&quot;</span>.join(spider_names) + <span class="hljs-string">&quot;_repeat_request_nums&quot;</span>
+        <span class="hljs-comment">#&#x5B58;&#x50A8;start_request&#x6570;&#x91CF;&#x7684;&#x952E;</span>
+        self.start_request_nums_key = <span class="hljs-string">&quot;_&quot;</span>.join(spider_names) + <span class="hljs-string">&quot;_start_request_nums&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">incr</span><span class="hljs-params">(self, key)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x7ED9;&#x952E;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x589E;&#x52A0;1&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#xFF0C;&#x5E76;&#x4E14;&#x503C;&#x4E3A;1&#xFF0C;&apos;&apos;&apos;</span>
+        self.redis.incr(key)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self, key)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;&#x952E;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x662F;&#x4E3A;0&#xFF0C;&#x5B58;&#x5728;&#x5219;&#x83B7;&#x53D6;&#x5E76;&#x8F6C;&#x5316;&#x4E3A;int&#x7C7B;&#x578B;&apos;&apos;&apos;</span>
+        ret = self.redis.get(key)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> ret:
+            ret = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">else</span>:
+            ret = int(ret)
+        <span class="hljs-keyword">return</span> ret
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clear</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;&#x540E;&#x6E05;&#x7A7A;&#x6240;&#x6709;&#x7684;&#x503C;&apos;&apos;&apos;</span>
+        self.redis.delete(self.request_nums_key, self.response_nums_key,
+                          self.repeat_request_nums_key, self.start_request_nums_key)
+        <span class="hljs-comment"># &#x5224;&#x65AD;&#x662F;&#x5426;&#x6E05;&#x7A7A;&#x6307;&#x7EB9;&#x96C6;&#x5408;</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> FP_PERSIST: <span class="hljs-comment"># not True &#x4E0D;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x5C31;&#x6E05;&#x7A7A;&#x6307;&#x7EB9;&#x96C6;&#x5408;</span>
+            self.redis.delete(REDIS_SET_NAME)
+
+<span class="hljs-decorator">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">request_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self.get(self.request_nums_key)
+
+<span class="hljs-decorator">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">response_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;&#x54CD;&#x5E94;&#x6570;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self.get(self.response_nums_key)
+
+<span class="hljs-decorator">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">repeat_request_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;&#x91CD;&#x590D;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self.get(self.repeat_request_nums_key)
+
+<span class="hljs-decorator">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">start_request_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;start_request&#x6570;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self.get(self.start_request_nums_key)
+</code></pre>
+<h5 id="&#x4FEE;&#x6539;schedulerpy&#x8C03;&#x5EA6;&#x5668;&#x4EE3;&#x7801;">&#x4FEE;&#x6539;<code>scheduler.py</code>&#x8C03;&#x5EA6;&#x5668;&#x4EE3;&#x7801;</h5>
+<pre><code class="lang-python"><span class="hljs-comment"># scrapy_plus/core/scheduler.py</span>
+......
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Scheduler</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x7F13;&#x5B58;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;(Request)&#xFF0C;&#x5E76;&#x4E3A;&#x4E0B;&#x8F7D;&#x5668;&#x63D0;&#x4F9B;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#xFF0C;&#x5B9E;&#x73B0;&#x8BF7;&#x6C42;&#x7684;&#x8C03;&#x5EA6;&#xFF1A;
+    &#x5BF9;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x53BB;&#x91CD;&#x5224;&#x65AD;&#xFF1A;&#x5B9E;&#x73B0;&#x53BB;&#x91CD;&#x65B9;&#x6CD5;_filter_request&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x5BF9;&#x5185;&#x63D0;&#x4F9B;&#xFF0C;&#x56E0;&#x6B64;&#x8BBE;&#x7F6E;&#x4E3A;&#x79C1;&#x6709;&#x65B9;&#x6CD5;
+    &quot;&quot;&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, collector)</span>:</span> <span class="hljs-comment"># &#x6B64;&#x5904;&#x4FEE;&#x6539;</span>
+
+        <span class="hljs-keyword">if</span> SCHEDULER_PERSIST: <span class="hljs-comment">#&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5206;&#x5E03;&#x5F0F;&#x6216;&#x8005;&#x662F;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x4F7F;&#x7528;redis&#x7684;&#x961F;&#x5217;</span>
+            self.queue = ReidsQueue()
+            self._filter_container = RedisFilterContainer() <span class="hljs-comment"># &#x4F7F;&#x7528;redis&#x4F5C;&#x4E3A;python&#x7684;&#x53BB;&#x91CD;&#x7684;&#x5BB9;&#x5668;</span>
+        <span class="hljs-keyword">else</span>:
+            self.queue = Queue()
+            self._filter_container = NoramlFilterContainer()
+        <span class="hljs-comment"># &#x6B64;&#x5904;&#x4FEE;&#x6539;</span>
+        <span class="hljs-comment"># self.repeate_request_num = 0  # &#x7EDF;&#x8BA1;&#x91CD;&#x590D;&#x7684;&#x6570;&#x91CF;</span>
+        self.collector = collector
+    ......
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_filter_request</span><span class="hljs-params">(self, request)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x53BB;&#x91CD;&#x65B9;&#x6CD5;&quot;&quot;&quot;</span>
+        request.fp = self._gen_fp(request) <span class="hljs-comment"># &#x7ED9;request&#x5BF9;&#x8C61;&#x589E;&#x52A0;&#x4E00;&#x4E2A;fp&#x6307;&#x7EB9;&#x5C5E;&#x6027;</span>
+        <span class="hljs-comment"># if request.fp not in self._filter_container:</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> self._filter_container.exists(request.fp):
+            self._filter_container.add_fp(request.fp) <span class="hljs-comment"># &#x5411;&#x6307;&#x7EB9;&#x5BB9;&#x5668;&#x96C6;&#x5408;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6307;&#x7EB9;</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-comment"># &#x6B64;&#x5904;&#x4FEE;&#x6539;</span>
+            <span class="hljs-comment"># self.repeate_request_num += 1</span>
+            self.collector.incr(self.collector.repeat_request_nums_key)
+            logger.info(<span class="hljs-string">&quot;&#x53D1;&#x73B0;&#x91CD;&#x590D;&#x7684;&#x8BF7;&#x6C42;&#xFF1A;&lt;{} {}&gt;&quot;</span>.format(request.method, request.url))
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+    ......
+</code></pre>
+<h5 id="&#x4FEE;&#x6539;enginepy">&#x4FEE;&#x6539;<code>engine.py</code></h5>
+<pre><code class="lang-python"><span class="hljs-comment"># coding=utf-8</span>
+......
+<span class="hljs-keyword">from</span> scrapy_plus.utils.stats_collector <span class="hljs-keyword">import</span> StatsCollector <span class="hljs-comment"># &#x6B64;&#x5904;&#x65B0;&#x589E;</span>
+<span class="hljs-keyword">from</span> scrapy_plus.conf.settings <span class="hljs-keyword">import</span> SCHEDULER_PERSIST
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Engine</span><span class="hljs-params">()</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.spiders = self._auto_import_instances(SPIDERS, isspider=<span class="hljs-keyword">True</span>)
+       <span class="hljs-keyword">if</span> SCHEDULER_PERSIST:
+            self.collector = ReidsStatsCollector()  <span class="hljs-comment">#&#x65B0;&#x589E;</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-comment"># self.total_request_nums = 0  # &#x4FEE;&#x6539;</span>
+            <span class="hljs-comment"># self.total_response_nums = 0 # &#x4FEE;&#x6539;</span>
+            self.collector = NormalStatsCollector()  <span class="hljs-comment">#&#x65B0;&#x589E;</span>
+        self.scheduler = Scheduler(self.collector)
+
+        self.downloader = Downloader()
+
+        self.pipelines = self._auto_import_instances(PIPELINES)
+        self.spider_mids = self._auto_import_instances(SPIDER_MIDDLEWARES)
+        self.downloader_mids = self._auto_import_instances(DOWNLOADER_MIDDLEWARES)
+
+        self.pool = Pool()
+        self.is_running = <span class="hljs-keyword">False</span> <span class="hljs-comment"># &#x5224;&#x65AD;&#x7A0B;&#x5E8F;&#x662F;&#x5426;&#x9700;&#x8981;&#x7ED3;&#x675F;&#x7684;&#x6807;&#x5FD7;</span>
+
+    ......
+
+    <span class="hljs-comment"># &#x6B64;&#x5904;&#x4FEE;&#x6539;--&#x589E;&#x52A0;&#x4E86;&#x66F4;&#x4E3A;&#x8BE6;&#x7EC6;&#x7684;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">start_engin</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x542F;&#x52A8;&#x5F15;&#x64CE;&quot;&quot;&quot;</span>
+        t_start = datetime.now()
+        logger.info(<span class="hljs-string">&quot;&#x722C;&#x866B;&#x5F00;&#x59CB;&#x542F;&#x52A8;&#xFF1A;{}&quot;</span>.format(t_start))
+        logger.info(<span class="hljs-string">&quot;&#x722C;&#x866B;&#x8FD0;&#x884C;&#x6A21;&#x5F0F;&#xFF1A;{}&quot;</span>.format(ASYNC_TYPE))
+        logger.info(<span class="hljs-string">&quot;&#x6700;&#x5927;&#x5E76;&#x53D1;&#x6570;&#xFF1A;{}&quot;</span>.format(MAX_ASYNC_THREAD_NUMBER))
+        logger.info(<span class="hljs-string">&quot;&#x542F;&#x52A8;&#x7684;&#x722C;&#x866B;&#x6709;&#xFF1A;{}&quot;</span>.format(list(self.spiders.keys())))
+        logger.info(<span class="hljs-string">&quot;&#x542F;&#x52A8;&#x7684;&#x4E0B;&#x8F7D;&#x4E2D;&#x95F4;&#x4EF6;&#x6709;&#xFF1A;\n{}&quot;</span>.format(DOWNLOADER_MIDDLEWARES))
+        logger.info(<span class="hljs-string">&quot;&#x542F;&#x52A8;&#x7684;&#x722C;&#x866B;&#x4E2D;&#x95F4;&#x4EF6;&#x6709;&#xFF1A;\n{}&quot;</span>.format(SPIDER_MIDDLEWARES))
+        logger.info(<span class="hljs-string">&quot;&#x542F;&#x52A8;&#x7684;&#x7BA1;&#x9053;&#x6709;&#xFF1A;\n{}&quot;</span>.format(PIPELINES))
+        self._start_engine()
+        t_end = datetime.now()
+        logger.info(<span class="hljs-string">&quot;&#x722C;&#x866B;&#x7ED3;&#x675F;&#xFF1A;{}&quot;</span>.format(t_end))
+        logger.info(<span class="hljs-string">&quot;&#x8017;&#x65F6;&#xFF1A;%s&quot;</span> % (t_end - t_start).total_seconds())
+        <span class="hljs-comment"># logger.info(&quot;&#x4E00;&#x5171;&#x83B7;&#x53D6;&#x4E86;&#x8BF7;&#x6C42;&#xFF1A;{}&#x4E2A;&quot;.format(self.total_request_nums))</span>
+        <span class="hljs-comment"># logger.info(&quot;&#x91CD;&#x590D;&#x7684;&#x8BF7;&#x6C42;&#xFF1A;{}&#x4E2A;&quot;.format(self.scheduler.repeate_request_num))</span>
+        <span class="hljs-comment"># logger.info(&quot;&#x6210;&#x529F;&#x7684;&#x8BF7;&#x6C42;&#xFF1A;{}&#x4E2A;&quot;.format(self.total_response_nums))</span>
+        logger.info(<span class="hljs-string">&quot;&#x4E00;&#x5171;&#x83B7;&#x53D6;&#x4E86;&#x8BF7;&#x6C42;&#xFF1A;{}&#x4E2A;&quot;</span>.format(self.collector.request_nums))
+        logger.info(<span class="hljs-string">&quot;&#x91CD;&#x590D;&#x7684;&#x8BF7;&#x6C42;&#xFF1A;{}&#x4E2A;&quot;</span>.format(self.collector.repeate_request_nums))
+        logger.info(<span class="hljs-string">&quot;&#x6210;&#x529F;&#x7684;&#x8BF7;&#x6C42;&#xFF1A;{}&#x4E2A;&quot;</span>.format(self.collector.response_nums))
+        self.collector.clear() <span class="hljs-comment"># &#x6E05;&#x9664;redis&#x4E2D;&#x6240;&#x6709;&#x7684;&#x8BA1;&#x6570;&#x7684;&#x503C;,&#x4F46;&#x4E0D;&#x6E05;&#x9664;&#x6307;&#x7EB9;&#x96C6;&#x5408;</span>
+
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_start_request</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x5355;&#x72EC;&#x5904;&#x7406;&#x722C;&#x866B;&#x6A21;&#x5757;&#x4E2D;start_requests()&#x4EA7;&#x751F;&#x7684;request&#x5BF9;&#x8C61;&quot;&quot;&quot;</span>
+        ......
+                <span class="hljs-comment"># &#x6539;&#x7528;collector&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x6536;&#x96C6;</span>
+                <span class="hljs-comment"># self.total_request_nums += 1</span>
+                self.collector.incr(self.collector.request_nums_key)
+
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_execute_request_response_item</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x5904;&#x7406;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x4E2D;&#x4EA7;&#x751F;&#x7684;request&#x5BF9;&#x8C61;&quot;&quot;&quot;</span>
+        ......
+
+                    <span class="hljs-comment"># &#x8BF7;&#x6C42;&#x6570;+1</span>
+                    <span class="hljs-comment"># self.total_request_nums += 1</span>
+                    <span class="hljs-comment"># &#x6539;&#x7528;collector&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x6536;&#x96C6;</span>
+                    self.collector.incr(self.collector.request_nums_key)
+
+                <span class="hljs-comment"># &#x5982;&#x679C;&#x4E0D;&#x662F;&#xFF0C;&#x8C03;&#x7528;pipeline&#x7684;process_item&#x65B9;&#x6CD5;&#x5904;&#x7406;&#x7ED3;&#x679C;</span>
+                <span class="hljs-keyword">else</span>:
+                    <span class="hljs-comment"># &#x5C31;&#x901A;&#x8FC7;process_item()&#x4F20;&#x9012;&#x6570;&#x636E;&#x7ED9;&#x7BA1;&#x9053;</span>
+                    <span class="hljs-keyword">for</span> pipeline <span class="hljs-keyword">in</span> self.pipelines:
+                        pipeline.process_item(result, spider)
+
+        <span class="hljs-comment"># &#x6539;&#x7528;collector&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x6536;&#x96C6;</span>
+        <span class="hljs-comment"># self.total_response_nums += 1</span>
+        self.collector.incr(self.collector.response_nums_key)
+
+    ......
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_start_engine</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x5F15;&#x64CE;&#x7684;&#x903B;&#x8F91;&quot;&quot;&quot;</span>
+        self.is_running = <span class="hljs-keyword">True</span>  <span class="hljs-comment"># &#x542F;&#x52A8;&#x5F15;&#x64CE;&#xFF0C;&#x8BBE;&#x7F6E;&#x72B6;&#x6001;&#x4E3A;True</span>
+        <span class="hljs-comment"># &#x5904;&#x7406;strat_urls&#x4EA7;&#x751F;&#x7684;request</span>
+        <span class="hljs-comment"># self._start_request()</span>
+        self.pool.apply_async(self._start_request)  <span class="hljs-comment"># &#x4F7F;&#x7528;&#x5F02;&#x6B65;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x6307;&#x5B9A;&#x7684;&#x51FD;&#x6570;</span>
+
+        <span class="hljs-comment"># &#x4E0D;&#x65AD;&#x7684;&#x5904;&#x7406;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x4E2D;&#x4EA7;&#x751F;&#x7684;request</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(MAX_ASYNC_THREAD_NUMBER): <span class="hljs-comment"># &#x63A7;&#x5236;&#x6700;&#x5927;&#x5E76;&#x53D1;&#x6570;</span>
+            self.pool.apply_async(self._execute_request_response_item, callback=self._call_back, error_callback=self._error_callback)
+
+        <span class="hljs-comment"># &#x63A7;&#x5236;&#x5224;&#x65AD;&#x7A0B;&#x5E8F;&#x4F55;&#x65F6;&#x4E2D;&#x6B62;</span>
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            time.sleep(<span class="hljs-number">0.001</span>) <span class="hljs-comment"># &#x907F;&#x514D;cpu&#x7A7A;&#x8F6C;,&#x907F;&#x514D;&#x6027;&#x80FD;&#x6D88;&#x8017;</span>
+
+            <span class="hljs-comment"># if self.total_response_nums != 0: # &#x56E0;&#x4E3A;&#x5F02;&#x6B65;&#xFF0C;&#x9700;&#x8981;&#x589E;&#x52A0;&#x5224;&#x65AD;&#xFF0C;&#x54CD;&#x5E94;&#x6570;&#x4E0D;&#x80FD;&#x4E3A;0</span>
+            <span class="hljs-comment">#     # &#x6210;&#x529F;&#x7684;&#x54CD;&#x5E94;&#x6570;+&#x91CD;&#x590D;&#x7684;&#x6570;&#x91CF;&gt;=&#x603B;&#x7684;&#x8BF7;&#x6C42;&#x6570;&#x91CF; &#x7A0B;&#x5E8F;&#x7ED3;&#x675F;</span>
+            <span class="hljs-comment">#     if self.total_response_nums + self.scheduler.repeat_request_num &gt;= self.total_request_nums:</span>
+            <span class="hljs-comment">#         self.is_running = False</span>
+            <span class="hljs-comment">#         break</span>
+
+            <span class="hljs-comment"># &#x6B64;&#x5904;&#x4FEE;&#x6539;</span>
+            <span class="hljs-keyword">if</span> self.collector.request_nums != <span class="hljs-number">0</span>: <span class="hljs-comment"># &#x6CE8;&#x610F;&#x8FD9;&#x4E2A;&#x5730;&#x65B9;&#x4E0D;&#x80FD;&#x7528;response_nums&#x4F5C;&#x4E3A;&#x5224;&#x65AD;&#x6807;&#x51C6;&#x4E86;!</span>
+                <span class="hljs-keyword">if</span> self.collector.response_nums+self.collector.repeat_request_nums &gt;= self.collector.request_nums:
+                    self.is_running = <span class="hljs-keyword">False</span>
+                    <span class="hljs-keyword">break</span>
+</code></pre>
+<h5 id="&#x6B64;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x7684;scrapyplus&#x5DF2;&#x7ECF;&#x4E0D;&#x80FD;&#x6CA1;&#x6709;redis&#x4E86;&#xFF0C;&#x8131;&#x79BB;redis&#x5C06;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x7EDF;&#x8BA1;&#x5404;&#x79CD;&#x6570;&#x91CF;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x540E;&#x8FB9;&#x4F18;&#x5316;&#x8FD9;&#x4E00;&#x70B9;&#xFF01;">&#x6B64;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x7684;scrapy_plus&#x5DF2;&#x7ECF;&#x4E0D;&#x80FD;&#x6CA1;&#x6709;redis&#x4E86;&#xFF0C;&#x8131;&#x79BB;redis&#x5C06;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x7EDF;&#x8BA1;&#x5404;&#x79CD;&#x6570;&#x91CF;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x540E;&#x8FB9;&#x4F18;&#x5316;&#x8FD9;&#x4E00;&#x70B9;&#xFF01;</h5>
+<h3 id="&#x5C0F;&#x7ED3;">&#x5C0F;&#x7ED3;</h3>
+<ol>
+<li>&#x4E86;&#x89E3;&#x5206;&#x5E03;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;&#x539F;&#x7406;</li>
+<li>&#x4E86;&#x89E3;&#x5728;redis&#x5B9E;&#x73B0;&#x7684;&#x961F;&#x5217;&#x4E2D;&#xFF0C;put&#x548C;put_nowait&#x4EE5;&#x53CA;get&#x548C;get_nowait&#x7684;&#x533A;&#x522B;</li>
+<li>&#x5B8C;&#x6210;&#x4EE3;&#x7801;&#x7684;&#x91CD;&#x6784;&#xFF0C;&#x5B9E;&#x73B0;&#x5206;&#x5E03;&#x5F0F;</li>
+</ol>
+<h3 id="&#x672C;&#x5C0F;&#x7ED3;&#x6D89;&#x53CA;&#x4FEE;&#x6539;&#x7684;&#x5B8C;&#x6574;&#x4EE3;&#x7801;">&#x672C;&#x5C0F;&#x7ED3;&#x6D89;&#x53CA;&#x4FEE;&#x6539;&#x7684;&#x5B8C;&#x6574;&#x4EE3;&#x7801;</h3>
+<p>scrapy_plus/conf/default_settings.py</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> logging
+
+<span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x7684;&#x65E5;&#x5FD7;&#x914D;&#x7F6E;</span>
+DEFAULT_LOG_LEVEL = logging.INFO    <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x7B49;&#x7EA7;</span>
+DEFAULT_LOG_FMT = <span class="hljs-string">&apos;%(asctime)s %(filename)s[line:%(lineno)d] \
+                  %(levelname)s: %(message)s&apos;</span>   <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;</span>
+DEFUALT_LOG_DATEFMT = <span class="hljs-string">&apos;%Y-%m-%d %H:%M:%S&apos;</span>  <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x65F6;&#x95F4;&#x683C;&#x5F0F;</span>
+DEFAULT_LOG_FILENAME = <span class="hljs-string">&apos;log.log&apos;</span>    <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x540D;&#x79F0;</span>
+
+<span class="hljs-comment"># &#x542F;&#x7528;&#x7684;&#x9ED8;&#x8BA4;&#x7BA1;&#x9053;&#x7C7B;</span>
+PIPELINES = []
+
+<span class="hljs-comment"># &#x542F;&#x7528;&#x7684;&#x9ED8;&#x8BA4;&#x722C;&#x866B;&#x4E2D;&#x95F4;&#x4EF6;&#x7C7B;</span>
+SPIDER_MIDDLEWARES = []
+
+<span class="hljs-comment"># &#x542F;&#x7528;&#x7684;&#x9ED8;&#x8BA4;&#x4E0B;&#x8F7D;&#x5668;&#x4E2D;&#x95F4;&#x4EF6;&#x7C7B;</span>
+DOWNLOADER_MIDDLEWARES = []
+
+<span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x5F02;&#x6B65;&#x7EBF;&#x7A0B;&#x6700;&#x5927;&#x5E76;&#x53D1;&#x6570;&#xFF0C;&#x6B64;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x5728;&#x9879;&#x76EE;&#x7684;settings.py&#x4E2D;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;&#x81EA;&#x52A8;&#x8986;&#x76D6;</span>
+MAX_ASYNC_THREAD_NUMBER = <span class="hljs-number">5</span>
+
+<span class="hljs-comment"># &#x5F02;&#x6B65;&#x5E76;&#x53D1;&#x7684;&#x65B9;&#x5F0F; thread or coroutine &#x7EBF;&#x7A0B; &#x6216; &#x534F;&#x7A0B;</span>
+<span class="hljs-comment"># &#x53EF;&#x4EE5;&#x5728;&#x9879;&#x76EE;&#x7684;settings.py&#x4E2D;&#x91CD;&#x65B0;&#x8BBE;&#x7F6E;&#x8BE5;&#x503C;&#xFF0C;&#x81EA;&#x52A8;&#x8986;&#x76D6;</span>
+ASYNC_TYPE = <span class="hljs-string">&apos;thread&apos;</span> <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x4E3A;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;</span>
+
+<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x8C03;&#x5EA6;&#x5668;&#x7684;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x8981;&#x6301;&#x4E45;&#x5316;</span>
+<span class="hljs-comment"># &#x91CF;&#x4E2A;&#x503C;&#xFF1A;True&#x548C;False</span>
+<span class="hljs-comment"># &#x5982;&#x679C;&#x662F;True&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x662F;&#x4F7F;&#x7528;&#x5206;&#x5E03;&#x5F0F;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x662F;&#x57FA;&#x4E8E;&#x8BF7;&#x6C42;&#x7684;&#x589E;&#x91CF;&#x5F0F;&#x722C;&#x866B;</span>
+<span class="hljs-comment"># &#x5982;&#x679C;&#x662F;False, &#x4E0D;&#x4F7F;&#x7528;redis&#x961F;&#x5217;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528;python&#x7684;set&#x5B58;&#x50A8;&#x6307;&#x7EB9;&#x548C;&#x8BF7;&#x6C42;</span>
+SCHEDULER_PERSIST = <span class="hljs-keyword">False</span>
+
+<span class="hljs-comment"># redis&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;,&#x9ED8;&#x8BA4;&#x4E3A;&#x672C;&#x673A;&#x7684;redis</span>
+REDIS_SET_NAME = <span class="hljs-string">&apos;scrapy_plus_fp_set&apos;</span> <span class="hljs-comment"># fp&#x96C6;&#x5408;</span>
+REDIS_QUEUE_NAME = <span class="hljs-string">&apos;scrapy_plus_request_queue&apos;</span> <span class="hljs-comment"># request&#x961F;&#x5217;</span>
+REDIS_HOST = <span class="hljs-string">&apos;127.0.0.1&apos;</span>
+REDIS_PORT = <span class="hljs-number">6379</span>
+REDIS_DB = <span class="hljs-number">0</span>
+</code></pre>
+<p>scrapy_plus/core/engine.py</p>
+<pre><code class="lang-python"><span class="hljs-string">&apos;&apos;&apos;&#x5F15;&#x64CE;&#x7EC4;&#x4EF6;&apos;&apos;&apos;</span>
+<span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> importlib
+<span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime
+
+<span class="hljs-keyword">from</span> scrapy_plus.utils.log <span class="hljs-keyword">import</span> logger
+<span class="hljs-keyword">from</span> scrapy_plus.conf.settings <span class="hljs-keyword">import</span> SPIDERS, PIPELINES, SPIDER_MIDDLEWARES, DOWNLOADER_MIDDLEWARES, MAX_ASYNC_THREAD_NUMBER, ASYNC_TYPE
+
+<span class="hljs-comment"># &#x5224;&#x65AD;&#x4F7F;&#x7528;&#x4EC0;&#x4E48;&#x5F02;&#x6B65;&#x6A21;&#x5F0F;&#xFF0C;&#x6539;&#x7528;&#x5BF9;&#x5E94;&#x7684;&#x5F02;&#x6B65;&#x6C60;</span>
+<span class="hljs-keyword">if</span> ASYNC_TYPE == <span class="hljs-string">&apos;thread&apos;</span>:
+    <span class="hljs-keyword">from</span> multiprocessing.dummy <span class="hljs-keyword">import</span> Pool  <span class="hljs-comment"># &#x5BFC;&#x5165;&#x7EBF;&#x7A0B;&#x6C60;&#x5BF9;&#x8C61;</span>
+<span class="hljs-keyword">elif</span> ASYNC_TYPE == <span class="hljs-string">&apos;coroutine&apos;</span>:
+    <span class="hljs-keyword">from</span> scrapy_plus.<span class="hljs-keyword">async</span>.coroutine <span class="hljs-keyword">import</span> Pool <span class="hljs-comment"># &#x5BFC;&#x5165;&#x534F;&#x7A0B;&#x6C60;&#x5BF9;&#x8C61;</span>
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-keyword">raise</span> Exception(<span class="hljs-string">&quot;&#x4E0D;&#x652F;&#x6301;&#x7684;&#x5F02;&#x6B65;&#x7C7B;&#x578B;&#xFF1A;{}, &#x53EA;&#x80FD;&#x662F;&apos;thread&apos;&#x6216;&#x8005;&apos;coroutine&apos;&quot;</span>.format(ASYNC_TYPE))
+<span class="hljs-comment"># &#x6CE8;&#x610F;&#xFF1A;</span>
+<span class="hljs-comment"># &#x7531;&#x4E8E;&#x6253;patch&#x8865;&#x4E01;&#x662F;&#x4E3A;&#x4E86;&#x66FF;&#x6362;&#x6389;socket&#x4E3A;&#x975E;&#x963B;&#x585E;&#x7684;</span>
+<span class="hljs-comment"># &#x800C;&#x4E0B;&#x8F7D;&#x5668;&#x4E2D;&#x6B63;&#x597D;&#x4F7F;&#x7528;&#x4E86;requests&#x6A21;&#x5757;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x8FD9;&#x4E4B;&#x540E;&#x5BFC;&#x5165;&#x534F;&#x7A0B;&#x6C60;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;requests&#x4E2D;&#x4F7F;&#x7528;&#x7684;socket&#x6CA1;&#x6709;&#x88AB;&#x66FF;&#x6362;&#x6210;&#x529F;</span>
+<span class="hljs-comment"># &#x4ECE;&#x800C;&#x6709;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x4F7F;&#x7528;&#x51FA;&#x73B0;&#x95EE;&#x9898;</span>
+<span class="hljs-comment"># &#x6240;&#x4EE5;&#x5728;&#x5BFC;&#x5165;&#x5E76;&#x53D1;&#x6C60;&#x5BF9;&#x8C61;&#x4E4B;&#x540E;&#x518D;&#x5BFC;&#x5165;&#x6846;&#x67B6;&#x7684;&#x5404;&#x79CD;&#x7C7B;&#x5BF9;&#x8C61;</span>
+<span class="hljs-keyword">from</span> scrapy_plus.http.request <span class="hljs-keyword">import</span> Request
+<span class="hljs-keyword">from</span> scrapy_plus.core.scheduler <span class="hljs-keyword">import</span> Scheduler
+<span class="hljs-keyword">from</span> scrapy_plus.core.downloader <span class="hljs-keyword">import</span> Downloader
+<span class="hljs-keyword">from</span> scrapy_plus.utils.stats_collector <span class="hljs-keyword">import</span> StatsCollector <span class="hljs-comment"># &#x4FEE;&#x6539;</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Engine</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;
+    a. &#x5BF9;&#x5916;&#x63D0;&#x4F9B;&#x6574;&#x4E2A;&#x7684;&#x7A0B;&#x5E8F;&#x7684;&#x5165;&#x53E3;
+    b. &#x4F9D;&#x6B21;&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x7EC4;&#x4EF6;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5B9E;&#x73B0;&#x6574;&#x4E2A;&#x6846;&#x67B6;&#x7684;&#x8FD0;&#x4F5C;(&#x9A71;&#x52A8;)
+    &apos;&apos;&apos;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.spiders = self._auto_import_instances(SPIDERS,isspider=<span class="hljs-keyword">True</span>)   <span class="hljs-comment"># &#x63A5;&#x6536;&#x722C;&#x866B;&#x5B57;&#x5178;</span>
+        <span class="hljs-comment"># self.scheduler = Scheduler()    # &#x521D;&#x59CB;&#x5316;&#x8C03;&#x5EA6;&#x5668;&#x5BF9;&#x8C61;</span>
+        <span class="hljs-keyword">if</span> SCHEDULER_PERSIST:
+            self.collector = ReidsStatsCollector()  <span class="hljs-comment">#&#x65B0;&#x589E;</span>
+        <span class="hljs-keyword">else</span>:
+            self.collector = NormalStatsCollector()  <span class="hljs-comment">#&#x65B0;&#x589E;</span>
+        self.scheduler = Scheduler(self.collector)
+
+        self.downloader = Downloader()    <span class="hljs-comment"># &#x521D;&#x59CB;&#x5316;&#x4E0B;&#x8F7D;&#x5668;&#x5BF9;&#x8C61;</span>
+
+        self.pipelines = self._auto_import_instances(PIPELINES) <span class="hljs-comment"># &#x7BA1;&#x9053;</span>
+        self.spider_mids = self._auto_import_instances(SPIDER_MIDDLEWARES) <span class="hljs-comment"># &#x722C;&#x866B;&#x4E2D;&#x95F4;&#x4EF6;</span>
+        self.downloader_mids = self._auto_import_instances(DOWNLOADER_MIDDLEWARES) <span class="hljs-comment"># &#x4E0B;&#x8F7D;&#x4E2D;&#x95F4;&#x4EF6;</span>
+
+
+        self.pool = Pool()
+        self.is_running = <span class="hljs-keyword">False</span> <span class="hljs-comment"># &#x5224;&#x65AD;&#x7A0B;&#x5E8F;&#x662F;&#x5426;&#x9700;&#x8981;&#x7ED3;&#x675F;&#x7684;&#x6807;&#x5FD7;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_auto_import_instances</span><span class="hljs-params">(self, path=[], isspider=False)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x52A8;&#x6001;&#x5BFC;&#x5165;&#x7C7B;&#x5E76;&#x5B9E;&#x4F8B;&#x5316;
+        path: &#x8868;&#x793A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x914D;&#x7F6E;&#x7684;&#x5BFC;&#x5165;&#x7C7B;&#x7684;&#x8DEF;&#x5F84;
+        isspider: &#x7531;&#x4E8E;&#x722C;&#x866B;&#x9700;&#x8981;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x5178;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x5176;&#x505A;&#x5BF9;&#x5E94;&#x7684;&#x5224;&#x65AD;&#x548C;&#x5904;&#x7406;
+        &apos;&apos;&apos;</span>
+        instances = {} <span class="hljs-keyword">if</span> isspider <span class="hljs-keyword">else</span> []
+        <span class="hljs-keyword">for</span> p <span class="hljs-keyword">in</span> path:
+            module_name = p.rsplit(<span class="hljs-string">&quot;.&quot;</span>, <span class="hljs-number">1</span>)[<span class="hljs-number">0</span>]  <span class="hljs-comment"># &#x53D6;&#x51FA;&#x6A21;&#x5757;&#x540D;&#x79F0;</span>
+            cls_name = p.rsplit(<span class="hljs-string">&quot;.&quot;</span>, <span class="hljs-number">1</span>)[<span class="hljs-number">1</span>]  <span class="hljs-comment"># &#x53D6;&#x51FA;&#x7C7B;&#x540D;&#x79F0;</span>
+            ret = importlib.import_module(module_name)  <span class="hljs-comment"># &#x52A8;&#x6001;&#x5BFC;&#x5165;&#x722C;&#x866B;&#x6A21;&#x5757;</span>
+            cls = getattr(ret, cls_name)  <span class="hljs-comment"># &#x6839;&#x636E;&#x7C7B;&#x540D;&#x79F0;&#x83B7;&#x53D6;&#x7C7B;&#x5BF9;&#x8C61;</span>
+
+            <span class="hljs-keyword">if</span> isspider:
+                instances[cls.name] = cls()  <span class="hljs-comment"># &#x7EC4;&#x88C5;&#x6210;&#x722C;&#x866B;&#x5B57;&#x5178;{spider_name:spider(),}</span>
+            <span class="hljs-keyword">else</span>:
+                instances.append(cls())  <span class="hljs-comment"># &#x5B9E;&#x4F8B;&#x5316;&#x7C7B;&#x5BF9;&#x8C61;</span>
+                <span class="hljs-comment"># &#x628A;&#x7BA1;&#x9053;&#x4E2D;&#x95F4;&#x4EF6;&#x5206;&#x522B;&#x7EC4;&#x88C5;&#x6210; &#x7BA1;&#x9053;&#x5217;&#x8868;=[&#x7BA1;&#x9053;&#x7C7B;1(),&#x7BA1;&#x9053;&#x7C7B;2()] / &#x4E2D;&#x95F4;&#x4EF6;&#x5217;&#x8868; = [&#x4E2D;&#x95F4;&#x4EF6;&#x7C7B;1(),&#x4E2D;&#x95F4;&#x4EF6;&#x7C7B;2()]</span>
+        <span class="hljs-keyword">return</span> instances  <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x7C7B;&#x5BF9;&#x8C61;&#x5B57;&#x5178;&#x6216;&#x5217;&#x8868;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">start</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x542F;&#x52A8;&#x6574;&#x4E2A;&#x5F15;&#x64CE;&apos;&apos;&apos;</span>
+        t_start = datetime.now()
+        logger.info(<span class="hljs-string">&quot;&#x722C;&#x866B;&#x5F00;&#x59CB;&#x542F;&#x52A8;&#xFF1A;{}&quot;</span>.format(t_start))
+        logger.info(<span class="hljs-string">&quot;&#x722C;&#x866B;&#x8FD0;&#x884C;&#x6A21;&#x5F0F;&#xFF1A;{}&quot;</span>.format(ASYNC_TYPE))
+        logger.info(<span class="hljs-string">&quot;&#x6700;&#x5927;&#x5E76;&#x53D1;&#x6570;&#xFF1A;{}&quot;</span>.format(MAX_ASYNC_THREAD_NUMBER))
+        logger.info(<span class="hljs-string">&quot;&#x542F;&#x52A8;&#x7684;&#x722C;&#x866B;&#x6709;&#xFF1A;{}&quot;</span>.format(list(self.spiders.keys())))
+        logger.info(<span class="hljs-string">&quot;&#x542F;&#x52A8;&#x7684;&#x4E0B;&#x8F7D;&#x4E2D;&#x95F4;&#x4EF6;&#x6709;&#xFF1A;\n{}&quot;</span>.format(DOWNLOADER_MIDDLEWARES))
+        logger.info(<span class="hljs-string">&quot;&#x542F;&#x52A8;&#x7684;&#x722C;&#x866B;&#x4E2D;&#x95F4;&#x4EF6;&#x6709;&#xFF1A;\n{}&quot;</span>.format(SPIDER_MIDDLEWARES))
+        logger.info(<span class="hljs-string">&quot;&#x542F;&#x52A8;&#x7684;&#x7BA1;&#x9053;&#x6709;&#xFF1A;\n{}&quot;</span>.format(PIPELINES))
+        self._start_engine()
+        t_end = datetime.now()
+        logger.info(<span class="hljs-string">&quot;&#x722C;&#x866B;&#x7ED3;&#x675F;&#xFF1A;{}&quot;</span>.format(t_end))
+        logger.info(<span class="hljs-string">&quot;&#x8017;&#x65F6;&#xFF1A;%s&quot;</span> % (t_end - t_start).total_seconds())
+        <span class="hljs-comment"># logger.info(&quot;&#x4E00;&#x5171;&#x83B7;&#x53D6;&#x4E86;&#x8BF7;&#x6C42;&#xFF1A;{}&#x4E2A;&quot;.format(self.total_request_nums))</span>
+        <span class="hljs-comment"># logger.info(&quot;&#x91CD;&#x590D;&#x7684;&#x8BF7;&#x6C42;&#xFF1A;{}&#x4E2A;&quot;.format(self.scheduler.repeate_request_num))</span>
+        <span class="hljs-comment"># logger.info(&quot;&#x6210;&#x529F;&#x7684;&#x8BF7;&#x6C42;&#xFF1A;{}&#x4E2A;&quot;.format(self.total_response_nums))</span>
+        logger.info(<span class="hljs-string">&quot;&#x4E00;&#x5171;&#x83B7;&#x53D6;&#x4E86;&#x8BF7;&#x6C42;&#xFF1A;{}&#x4E2A;&quot;</span>.format(self.collector.request_nums))
+        logger.info(<span class="hljs-string">&quot;&#x91CD;&#x590D;&#x7684;&#x8BF7;&#x6C42;&#xFF1A;{}&#x4E2A;&quot;</span>.format(self.collector.repeat_request_nums))
+        logger.info(<span class="hljs-string">&quot;&#x6210;&#x529F;&#x7684;&#x8BF7;&#x6C42;&#xFF1A;{}&#x4E2A;&quot;</span>.format(self.collector.response_nums))
+        self.collector.clear() <span class="hljs-comment"># &#x6E05;&#x9664;redis&#x4E2D;&#x6240;&#x6709;&#x7684;&#x8BA1;&#x6570;&#x7684;&#x503C;,&#x4F46;&#x4E0D;&#x6E05;&#x9664;&#x6307;&#x7EB9;&#x96C6;&#x5408; # &#x4FEE;&#x6539;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_start_request</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x5355;&#x72EC;&#x5904;&#x7406;&#x722C;&#x866B;&#x6A21;&#x5757;&#x4E2D;start_requests()&#x4EA7;&#x751F;&#x7684;request&#x5BF9;&#x8C61;&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">for</span> spider_name, spider <span class="hljs-keyword">in</span> self.spiders.items():
+            <span class="hljs-keyword">for</span> start_request <span class="hljs-keyword">in</span> spider.start_requests():
+                <span class="hljs-comment">#1. &#x5BF9;start_request&#x8FDB;&#x8FC7;&#x722C;&#x866B;&#x4E2D;&#x95F4;&#x4EF6;&#x8FDB;&#x884C;&#x5904;&#x7406;</span>
+                <span class="hljs-keyword">for</span> spider_mid <span class="hljs-keyword">in</span> self.spider_mids:
+                    start_request = spider_mid.process_request(start_request)
+
+                <span class="hljs-comment"># &#x4E3A;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#x7ED1;&#x5B9A;&#x5B83;&#x6240;&#x5C5E;&#x7684;&#x722C;&#x866B;&#x7684;&#x540D;&#x79F0;</span>
+                start_request.spider_name = spider_name
+
+                <span class="hljs-comment">#2. &#x8C03;&#x7528;&#x8C03;&#x5EA6;&#x5668;&#x7684;add_request&#x65B9;&#x6CD5;&#xFF0C;&#x6DFB;&#x52A0;request&#x5BF9;&#x8C61;&#x5230;&#x8C03;&#x5EA6;&#x5668;&#x4E2D;</span>
+                self.scheduler.add_request(start_request)
+                <span class="hljs-comment"># &#x6539;&#x7528;collector&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x6536;&#x96C6;</span>
+                <span class="hljs-comment"># self.total_request_nums += 1</span>
+                self.collector.incr(self.collector.request_nums_key)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_execute_request_response_item</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x6839;&#x636E;&#x8BF7;&#x6C42;&#x3001;&#x53D1;&#x8D77;&#x8BF7;&#x6C42;&#x83B7;&#x53D6;&#x54CD;&#x5E94;&#x3001;&#x89E3;&#x6790;&#x54CD;&#x5E94;&#x3001;&#x5904;&#x7406;&#x54CD;&#x5E94;&#x7ED3;&#x679C;&apos;&apos;&apos;</span>
+        <span class="hljs-comment">#3. &#x8C03;&#x7528;&#x8C03;&#x5EA6;&#x5668;&#x7684;get_request&#x65B9;&#x6CD5;&#xFF0C;&#x83B7;&#x53D6;request&#x5BF9;&#x8C61;</span>
+        request = self.scheduler.get_request()
+        <span class="hljs-keyword">if</span> request <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>: <span class="hljs-comment">#&#x5982;&#x679C;&#x6CA1;&#x6709;&#x83B7;&#x53D6;&#x5230;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;</span>
+            <span class="hljs-keyword">return</span>
+
+        <span class="hljs-comment">#request&#x5BF9;&#x8C61;&#x7ECF;&#x8FC7;&#x4E0B;&#x8F7D;&#x5668;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;process_request&#x8FDB;&#x884C;&#x5904;&#x7406;</span>
+        <span class="hljs-keyword">for</span> downloader_mid <span class="hljs-keyword">in</span> self.downloader_mids:
+            request = downloader_mid.process_request(request)
+
+        <span class="hljs-comment">#4. &#x8C03;&#x7528;&#x4E0B;&#x8F7D;&#x5668;&#x7684;get_response&#x65B9;&#x6CD5;&#xFF0C;&#x83B7;&#x53D6;&#x54CD;&#x5E94;</span>
+        response = self.downloader.get_response(request)
+
+        response.meta = request.meta
+
+        <span class="hljs-comment">#response&#x5BF9;&#x8C61;&#x7ECF;&#x8FC7;&#x4E0B;&#x8F7D;&#x5668;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;process_response&#x8FDB;&#x884C;&#x5904;&#x7406;</span>
+        <span class="hljs-keyword">for</span> downloader_mid <span class="hljs-keyword">in</span> self.downloader_mids:
+            response = downloader_mid.process_response(response)
+
+        <span class="hljs-comment">#response&#x5BF9;&#x8C61;&#x7ECF;&#x8FC7;&#x4E0B;&#x722C;&#x866B;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;process_response&#x8FDB;&#x884C;&#x5904;&#x7406;</span>
+        <span class="hljs-keyword">for</span> spider_mid <span class="hljs-keyword">in</span> self.spider_mids:
+            response = spider_mid.process_response(response)
+
+        <span class="hljs-comment"># &#x6839;&#x636E;request&#x7684;spider_name&#x5C5E;&#x6027;&#xFF0C;&#x83B7;&#x53D6;&#x5BF9;&#x5E94;&#x7684;&#x722C;&#x866B;&#x5BF9;&#x8C61;</span>
+        spider = self.spiders[request.spider_name]
+        <span class="hljs-comment"># parse&#x65B9;&#x6CD5;</span>
+        parse = getattr(spider, request.parse)  <span class="hljs-comment"># getattr(&#x7C7B;, &#x7C7B;&#x4E2D;&#x65B9;&#x6CD5;&#x540D;&#x7684;&#x5B57;&#x7B26;&#x4E32;) = &#x7C7B;&#x65B9;&#x6CD5;&#x5BF9;&#x8C61;</span>
+
+        <span class="hljs-comment">#5. &#x8C03;&#x7528;&#x722C;&#x866B;&#x7684;parse&#x65B9;&#x6CD5;&#xFF0C;&#x5904;&#x7406;&#x54CD;&#x5E94;</span>
+        results = parse(response)
+        <span class="hljs-comment"># &#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x5224;&#x65AD;&#xFF01;</span>
+        <span class="hljs-keyword">if</span> results <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span>: <span class="hljs-comment"># &#x5982;&#x679C;&#x9879;&#x76EE;&#x4E2D;&#x722C;&#x866B;&#x7684;&#x89E3;&#x6790;&#x51FD;&#x6570;&#x4E0D;&#x8FD4;&#x56DE;&#x53EF;&#x8FED;&#x4EE3;&#x5BF9;&#x8C61;&#x5C31;&#x4F1A;&#x62A5;&#x9519;</span>
+            <span class="hljs-keyword">for</span> result <span class="hljs-keyword">in</span> results:
+
+                <span class="hljs-comment">#6.&#x5224;&#x65AD;&#x7ED3;&#x679C;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x679C;&#x662F;request&#xFF0C;&#x91CD;&#x65B0;&#x8C03;&#x7528;&#x8C03;&#x5EA6;&#x5668;&#x7684;add_request&#x65B9;&#x6CD5;</span>
+                <span class="hljs-keyword">if</span> isinstance(result,Request):
+                    <span class="hljs-comment">#&#x5728;&#x89E3;&#x6790;&#x51FD;&#x6570;&#x5F97;&#x5230;request&#x5BF9;&#x8C61;&#x4E4B;&#x540E;&#xFF0C;&#x4F7F;&#x7528;process_request&#x8FDB;&#x884C;&#x5904;&#x7406;</span>
+
+                    <span class="hljs-keyword">for</span> spider_mid <span class="hljs-keyword">in</span> self.spider_mids:
+                        result = spider_mid.process_request(result)
+
+                    <span class="hljs-comment"># &#x7ED9;request&#x5BF9;&#x8C61;&#x589E;&#x52A0;&#x4E00;&#x4E2A;spider_name&#x5C5E;&#x6027;</span>
+                    result.spider_name = request.spider_name
+                    <span class="hljs-comment"># &#x5C06;request&#x5BF9;&#x8C61;&#x6DFB;&#x52A0;&#x5230;&#x8C03;&#x5EA6;&#x5668;&#x961F;&#x5217;&#x4E2D;</span>
+                    self.scheduler.add_request(result)
+                    <span class="hljs-comment"># &#x8BF7;&#x6C42;&#x6570;+1</span>
+                    <span class="hljs-comment"># self.total_request_nums += 1</span>
+                    <span class="hljs-comment"># &#x6539;&#x7528;collector&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x6536;&#x96C6;</span>
+                    self.collector.incr(self.collector.request_nums_key)
+
+                <span class="hljs-comment">#7&#x5982;&#x679C;&#x4E0D;&#x662F;&#xFF0C;&#x8C03;&#x7528;pipeline&#x7684;process_item&#x65B9;&#x6CD5;&#x5904;&#x7406;&#x7ED3;&#x679C;</span>
+                <span class="hljs-keyword">else</span>:
+                    <span class="hljs-comment"># &#x5C31;&#x901A;&#x8FC7;process_item()&#x4F20;&#x9012;&#x6570;&#x636E;&#x7ED9;&#x7BA1;&#x9053;</span>
+                    <span class="hljs-keyword">for</span> pipeline <span class="hljs-keyword">in</span> self.pipelines:
+                        pipeline.process_item(result, spider)
+
+        <span class="hljs-comment"># &#x6539;&#x7528;collector&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x6536;&#x96C6;</span>
+        <span class="hljs-comment"># self.total_response_nums += 1</span>
+        self.collector.incr(self.collector.response_nums_key)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_call_back</span><span class="hljs-params">(self, temp)</span>:</span> <span class="hljs-comment"># &#x8FD9;&#x662F;&#x5F02;&#x6B65;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;callback&#x53C2;&#x6570;&#x6307;&#x5411;&#x7684;&#x51FD;&#x6570;,temp&#x53C2;&#x6570;&#x4E3A;&#x56FA;&#x5B9A;&#x5199;&#x6CD5;</span>
+        <span class="hljs-keyword">if</span> self.is_running:
+            self.pool.apply_async(self._execute_request_response_item, callback=self._call_back, error_callback=self._error_callback)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_error_callback</span><span class="hljs-params">(self, exception)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x5F02;&#x5E38;&#x56DE;&#x8C03;&#x51FD;&#x6570;&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">try</span>:
+            <span class="hljs-keyword">raise</span> exception    <span class="hljs-comment"># &#x629B;&#x51FA;&#x5F02;&#x5E38;&#x540E;&#xFF0C;&#x624D;&#x80FD;&#x88AB;&#x65E5;&#x5FD7;&#x8FDB;&#x884C;&#x5B8C;&#x6574;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;</span>
+        <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:
+            logger.exception(e)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_start_engine</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;
+        &#x5177;&#x4F53;&#x7684;&#x5B9E;&#x73B0;&#x5F15;&#x64CE;&#x7684;&#x7EC6;&#x8282;
+        :return:
+        &apos;&apos;&apos;</span>
+        self.is_running = <span class="hljs-keyword">True</span>  <span class="hljs-comment"># &#x542F;&#x52A8;&#x5F15;&#x64CE;&#xFF0C;&#x8BBE;&#x7F6E;&#x72B6;&#x6001;&#x4E3A;True</span>
+        <span class="hljs-comment"># &#x5904;&#x7406;strat_urls&#x4EA7;&#x751F;&#x7684;request</span>
+        self.pool.apply_async(self._start_request, error_callback=self._error_callback)  <span class="hljs-comment"># &#x4F7F;&#x7528;&#x5F02;&#x6B65;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x7684;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x6307;&#x5B9A;&#x7684;&#x51FD;&#x6570;</span>
+
+        <span class="hljs-comment"># &#x4E0D;&#x65AD;&#x7684;&#x5904;&#x7406;&#x89E3;&#x6790;&#x8FC7;&#x7A0B;&#x4E2D;&#x4EA7;&#x751F;&#x7684;request</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(MAX_ASYNC_THREAD_NUMBER): <span class="hljs-comment"># &#x63A7;&#x5236;&#x6700;&#x5927;&#x5E76;&#x53D1;&#x6570;</span>
+            self.pool.apply_async(self._execute_request_response_item, callback=self._call_back, error_callback=self._error_callback)
+
+
+        <span class="hljs-comment"># &#x63A7;&#x5236;&#x5224;&#x65AD;&#x7A0B;&#x5E8F;&#x4F55;&#x65F6;&#x4E2D;&#x6B62;</span>
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            time.sleep(<span class="hljs-number">0.001</span>) <span class="hljs-comment"># &#x907F;&#x514D;cpu&#x7A7A;&#x8F6C;,&#x907F;&#x514D;&#x6027;&#x80FD;&#x6D88;&#x8017;</span>
+
+            <span class="hljs-comment"># if self.total_response_nums != 0: # &#x56E0;&#x4E3A;&#x5F02;&#x6B65;&#xFF0C;&#x9700;&#x8981;&#x589E;&#x52A0;&#x5224;&#x65AD;&#xFF0C;&#x54CD;&#x5E94;&#x6570;&#x4E0D;&#x80FD;&#x4E3A;0</span>
+            <span class="hljs-comment">#     # &#x6210;&#x529F;&#x7684;&#x54CD;&#x5E94;&#x6570;+&#x91CD;&#x590D;&#x7684;&#x6570;&#x91CF;&gt;=&#x603B;&#x7684;&#x8BF7;&#x6C42;&#x6570;&#x91CF; &#x7A0B;&#x5E8F;&#x7ED3;&#x675F;</span>
+            <span class="hljs-comment">#     if self.total_response_nums + self.scheduler.repeat_request_num &gt;= self.total_request_nums:</span>
+            <span class="hljs-comment">#         self.is_running = False</span>
+            <span class="hljs-comment">#         break</span>
+
+            <span class="hljs-keyword">if</span> self.collector.request_nums != <span class="hljs-number">0</span>: <span class="hljs-comment"># &#x6CE8;&#x610F;&#x8FD9;&#x4E2A;&#x5730;&#x65B9;&#x4E0D;&#x80FD;&#x7528;response_nums&#x4F5C;&#x4E3A;&#x5224;&#x65AD;&#x6807;&#x51C6;&#x4E86;!</span>
+                <span class="hljs-keyword">if</span> self.collector.response_nums+self.collector.repeat_request_nums &gt;= self.collector.request_nums:
+                    self.is_running = <span class="hljs-keyword">False</span>
+                    <span class="hljs-keyword">break</span>
+</code></pre>
+<p>scrapy_plus/core/scheduler.py</p>
+<pre><code class="lang-python"><span class="hljs-string">&apos;&apos;&apos;&#x8C03;&#x5EA6;&#x5668;&#x6A21;&#x5757;&#x5C01;&#x4F4F;&apos;&apos;&apos;</span>
+<span class="hljs-keyword">from</span> six.moves.queue <span class="hljs-keyword">import</span> Queue <span class="hljs-comment"># &#x517C;&#x5BB9;py2py3 &#x4FEE;&#x6539;requirements.txt&#x6587;&#x4EF6;</span>
+<span class="hljs-comment"># from queue import Queue # py3</span>
+
+<span class="hljs-keyword">import</span> six
+<span class="hljs-keyword">import</span> w3lib.url
+<span class="hljs-keyword">from</span> hashlib <span class="hljs-keyword">import</span> sha1
+
+<span class="hljs-keyword">from</span> scrapy_plus.utils.log <span class="hljs-keyword">import</span> logger
+
+<span class="hljs-keyword">from</span> scrapy_plus.utils.queue <span class="hljs-keyword">import</span> Queue <span class="hljs-keyword">as</span> ReidsQueue
+<span class="hljs-keyword">from</span> scrapy_plus.conf.settings <span class="hljs-keyword">import</span> SCHEDULER_PERSIST
+<span class="hljs-keyword">from</span> scrapy_plus.utils.set <span class="hljs-keyword">import</span> NoramlFilterContainer, RedisFilterContainer
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Scheduler</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    &#x7F13;&#x5B58;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;(Request)&#xFF0C;&#x5E76;&#x4E3A;&#x4E0B;&#x8F7D;&#x5668;&#x63D0;&#x4F9B;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#xFF0C;&#x5B9E;&#x73B0;&#x8BF7;&#x6C42;&#x7684;&#x8C03;&#x5EA6;&#xFF1A;
+    &#x5BF9;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x53BB;&#x91CD;&#x5224;&#x65AD;&#xFF1A;&#x5B9E;&#x73B0;&#x53BB;&#x91CD;&#x65B9;&#x6CD5;_filter_request&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x5BF9;&#x5185;&#x63D0;&#x4F9B;&#xFF0C;&#x56E0;&#x6B64;&#x8BBE;&#x7F6E;&#x4E3A;&#x79C1;&#x6709;&#x65B9;&#x6CD5;
+    &quot;&quot;&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, collector)</span>:</span>
+        <span class="hljs-comment"># self.queue = Queue()</span>
+        <span class="hljs-keyword">if</span> SCHEDULER_PERSIST: <span class="hljs-comment">#&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5206;&#x5E03;&#x5F0F;&#x6216;&#x8005;&#x662F;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x4F7F;&#x7528;redis&#x7684;&#x961F;&#x5217;</span>
+            self.queue = ReidsQueue()
+            self._filter_container = RedisFilterContainer()  <span class="hljs-comment"># &#x4F7F;&#x7528;redis&#x4F5C;&#x4E3A;python&#x7684;&#x53BB;&#x91CD;&#x7684;&#x5BB9;&#x5668;</span>
+        <span class="hljs-keyword">else</span>:
+            self.queue = Queue
+            self._filter_container = NoramlFilterContainer()  <span class="hljs-comment"># &#x4F7F;&#x7528;Python&#x7684;set()&#x96C6;&#x5408;</span>
+        <span class="hljs-comment"># self.repeat_request_num = 0  # &#x7EDF;&#x8BA1;&#x91CD;&#x590D;&#x7684;&#x6570;&#x91CF;</span>
+        self.collector = collector
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_request</span><span class="hljs-params">(self, request)</span>:</span>
+        <span class="hljs-comment"># &#x6DFB;&#x52A0;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;,&#x524D;&#x63D0;&#x662F;&#x6307;&#x7EB9;&#x6CA1;&#x6709;&#x91CD;&#x590D;</span>
+        <span class="hljs-keyword">if</span> self._filter_request(request):
+            self.queue.put(request)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_request</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-comment"># &#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;</span>
+        <span class="hljs-comment"># return self.queue.get()</span>
+        <span class="hljs-keyword">try</span>:
+            request = self.queue.get(<span class="hljs-keyword">False</span>) <span class="hljs-comment"># &#x4ECE;&#x961F;&#x5217;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x5BF9;&#x8C61;&#x8BBE;&#x7F6E;&#x4E3A;&#x975E;&#x963B;&#x585E;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x9020;&#x6210;&#x7A0B;&#x5E8F;&#x65E0;&#x6CD5;&#x9000;&#x51FA;</span>
+        <span class="hljs-keyword">except</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">None</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> request
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_filter_request</span><span class="hljs-params">(self, request)</span>:</span>
+        <span class="hljs-comment"># &#x53BB;&#x91CD;&#x65B9;&#x6CD5;</span>
+        request.fp = self._gen_fp(request) <span class="hljs-comment"># &#x7ED9;request&#x5BF9;&#x8C61;&#x589E;&#x52A0;&#x4E00;&#x4E2A;fp&#x6307;&#x7EB9;&#x5C5E;&#x6027;</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> self._filter_container.exists(request.fp):
+            self._filter_container.add_fp(request.fp) <span class="hljs-comment"># &#x5411;&#x6307;&#x7EB9;&#x5BB9;&#x5668;&#x96C6;&#x5408;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6307;&#x7EB9;</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-comment"># self.repeat_request_num += 1</span>
+            self.collector.incr(self.collector.repeat_request_nums_key)
+            logger.info(<span class="hljs-string">&quot;&#x53D1;&#x73B0;&#x91CD;&#x590D;&#x7684;&#x8BF7;&#x6C42;&#xFF1A;&lt;{} {}&gt;&quot;</span>.format(request.method, request.url))
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_gen_fp</span><span class="hljs-params">(self, request)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x751F;&#x6210;&#x5E76;&#x8FD4;&#x56DE;request&#x5BF9;&#x8C61;&#x7684;&#x6307;&#x7EB9;
+        &#x7528;&#x6765;&#x5224;&#x65AD;&#x8BF7;&#x6C42;&#x662F;&#x5426;&#x91CD;&#x590D;&#x7684;&#x5C5E;&#x6027;&#xFF1A;url&#xFF0C;method&#xFF0C;params(&#x5728;url&#x4E2D;)&#xFF0C;data
+        &#x4E3A;&#x4FDD;&#x6301;&#x552F;&#x4E00;&#x6027;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x4ED6;&#x4EEC;&#x6309;&#x7167;&#x540C;&#x6837;&#x7684;&#x6392;&#x5E8F;&#x89C4;&#x5219;&#x8FDB;&#x884C;&#x6392;&#x5E8F;
+        &quot;&quot;&quot;</span>
+        <span class="hljs-comment"># 1. url&#x6392;&#x5E8F;&#xFF1A;&#x501F;&#x52A9;w3lib.url&#x6A21;&#x5757;&#x4E2D;&#x7684;canonicalize_url&#x65B9;&#x6CD5;</span>
+        url = w3lib.url.canonicalize_url(request.url)
+        <span class="hljs-comment"># 2. method&#x4E0D;&#x9700;&#x8981;&#x6392;&#x5E8F;&#xFF0C;&#x53EA;&#x8981;&#x4FDD;&#x6301;&#x5927;&#x5C0F;&#x5199;&#x4E00;&#x81F4;&#x5C31;&#x53EF;&#x4EE5; upper()&#x65B9;&#x6CD5;&#x5168;&#x90E8;&#x8F6C;&#x6362;&#x4E3A;&#x5927;&#x5199;</span>
+        method = request.method.upper()
+        <span class="hljs-comment"># 3. data&#x6392;&#x5E8F;&#xFF1A;&#x5982;&#x679C;&#x6709;&#x63D0;&#x4F9B;&#x5219;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x5178;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x662F;&#x7A7A;&#x5B57;&#x5178;</span>
+        data = request.data <span class="hljs-keyword">if</span> request.data <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-keyword">None</span> <span class="hljs-keyword">else</span> {}
+        data = sorted(data.items(), key=<span class="hljs-keyword">lambda</span> x: x[<span class="hljs-number">0</span>]) <span class="hljs-comment"># &#x7528;sorted()&#x65B9;&#x6CD5; &#x6309;data&#x5B57;&#x5178;&#x7684;key&#x8FDB;&#x884C;&#x6392;&#x5E8F;</span>
+        <span class="hljs-comment"># items()&#x8FD4;&#x56DE;&#x5143;&#x7956; key&#x53C2;&#x6570;&#x8868;&#x793A;&#x6309;&#x4EC0;&#x4E48;&#x8FDB;&#x884C;&#x6392;&#x5E8F; x&#x8868;&#x793A;data.items() x[0]&#x8868;&#x793A;&#x5143;&#x7956;&#x7B2C;&#x4E00;&#x4E2A;&#x503C;,&#x4E5F;&#x5C31;&#x662F;data&#x7684;&#x952E;</span>
+
+        <span class="hljs-comment"># 4. &#x5229;&#x7528;sha1&#x8BA1;&#x7B97;&#x83B7;&#x53D6;&#x6307;&#x7EB9;</span>
+        s1 = sha1()
+        s1.update(self._to_bytes(url)) <span class="hljs-comment"># sha1&#x8BA1;&#x7B97;&#x7684;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x662F;&#x5B57;&#x8282;&#x7C7B;&#x578B;</span>
+        s1.update(self._to_bytes(method))
+        s1.update(self._to_bytes(str(data)))
+
+        fp = s1.hexdigest()
+        <span class="hljs-keyword">return</span> fp
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">_to_bytes</span><span class="hljs-params">(self, string)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x4E3A;&#x4E86;&#x517C;&#x5BB9;py2&#x548C;py3&#xFF0C;&#x5229;&#x7528;_to_bytes&#x65B9;&#x6CD5;&#xFF0C;&#x628A;&#x6240;&#x6709;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x5316;&#x4E3A;&#x5B57;&#x8282;&#x7C7B;&#x578B;&quot;&quot;&quot;</span>
+        <span class="hljs-keyword">if</span> six.PY2:
+            <span class="hljs-keyword">if</span> isinstance(string, str):
+                <span class="hljs-keyword">return</span> string
+            <span class="hljs-keyword">else</span>: <span class="hljs-comment"># &#x5982;&#x679C;&#x662F;python2&#x7684;unicode&#x7C7B;&#x578B;&#xFF0C;&#x8F6C;&#x5316;&#x4E3A;&#x5B57;&#x8282;&#x7C7B;&#x578B;</span>
+                <span class="hljs-keyword">return</span> string.encode(<span class="hljs-string">&apos;utf-8&apos;</span>)
+        <span class="hljs-keyword">elif</span> six.PY3:
+            <span class="hljs-keyword">if</span> isinstance(string, str):  <span class="hljs-comment"># &#x5982;&#x679C;&#x662F;python3&#x7684;str&#x7C7B;&#x578B;&#xFF0C;&#x8F6C;&#x5316;&#x4E3A;&#x5B57;&#x8282;&#x7C7B;&#x578B;</span>
+                <span class="hljs-keyword">return</span> string.encode(<span class="hljs-string">&quot;utf-8&quot;</span>)
+            <span class="hljs-keyword">else</span>:
+                <span class="hljs-keyword">return</span> string
+</code></pre>
+<p>scrapy_plus/utils/queue.py</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-keyword">import</span> pickle
+<span class="hljs-keyword">import</span> redis <span class="hljs-comment"># &#x4FEE;&#x6539;requirements.txt</span>
+<span class="hljs-keyword">from</span> six.moves <span class="hljs-keyword">import</span> queue <span class="hljs-keyword">as</span> BaseQueue
+
+<span class="hljs-comment"># &#x5BFC;&#x5165;redis&#x914D;&#x7F6E;</span>
+<span class="hljs-keyword">from</span> scrapy_plus.conf.settings <span class="hljs-keyword">import</span> REDIS_QUEUE_NAME, REDIS_HOST, REDIS_PORT, REDIS_DB
+
+
+<span class="hljs-comment"># &#x5229;&#x7528;redis&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;Queue&#xFF0C;&#x4F7F;&#x5176;&#x63A5;&#x53E3;&#x540C;python&#x7684;&#x5185;&#x7F6E;&#x961F;&#x5217;&#x63A5;&#x53E3;&#x4E00;&#x81F4;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x65E0;&#x7F1D;&#x8F6C;&#x6362;</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Queue</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;
+    A Queue like message built over redis
+    &quot;&quot;&quot;</span>
+    Empty = BaseQueue.Empty
+    Full = BaseQueue.Full
+    max_timeout = <span class="hljs-number">0.3</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, maxsize=<span class="hljs-number">0</span>, name=REDIS_QUEUE_NAME, host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB,
+                lazy_limit=True, password=None)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        Constructor for RedisQueue
+        maxsize:    an integer that sets the upperbound limit on the number of
+                    items that can be placed in the queue.
+        lazy_limit: redis queue is shared via instance, a lazy size limit is used
+                    for better performance.
+        &quot;&quot;&quot;</span>
+        self.name = name
+        self.redis = redis.StrictRedis(host=host, port=port, db=db, password=password)
+        self.maxsize = maxsize
+        self.lazy_limit = lazy_limit
+        self.last_qsize = <span class="hljs-number">0</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">qsize</span><span class="hljs-params">(self)</span>:</span>
+        self.last_qsize = self.redis.llen(self.name)
+        <span class="hljs-keyword">return</span> self.last_qsize
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">empty</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">if</span> self.qsize() == <span class="hljs-number">0</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">full</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-keyword">if</span> self.maxsize <span class="hljs-keyword">and</span> self.qsize() &gt;= self.maxsize:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">put_nowait</span><span class="hljs-params">(self, obj)</span>:</span>
+        <span class="hljs-keyword">if</span> self.lazy_limit <span class="hljs-keyword">and</span> self.last_qsize &lt; self.maxsize:
+            <span class="hljs-keyword">pass</span>
+        <span class="hljs-keyword">elif</span> self.full():
+            <span class="hljs-keyword">raise</span> self.Full
+        self.last_qsize = self.redis.rpush(self.name, pickle.dumps(obj)) <span class="hljs-comment"># pickle.dumps(obj)&#x628A;&#x5BF9;&#x8C61;&#x8F6C;&#x6362;&#x4E3A;&#x4E8C;&#x8FDB;&#x5236;</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">put</span><span class="hljs-params">(self, obj, block=True, timeout=None)</span>:</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> block:
+            <span class="hljs-keyword">return</span> self.put_nowait(obj)
+
+        start_time = time.time()
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            <span class="hljs-keyword">try</span>:
+                <span class="hljs-keyword">return</span> self.put_nowait(obj)
+            <span class="hljs-keyword">except</span> self.Full:
+                <span class="hljs-keyword">if</span> timeout:
+                    lasted = time.time() - start_time
+                    <span class="hljs-keyword">if</span> timeout &gt; lasted:
+                        time.sleep(min(self.max_timeout, timeout - lasted))
+                    <span class="hljs-keyword">else</span>:
+                        <span class="hljs-keyword">raise</span>
+                <span class="hljs-keyword">else</span>:
+                    time.sleep(self.max_timeout)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_nowait</span><span class="hljs-params">(self)</span>:</span>
+        ret = self.redis.lpop(self.name)
+        <span class="hljs-keyword">if</span> ret <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            <span class="hljs-keyword">raise</span> self.Empty
+        <span class="hljs-keyword">return</span> pickle.loads(ret) <span class="hljs-comment"># pickle.loads(ret)&#x628A;&#x4E8C;&#x8FDB;&#x5236;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x4E3A;&#x5BF9;&#x8C61; &#x53CD;&#x5E8F;&#x5217;&#x5316;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self, block=True, timeout=None)</span>:</span>
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> block:
+            <span class="hljs-keyword">return</span> self.get_nowait()
+
+        start_time = time.time()
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+            <span class="hljs-keyword">try</span>:
+                <span class="hljs-keyword">return</span> self.get_nowait()
+            <span class="hljs-keyword">except</span> self.Empty:
+                <span class="hljs-keyword">if</span> timeout:
+                    lasted = time.time() - start_time
+                    <span class="hljs-keyword">if</span> timeout &gt; lasted:
+                        time.sleep(min(self.max_timeout, timeout - lasted))
+                    <span class="hljs-keyword">else</span>:
+                        <span class="hljs-keyword">raise</span>
+                <span class="hljs-keyword">else</span>:
+                    time.sleep(self.max_timeout)
+</code></pre>
+<p>scrapy_plus/utils/set.py</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> redis
+<span class="hljs-keyword">from</span> scrapy_plus.conf <span class="hljs-keyword">import</span> settings
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BaseFilterContainer</span><span class="hljs-params">(object)</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_fp</span><span class="hljs-params">(self, fp)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x5F80;&#x53BB;&#x91CD;&#x5BB9;&#x5668;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6307;&#x7EB9;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">pass</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exists</span><span class="hljs-params">(self, fp)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x5224;&#x65AD;&#x6307;&#x7EB9;&#x662F;&#x5426;&#x5728;&#x53BB;&#x91CD;&#x5BB9;&#x5668;&#x4E2D;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">pass</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NoramlFilterContainer</span><span class="hljs-params">(BaseFilterContainer)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;&#x5229;&#x7528;python&#x7684;&#x96C6;&#x5408;&#x7C7B;&#x578B;&apos;&apos;&apos;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self._filter_container = set()
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_fp</span><span class="hljs-params">(self, fp)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&apos;&apos;&apos;</span>
+        self._filter_container.add(fp)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exists</span><span class="hljs-params">(self, fp)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x5224;&#x65AD;&#x6307;&#x7EB9;&#x662F;&#x5426;&#x5728;&#x53BB;&#x91CD;&#x5BB9;&#x5668;&#x4E2D;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">if</span> fp <span class="hljs-keyword">in</span> self._filter_container:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">False</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RedisFilterContainer</span><span class="hljs-params">(BaseFilterContainer)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos;&#x5229;&#x7528;redis&#x7684;&#x6307;&#x7EB9;&#x96C6;&#x5408;&apos;&apos;&apos;</span>
+    REDIS_SET_NAME = settings.REDIS_SET_NAME
+    REDIS_SET_HOST = settings.REDIS_HOST
+    REDIS_SET_PORT = settings.REDIS_PORT
+    REDIS_SET_DB = settings.REDIS_DB
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self._redis = redis.StrictRedis(host=self.REDIS_SET_HOST, port=self.REDIS_SET_PORT ,db=self.REDIS_SET_DB)
+        self._name = self.REDIS_SET_NAME
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_fp</span><span class="hljs-params">(self, fp)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x5F80;&#x53BB;&#x91CD;&#x5BB9;&#x5668;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x6307;&#x7EB9;&apos;&apos;&apos;</span>
+        self._redis.sadd(self._name, fp)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exists</span><span class="hljs-params">(self, fp)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x5224;&#x65AD;&#x6307;&#x7EB9;&#x662F;&#x5426;&#x5728;&#x53BB;&#x91CD;&#x5BB9;&#x5668;&#x4E2D;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self._redis.sismember(self._name, fp) <span class="hljs-comment"># &#x5B58;&#x5728;&#x8FD4;&#x56DE;1 &#x4E0D;&#x5B58;&#x5728;&#x8FD4;&#x56DE;0</span>
+</code></pre>
+<p>scrapy_plus/stats_collector.py</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> redis
+<span class="hljs-keyword">from</span> scrapy_plus.conf.settings <span class="hljs-keyword">import</span> REDIS_HOST, REDIS_PORT, REDIS_DB
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StatsCollector</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x5BF9;&#x5404;&#x79CD;&#x6570;&#x91CF;&#x7684;&#x7EDF;&#x8BA1;&#xFF0C;&#x5305;&#x62EC;&#x603B;&#x7684;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&#xFF0C;&#x603B;&#x7684;&#x54CD;&#x5E94;&#x6570;&#x91CF;&#xFF0C;&#x603B;&#x7684;&#x91CD;&#x590D;&#x6570;&#x91CF;&quot;&quot;&quot;</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self, spider_names=[], host=REDIS_HOST,
+                 port=REDIS_PORT, db=REDIS_DB, password=None)</span>:</span>
+
+        self.redis = redis.StrictRedis(host=host, port=port, db=db, password=password)
+        <span class="hljs-comment">#&#x5B58;&#x50A8;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&#x7684;&#x952E;</span>
+        self.request_nums_key = <span class="hljs-string">&quot;_&quot;</span>.join(spider_names) + <span class="hljs-string">&quot;_request_nums&quot;</span>
+        <span class="hljs-comment">#&#x5B58;&#x50A8;&#x54CD;&#x5E94;&#x6570;&#x91CF;&#x7684;&#x952E;</span>
+        self.response_nums_key = <span class="hljs-string">&quot;_&quot;</span>.join(spider_names) + <span class="hljs-string">&quot;_response_nums&quot;</span>
+        <span class="hljs-comment">#&#x5B58;&#x50A8;&#x91CD;&#x590D;&#x8BF7;&#x6C42;&#x7684;&#x952E;</span>
+        self.repeat_request_nums_key = <span class="hljs-string">&quot;_&quot;</span>.join(spider_names) + <span class="hljs-string">&quot;_repeat_request_nums&quot;</span>
+        <span class="hljs-comment">#&#x5B58;&#x50A8;start_request&#x6570;&#x91CF;&#x7684;&#x952E;</span>
+        self.start_request_nums_key = <span class="hljs-string">&quot;_&quot;</span>.join(spider_names) + <span class="hljs-string">&quot;_start_request_nums&quot;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">incr</span><span class="hljs-params">(self, key)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x7ED9;&#x952E;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#x589E;&#x52A0;1&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x4F1A;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#xFF0C;&#x5E76;&#x4E14;&#x503C;&#x4E3A;1&#xFF0C;&apos;&apos;&apos;</span>
+        self.redis.incr(key)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self, key)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;&#x952E;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x662F;&#x4E3A;0&#xFF0C;&#x5B58;&#x5728;&#x5219;&#x83B7;&#x53D6;&#x5E76;&#x8F6C;&#x5316;&#x4E3A;int&#x7C7B;&#x578B;&apos;&apos;&apos;</span>
+        ret = self.redis.get(key)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> ret:
+            ret = <span class="hljs-number">0</span>
+        <span class="hljs-keyword">else</span>:
+            ret = int(ret)
+        <span class="hljs-keyword">return</span> ret
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">clear</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x7A0B;&#x5E8F;&#x7ED3;&#x675F;&#x540E;&#x6E05;&#x7A7A;&#x6240;&#x6709;&#x7684;&#x503C;&apos;&apos;&apos;</span>
+        self.redis.delete(self.request_nums_key, self.response_nums_key,
+                          self.repeat_request_nums_key, self.start_request_nums_key)
+
+<span class="hljs-decorator">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">request_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self.get(self.request_nums_key)
+
+<span class="hljs-decorator">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">response_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;&#x54CD;&#x5E94;&#x6570;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self.get(self.response_nums_key)
+
+<span class="hljs-decorator">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">repeat_request_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;&#x91CD;&#x590D;&#x8BF7;&#x6C42;&#x6570;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self.get(self.repeat_request_nums_key)
+
+<span class="hljs-decorator">    @property</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">start_request_nums</span><span class="hljs-params">(self)</span>:</span>
+        <span class="hljs-string">&apos;&apos;&apos;&#x83B7;&#x53D6;start_request&#x6570;&#x91CF;&apos;&apos;&apos;</span>
+        <span class="hljs-keyword">return</span> self.get(self.start_request_nums_key)
+</code></pre>
+<p>&#x9879;&#x76EE;&#x8DEF;&#x5F84;/settings.py</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x540D;&#x79F0;</span>
+DEFAULT_LOG_FILENAME = <span class="hljs-string">&apos;&#x65E5;&#x5FD7;.log&apos;</span>    <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x540D;&#x79F0;</span>
+
+<span class="hljs-comment"># &#x542F;&#x7528;&#x7684;&#x722C;&#x866B;&#x7C7B;</span>
+SPIDERS = [
+    <span class="hljs-string">&apos;spiders.baidu.BaiduSpider&apos;</span>,
+    <span class="hljs-string">&apos;spiders.douban.DoubanSpider&apos;</span>
+]
+
+<span class="hljs-comment"># &#x542F;&#x7528;&#x7684;&#x7BA1;&#x9053;&#x7C7B;</span>
+PIPELINES = [
+    <span class="hljs-string">&apos;pipelines.BaiduPipeline&apos;</span>,
+    <span class="hljs-string">&apos;pipelines.DoubanPipeline&apos;</span>
+]
+
+<span class="hljs-comment"># &#x542F;&#x7528;&#x7684;&#x722C;&#x866B;&#x4E2D;&#x95F4;&#x4EF6;&#x7C7B;</span>
+SPIDER_MIDDLEWARES = []
+
+<span class="hljs-comment"># &#x542F;&#x7528;&#x7684;&#x4E0B;&#x8F7D;&#x5668;&#x4E2D;&#x95F4;&#x4EF6;&#x7C7B;</span>
+DOWNLOADER_MIDDLEWARES = []
+
+SCHEDULER_PERSIST = <span class="hljs-keyword">True</span>
+
+ASYNC_TYPE = <span class="hljs-string">&apos;coroutine&apos;</span> <span class="hljs-comment"># &#x9ED8;&#x8BA4;&#x4E3A;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;</span>
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../day15/0_框架升级.html" class="navigation navigation-prev " aria-label="Previous page: 第十五天-框架升级"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../day15/2_框架升级--增量爬虫设计原理及其实现.html" class="navigation navigation-next " aria-label="Next page: [应用]增量爬虫设计原理及其实现"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"expandable-chapters-small":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

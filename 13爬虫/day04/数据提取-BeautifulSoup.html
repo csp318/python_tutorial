@@ -1,0 +1,3033 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>数据提取-BeautifulSoup | 课程整体概要</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../day04/糗事百科爬虫.html" />
+    
+    
+    <link rel="prev" href="../day04/贴吧爬虫.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.4"
+        data-chapter-title="数据提取-BeautifulSoup"
+        data-filepath="day04/数据提取-BeautifulSoup.md"
+        data-basepath=".."
+        data-revision="Mon Aug 13 2018 21:05:44 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="day01/课程内容概述.html">
+            
+                
+                    <a href="../day01/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        第一天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="day01/爬虫概述.html">
+            
+                
+                    <a href="../day01/爬虫概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        爬虫概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="day01/爬虫的分类.html">
+            
+                
+                    <a href="../day01/爬虫的分类.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        爬虫的分类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="day01/爬虫工作流程.html">
+            
+                
+                    <a href="../day01/爬虫工作流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        爬虫工作流程(重点)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="day01/HTTP与HTTPS.html">
+            
+                
+                    <a href="../day01/HTTP与HTTPS.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        复习HTTP与HTTPS
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="day01/字符串复习.html">
+            
+                
+                    <a href="../day01/字符串复习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        字符串复习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="day01/requests基本使用.html">
+            
+                
+                    <a href="../day01/requests基本使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        requests基本使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="day01/requests发送带有header的请求.html">
+            
+                
+                    <a href="../day01/requests发送带有header的请求.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.7.</b>
+                        
+                        requests发送带有headers的请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="day01/requests发送带有参数的请求.html">
+            
+                
+                    <a href="../day01/requests发送带有参数的请求.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.8.</b>
+                        
+                        requests发送带有参数的请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="day01/贴吧爬虫.html">
+            
+                
+                    <a href="../day01/贴吧爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.9.</b>
+                        
+                        贴吧爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="day01/作业.html">
+            
+                
+                    <a href="../day01/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.10.</b>
+                        
+                        今日学习目标和作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="day02/课程内容概述.html">
+            
+                
+                    <a href="../day02/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        第二天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="day02/requests发送POST请求.html">
+            
+                
+                    <a href="../day02/requests发送POST请求.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        requests发送POST请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="day02/百度翻译爬虫.html">
+            
+                
+                    <a href="../day02/百度翻译爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        百度翻译爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="day02/requests使用代理.html">
+            
+                
+                    <a href="../day02/requests使用代理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        requests使用代理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="day02/随机代理.html">
+            
+                
+                    <a href="../day02/随机代理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        随机代理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="day02/requests使用cookie和session.html">
+            
+                
+                    <a href="../day02/requests使用cookie和session.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        requests访问登录后才能访问的资源
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="day02/如何找POST请求的URL.html">
+            
+                
+                    <a href="../day02/如何找POST请求的URL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        js逆向-找出POST请求的URL
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="day02/如何定位生成js的位置.html">
+            
+                
+                    <a href="../day02/如何定位生成js的位置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        js逆向-定位和调试js
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="day02/人人手机端登录.html">
+            
+                
+                    <a href="../day02/人人手机端登录.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        js逆向-人人手机端登录
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="day02/requests模块其他知识点.html">
+            
+                
+                    <a href="../day02/requests模块其他知识点.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.9.</b>
+                        
+                        requests模块其他知识点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="day02/作业.html">
+            
+                
+                    <a href="../day02/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.10.</b>
+                        
+                        今日学习目标和作业
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="day02/chrome浏览器使用方法介绍.html">
+            
+                
+                    <a href="../day02/chrome浏览器使用方法介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.11.</b>
+                        
+                        扩展阅读-chrome浏览器使用方法介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="day02/urllib的介绍.html">
+            
+                
+                    <a href="../day02/urllib的介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.12.</b>
+                        
+                        扩展阅读-urllib的介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="day02/代理神器Fiddler.html">
+            
+                
+                    <a href="../day02/代理神器Fiddler.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.13.</b>
+                        
+                        扩展阅读-代理神器Fiddler
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="day03/课程内容概述.html">
+            
+                
+                    <a href="../day03/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        第三天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="day03/数据提取概念与分类.html">
+            
+                
+                    <a href="../day03/数据提取概念与分类.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        数据提取概念与分类
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="day03/json数据提取-json概述.html">
+            
+                
+                    <a href="../day03/json数据提取-json概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        json数据提取-json概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="day03/json数据提取-json模块.html">
+            
+                
+                    <a href="../day03/json数据提取-json模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        json数据提取-json模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="day03/豆瓣电影.html">
+            
+                
+                    <a href="../day03/豆瓣电影.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        json数据提取-豆瓣电影
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="day03/json数据提取-jsonpath模块.html">
+            
+                
+                    <a href="../day03/json数据提取-jsonpath模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.5.</b>
+                        
+                        json数据提取-jsonpath模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.6" data-path="day03/正则表达式.html">
+            
+                
+                    <a href="../day03/正则表达式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.6.</b>
+                        
+                        正则表达式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.7" data-path="day03/36氪练习.html">
+            
+                
+                    <a href="../day03/36氪练习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.7.</b>
+                        
+                        36氪练习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.8" data-path="day03/作业.html">
+            
+                
+                    <a href="../day03/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.8.</b>
+                        
+                        今日学习目标和作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="day04/课程内容概述.html">
+            
+                
+                    <a href="../day04/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        第四天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="day04/XPATH.html">
+            
+                
+                    <a href="../day04/XPATH.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        数据提取-XPATH
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="day04/lxml库.html">
+            
+                
+                    <a href="../day04/lxml库.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        数据提取-lxml库
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="day04/贴吧爬虫.html">
+            
+                
+                    <a href="../day04/贴吧爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        数据提取-贴吧爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.4" data-path="day04/数据提取-BeautifulSoup.html">
+            
+                
+                    <a href="../day04/数据提取-BeautifulSoup.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        数据提取-BeautifulSoup
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="day04/糗事百科爬虫.html">
+            
+                
+                    <a href="../day04/糗事百科爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        糗事百科爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="day04/作业.html">
+            
+                
+                    <a href="../day04/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        作业
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="day04/作业讲解_获取上所有电视剧信息.html">
+            
+                
+                    <a href="../day04/作业讲解_获取上所有电视剧信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        作业答案_获取上所有电视剧信息
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="day04/内涵吧.html">
+            
+                
+                    <a href="../day04/内涵吧.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.8.</b>
+                        
+                        作业答案_内涵吧爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="day04/果壳爬虫.html">
+            
+                
+                    <a href="../day04/果壳爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.9.</b>
+                        
+                        作业答案_果壳爬虫
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="day05/课程内容概述.html">
+            
+                
+                    <a href="../day05/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        第五天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="day05/多线程爬虫.html">
+            
+                
+                    <a href="../day05/多线程爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        多线程爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="day05/多进程爬虫.html">
+            
+                
+                    <a href="../day05/多进程爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        多进程爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="day05/线程池爬虫.html">
+            
+                
+                    <a href="../day05/线程池爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        线程池爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="day05/协程池池爬虫.html">
+            
+                
+                    <a href="../day05/协程池池爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        协程池爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="day05/Selenium概述.html">
+            
+                
+                    <a href="../day05/Selenium概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        Selenium概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="day05/Selenium入门.html">
+            
+                
+                    <a href="../day05/Selenium入门.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        Selenium入门
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="day05/Selenium常用方法.html">
+            
+                
+                    <a href="../day05/Selenium常用方法.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        Selenium常用方法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="day05/58租房爬虫.html">
+            
+                
+                    <a href="../day05/58租房爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        58租房爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.9" data-path="day05/作业.html">
+            
+                
+                    <a href="../day05/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.9.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.10" data-path="day05/写爬虫的套路.html">
+            
+                
+                    <a href="../day05/写爬虫的套路.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.10.</b>
+                        
+                        写爬虫的套路(扩展阅读)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="day06/课程内容概述.html">
+            
+                
+                    <a href="../day06/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        第六天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="day06/webdriver等待.html">
+            
+                
+                    <a href="../day06/webdriver等待.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        webdriver等待
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="day06/斗鱼爬虫.html">
+            
+                
+                    <a href="../day06/斗鱼爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        斗鱼爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="day06/如何处理页面在iframe的情况.html">
+            
+                
+                    <a href="../day06/如何处理页面在iframe的情况.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        如何处理页面在iframe的情况
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="day06/打码平台的使用.html">
+            
+                
+                    <a href="../day06/打码平台的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        打码平台的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="day06/登录豆瓣.html">
+            
+                
+                    <a href="../day06/登录豆瓣.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        登录豆瓣
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="day05/常见的反爬手段和解决思路.html">
+            
+                
+                    <a href="../day05/常见的反爬手段和解决思路.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        常见的反爬手段和解决思路
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="day07/MongoDB概述.html">
+            
+                
+                    <a href="../day07/MongoDB概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        MongoDB概述
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="day07/MongoDB安装与配置.html">
+            
+                
+                    <a href="../day07/MongoDB安装与配置.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        MongoDB安装与配置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.9" data-path="day07/MongoDB基础命令.html">
+            
+                
+                    <a href="../day07/MongoDB基础命令.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.9.</b>
+                        
+                        MongoDB基础命令
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.10" data-path="day07/MongoDB中的数据类型.html">
+            
+                
+                    <a href="../day07/MongoDB中的数据类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.10.</b>
+                        
+                        MongoDB中的数据类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.11" data-path="day07/MongoDB数据的增删改查.html">
+            
+                
+                    <a href="../day07/MongoDB数据的增删改查.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.11.</b>
+                        
+                        MongoDB数据的增删改查
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.12" data-path="day06/作业.html">
+            
+                
+                    <a href="../day06/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.12.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.13" data-path="day06/去哪儿手机版反爬处理.html">
+            
+                
+                    <a href="../day06/去哪儿手机版反爬处理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.13.</b>
+                        
+                        扩展阅读(字体反爬反爬处理-去哪儿手机版)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.14" data-path="day06/后续爬虫代码建议.html">
+            
+                
+                    <a href="../day06/后续爬虫代码建议.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.14.</b>
+                        
+                        扩展阅读(后续爬虫代码建议)
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="day07/课程内容概述.html">
+            
+                
+                    <a href="../day07/课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        第七天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="day07/MongoDB的高级查询.html">
+            
+                
+                    <a href="../day07/MongoDB的高级查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        MongoDB的高级查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="day07/MongoDB管道与聚合.html">
+            
+                
+                    <a href="../day07/MongoDB管道与聚合.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        MongoDB管道与聚合
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="day07/MongoDB 操作索引.html">
+            
+                
+                    <a href="../day07/MongoDB 操作索引.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                        MongoDB 操作索引
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="day07/MongoDB数据备份与恢复.html">
+            
+                
+                    <a href="../day07/MongoDB数据备份与恢复.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                        MongoDB数据备份与恢复
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.5" data-path="day07/mongodb的权限管理.html">
+            
+                
+                    <a href="../day07/mongodb的权限管理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                        mongodb的权限管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.6" data-path="day07/MongoDB和python的交互之pymongo.html">
+            
+                
+                    <a href="../day07/MongoDB和python的交互之pymongo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.6.</b>
+                        
+                        MongoDB和python的交互
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.7" data-path="day07/作业.html">
+            
+                
+                    <a href="../day07/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.7.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="day08/00_课程内容概述.html">
+            
+                
+                    <a href="../day08/00_课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        第八天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="day08/01_scrapy框的概念.html">
+            
+                
+                    <a href="../day08/01_scrapy框的概念.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        [理解]Scrapy的概念
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="day08/02_scrapy框架的工作流程.html">
+            
+                
+                    <a href="../day08/02_scrapy框架的工作流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        [理解]Scrapy的工作流程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="day08/03_scrapy框架的安装.html">
+            
+                
+                    <a href="../day08/03_scrapy框架的安装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        [应用]Scrapy的安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="day08/04_0_scrapy框架使用入门.html">
+            
+                
+                    <a href="../day08/04_0_scrapy框架使用入门.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        [应用]Scrapy入门
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.4.1" data-path="day08/04_1_创建一个scrapy爬虫项目.html">
+            
+                
+                    <a href="../day08/04_1_创建一个scrapy爬虫项目.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.1.</b>
+                        
+                        [应用]创建一个scrapy爬虫项目
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.2" data-path="day08/04_2_生成一个爬虫.html">
+            
+                
+                    <a href="../day08/04_2_生成一个爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.2.</b>
+                        
+                        [应用]生成一个爬虫(Spider)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.3" data-path="day08/04_3_完善爬虫.html">
+            
+                
+                    <a href="../day08/04_3_完善爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.3.</b>
+                        
+                        [应用]完善爬虫(Spider)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.4" data-path="day08/04_4_处理保存数据.html">
+            
+                
+                    <a href="../day08/04_4_处理保存数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.4.</b>
+                        
+                        [应用]处理保存数据(Pipeline)
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.5" data-path="day08/04_5_运行Scrapy项目.html">
+            
+                
+                    <a href="../day08/04_5_运行Scrapy项目.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.5.</b>
+                        
+                        [应用]运行Scrapy项目
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4.6" data-path="day08/04_6_总结.html">
+            
+                
+                    <a href="../day08/04_6_总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.6.</b>
+                        
+                        总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="day08/05_腾讯招聘案例.html">
+            
+                
+                    <a href="../day08/05_腾讯招聘案例.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        [应用]腾讯招聘案例
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="day08/06_Item类的使用.html">
+            
+                
+                    <a href="../day08/06_Item类的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        [应用]Item类的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="day08/07_翻页处理.html">
+            
+                
+                    <a href="../day08/07_翻页处理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.7.</b>
+                        
+                        [应用]翻页处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.8" data-path="day08/08_详情页处理.html">
+            
+                
+                    <a href="../day08/08_详情页处理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.8.</b>
+                        
+                        [应用]详情页处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.9" data-path="day08/09_管道的使用.html">
+            
+                
+                    <a href="../day08/09_管道的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.9.</b>
+                        
+                        [应用]管道的深入使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.10" data-path="day08/作业.html">
+            
+                
+                    <a href="../day08/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.10.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="day09/00_课程内容概述.html">
+            
+                
+                    <a href="../day09/00_课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        第九天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="day09/01_苏宁易购图书爬虫.html">
+            
+                
+                    <a href="../day09/01_苏宁易购图书爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        [应用]苏宁易购电子书爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="day09/02_0_scrapy的深入使用.html">
+            
+                
+                    <a href="../day09/02_0_scrapy的深入使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        [应用]scrapy的深入使用
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="day09/02_1_Scrapy的debug信息.html">
+            
+                
+                    <a href="../day09/02_1_Scrapy的debug信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.1.</b>
+                        
+                        [了解]Scrapy的debug信息
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="day09/02_2_scrapyShell.html">
+            
+                
+                    <a href="../day09/02_2_scrapyShell.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.2.</b>
+                        
+                        [了解]ScrapyShell
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.3" data-path="day09/02_3_settings.py中的设置信息.html">
+            
+                
+                    <a href="../day09/02_3_settings.py中的设置信息.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.3.</b>
+                        
+                        [应用]settings.py中的设置信息
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.4" data-path="day09/02_4_深入理解Spider.html">
+            
+                
+                    <a href="../day09/02_4_深入理解Spider.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.4.</b>
+                        
+                        [理解]深入理解Spider
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.5" data-path="day09/02_5_ scrapy的深入使用总结.html">
+            
+                
+                    <a href="../day09/02_5_ scrapy的深入使用总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.5.</b>
+                        
+                        Scrapy的深入使用总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="day09/03_crawlspider类的使用.html">
+            
+                
+                    <a href="../day09/03_crawlspider类的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        [应用]crawlspider类的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="day09/作业.html">
+            
+                
+                    <a href="../day09/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="day10/00_课程内容概述.html">
+            
+                
+                    <a href="../day10/00_课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        第十天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1" data-path="day10/01_豆瓣电影.html">
+            
+                
+                    <a href="../day10/01_豆瓣电影.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                        [应用]豆瓣电影
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="day10/02_scrapy中间件.html">
+            
+                
+                    <a href="../day10/02_scrapy中间件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                        [应用]scrapy中间件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="day10/03_scrapy模拟登陆.html">
+            
+                
+                    <a href="../day10/03_scrapy模拟登陆.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.</b>
+                        
+                        [应用]scrapy模拟登陆
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="day10/04.小结.html">
+            
+                
+                    <a href="../day10/04.小结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.</b>
+                        
+                        [理解]scrapy框架小结
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="day10/作业.html">
+            
+                
+                    <a href="../day10/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.5.</b>
+                        
+                        [理解]学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="day11/00_课程内容概述.html">
+            
+                
+                    <a href="../day11/00_课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        第十一天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.1" data-path="day11/01_scrapy_redis的概念.html">
+            
+                
+                    <a href="../day11/01_scrapy_redis的概念.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.1.</b>
+                        
+                        [理解]scrapy_redis的概念
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="day11/02_scrapy_redis实现分布式的原理.html">
+            
+                
+                    <a href="../day11/02_scrapy_redis实现分布式的原理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.2.</b>
+                        
+                        [理解]scrapy_redis实现分布式的原理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.3" data-path="day11/03_Redis简单复习.html">
+            
+                
+                    <a href="../day11/03_Redis简单复习.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.3.</b>
+                        
+                        [理解]Redis简单复习
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.4" data-path="day11/04_运行domz爬虫.html">
+            
+                
+                    <a href="../day11/04_运行domz爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.4.</b>
+                        
+                        [理解]scrapy_redis的例子domz爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.5" data-path="day11/05_scrapy_redis的源码分析.html">
+            
+                
+                    <a href="../day11/05_scrapy_redis的源码分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.5.</b>
+                        
+                        [理解]scrapy_redis的源码分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.6" data-path="day11/06_京东图书爬虫.html">
+            
+                
+                    <a href="../day11/06_京东图书爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.6.</b>
+                        
+                        [应用]京东图书爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11.7" data-path="day11/作业.html">
+            
+                
+                    <a href="../day11/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.7.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="day12/00_课程内容概述.html">
+            
+                
+                    <a href="../day12/00_课程内容概述.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        第十二天
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="day12/01_RedisSpider.html">
+            
+                
+                    <a href="../day12/01_RedisSpider.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        [应用]RedisSpider
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="day12/02_RedisCrawlSpider.html">
+            
+                
+                    <a href="../day12/02_RedisCrawlSpider.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        [应用]RedisCrawlSpider.
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.3" data-path="day12/03_scrapy_redis_小结.html">
+            
+                
+                    <a href="../day12/03_scrapy_redis_小结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.3.</b>
+                        
+                        [应用]scrapy_redis_小结
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4" data-path="day12/05_爬虫的部署.html">
+            
+                
+                    <a href="../day12/05_爬虫的部署.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.</b>
+                        
+                        [应用]爬虫的部署
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.4.1" data-path="day12/05_1_scrapyd的使用.html">
+            
+                
+                    <a href="../day12/05_1_scrapyd的使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.1.</b>
+                        
+                        [了解]scrapyd的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4.2" data-path="day12/05_2_pycharm发布代码.html">
+            
+                
+                    <a href="../day12/05_2_pycharm发布代码.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.2.</b>
+                        
+                        [了解]pycharm发布代码
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4.3" data-path="day12/05_3_crontab实现定时任务.html">
+            
+                
+                    <a href="../day12/05_3_crontab实现定时任务.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.3.</b>
+                        
+                        [了解]crontab实现定时任务
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.4.4" data-path="day12/05_4_爬虫部署小结.html">
+            
+                
+                    <a href="../day12/05_4_爬虫部署小结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.4.4.</b>
+                        
+                        爬虫部署小结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="12.5" data-path="day12/作业.html">
+            
+                
+                    <a href="../day12/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.5.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13" data-path="day13/00_爬虫框架介绍.html">
+            
+                
+                    <a href="../day13/00_爬虫框架介绍.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.</b>
+                        
+                        第十三天-爬虫框架开发
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1" data-path="day13/1_0_爬虫框架分析.html">
+            
+                
+                    <a href="../day13/1_0_爬虫框架分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.</b>
+                        
+                        [理解]爬虫框架分析
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.1.1" data-path="day13/1_1_了解框架.html">
+            
+                
+                    <a href="../day13/1_1_了解框架.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.1.</b>
+                        
+                        [了解]了解框架
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.1.2" data-path="day13/1_2_框架设计思路分析.html">
+            
+                
+                    <a href="../day13/1_2_框架设计思路分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.2.</b>
+                        
+                        [理解]框架设计思路分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.1.3" data-path="day13/1_3_框架代码雏形结构.html">
+            
+                
+                    <a href="../day13/1_3_框架代码雏形结构.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.1.3.</b>
+                        
+                        [应用]框架代码雏形结构
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2" data-path="day13/2_0_框架雏形.html">
+            
+                
+                    <a href="../day13/2_0_框架雏形.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.</b>
+                        
+                        [应用]框架雏形
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.2.1" data-path="day13/2_1_框架雏形--http模块和item模块.html">
+            
+                
+                    <a href="../day13/2_1_框架雏形--http模块和item模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.1.</b>
+                        
+                        [应用]http模块和item模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2.2" data-path="day13/2_2_框架雏形--核心模块.html">
+            
+                
+                    <a href="../day13/2_2_框架雏形--核心模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.2.</b>
+                        
+                        [应用]核心模块
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2.3" data-path="day13/2_3_框架安装.html">
+            
+                
+                    <a href="../day13/2_3_框架安装.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.3.</b>
+                        
+                        [应用]框架安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2.4" data-path="day13/2_4_框架运行--main.py.html">
+            
+                
+                    <a href="../day13/2_4_框架运行--main.py.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.4.</b>
+                        
+                        [应用]框架运行--main.py
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.2.5" data-path="day13/2_5_框架雏形--中间件模块.html">
+            
+                
+                    <a href="../day13/2_5_框架雏形--中间件模块.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.2.5.</b>
+                        
+                        [应用]中间件模块
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13.3" data-path="day13/3_0_框架完善.html">
+            
+                
+                    <a href="../day13/3_0_框架完善.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.3.</b>
+                        
+                        [应用]框架完善
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="13.3.1" data-path="day13/3_1_框架完善--日志模块使用.html">
+            
+                
+                    <a href="../day13/3_1_框架完善--日志模块使用.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.3.1.</b>
+                        
+                        [应用]日志模块使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="13.3.2" data-path="day13/3_2_框架完善--配置文件实现.html">
+            
+                
+                    <a href="../day13/3_2_框架完善--配置文件实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.3.2.</b>
+                        
+                        [应用]配置文件实现
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="13.4" data-path="day13/作业.html">
+            
+                
+                    <a href="../day13/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>13.4.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="14" data-path="day14/爬虫框架完善.html">
+            
+                
+                    <a href="../day14/爬虫框架完善.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.</b>
+                        
+                        第十四天-框架完善
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="14.1" data-path="day14/3_框架完善--多爬虫实现之一--多请求.html">
+            
+                
+                    <a href="../day14/3_框架完善--多爬虫实现之一--多请求.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.1.</b>
+                        
+                        [应用]多爬虫实现之一--多请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.2" data-path="day14/4_框架完善--多爬虫实现之二--多个解析函数.html">
+            
+                
+                    <a href="../day14/4_框架完善--多爬虫实现之二--多个解析函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.2.</b>
+                        
+                        [应用]多爬虫实现之二--多个解析函数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.3" data-path="day14/5_框架完善--多爬虫实现之三--多爬虫文件.html">
+            
+                
+                    <a href="../day14/5_框架完善--多爬虫实现之三--多爬虫文件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.3.</b>
+                        
+                        [应用]多爬虫实现之三--多爬虫文件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.4" data-path="day14/6_框架完善--实现多个管道.html">
+            
+                
+                    <a href="../day14/6_框架完善--实现多个管道.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.4.</b>
+                        
+                        [应用]实现多个管道
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.5" data-path="day14/7_框架完善--实现多个中间件.html">
+            
+                
+                    <a href="../day14/7_框架完善--实现多个中间件.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.5.</b>
+                        
+                        [应用]实现多个中间件
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.6" data-path="day14/8_框架完善--实现动态模块导入.html">
+            
+                
+                    <a href="../day14/8_框架完善--实现动态模块导入.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.6.</b>
+                        
+                        [应用]实现动态模块导入
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.7" data-path="day14/9_框架完善--实现请求去重.html">
+            
+                
+                    <a href="../day14/9_框架完善--实现请求去重.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.7.</b>
+                        
+                        [应用]实现请求去重
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.8" data-path="day14/10_框架完善--使用线程池实现异步以及并发控制.html">
+            
+                
+                    <a href="../day14/10_框架完善--使用线程池实现异步以及并发控制.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.8.</b>
+                        
+                        [应用]使用线程池实现异步以及并发控制
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.9" data-path="day14/11_框架完善--使用协程池实现异步以及并发控制.html">
+            
+                
+                    <a href="../day14/11_框架完善--使用协程池实现异步以及并发控制.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.9.</b>
+                        
+                        [应用]使用协程池实现异步以及并发控制
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="14.10" data-path="day14/作业.html">
+            
+                
+                    <a href="../day14/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>14.10.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="15" data-path="day15/0_框架升级.html">
+            
+                
+                    <a href="../day15/0_框架升级.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.</b>
+                        
+                        第十五天-框架升级
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="15.1" data-path="day15/1_框架升级--分布式爬虫设计原理及其实现.html">
+            
+                
+                    <a href="../day15/1_框架升级--分布式爬虫设计原理及其实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.1.</b>
+                        
+                        [应用]分布式爬虫设计原理及其实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15.2" data-path="day15/2_框架升级--增量爬虫设计原理及其实现.html">
+            
+                
+                    <a href="../day15/2_框架升级--增量爬虫设计原理及其实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.2.</b>
+                        
+                        [应用]增量爬虫设计原理及其实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15.3" data-path="day15/3_框架升级--断点续爬设计原理及其实现.html">
+            
+                
+                    <a href="../day15/3_框架升级--断点续爬设计原理及其实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.3.</b>
+                        
+                        [应用]断点续爬设计原理及其实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15.4" data-path="day15/4_0_项目实战.html">
+            
+                
+                    <a href="../day15/4_0_项目实战.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.4.</b>
+                        
+                        [扩展阅读]项目实战
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="15.4.1" data-path="day15/4_1_案例1-scrapy_plus实现腾讯招聘爬虫.html">
+            
+                
+                    <a href="../day15/4_1_案例1-scrapy_plus实现腾讯招聘爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.4.1.</b>
+                        
+                        [扩展阅读]scrapy_plus实现腾讯招聘爬虫
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="15.4.2" data-path="day15/4_2_案例2-scrapy_plus实现新浪新闻爬虫.html">
+            
+                
+                    <a href="../day15/4_2_案例2-scrapy_plus实现新浪新闻爬虫.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.4.2.</b>
+                        
+                        [扩展阅读]scrapy_plus实现新浪新闻爬虫
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="15.5" data-path="day15/作业.html">
+            
+                
+                    <a href="../day15/作业.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>15.5.</b>
+                        
+                        学习目标与作业
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >课程整体概要</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="1-&#x4EC0;&#x4E48;&#x662F;beautiful-soup">1. &#x4EC0;&#x4E48;&#x662F;Beautiful Soup</h2>
+<p>&#x622A;&#x6B62;&#x5230;&#x76EE;&#x524D;&#xFF0C;BeautifulSoup&#xFF08;3.2.1&#x7248;&#x672C;&#xFF09;&#x5DF2;&#x7ECF;&#x505C;&#x6B62;&#x5F00;&#x53D1;&#xFF0C;&#x5B98;&#x7F51;&#x63A8;&#x8350;&#x73B0;&#x5728;&#x7684;&#x9879;&#x76EE;&#x4F7F;&#x7528;beautifulsoup4&#xFF08;BeautifulSoup 4&#x7248;&#x672C;&#xFF0C;&#x7B80;&#x79F0;&#x4E3A;bs4&#xFF09;&#x5F00;&#x53D1;&#x3002;</p>
+<p>bs4&#x662F;&#x4E00;&#x4E2A;HTML/XML&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x4E3B;&#x8981;&#x7684;&#x529F;&#x80FD;&#x662F;&#x89E3;&#x6790;&#x548C;&#x63D0;&#x53D6;HTML/XML&#x6570;&#x636E;&#xFF0C;&#x5B83;&#x63D0;&#x4F9B;&#x4E86;&#x591A;&#x79CD;&#x67E5;&#x627E;&#x548C;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;&#x7684;&#x65B9;&#x5F0F;, &#x5B9E;&#x73B0;&#x4E86;&#x60EF;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#x67E5;&#x627E;&#x548C;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;&#xFF0C;&#x4ECE;&#x800C;&#x8282;&#x7701;&#x4E86;&#x5927;&#x91CF;&#x7684;&#x5DE5;&#x4F5C;&#x65F6;&#x95F4;&#xFF0C;&#x63D0;&#x9AD8;&#x4E86;&#x5F00;&#x53D1;&#x9879;&#x76EE;&#x7684;&#x6548;&#x7387;&#x3002;</p>
+<h4 id="&#x56DB;&#x5927;&#x5BF9;&#x8C61;">&#x56DB;&#x5927;&#x5BF9;&#x8C61;</h4>
+<p>bs4&#x5E93;&#x4F1A;&#x5C06;&#x590D;&#x6742;&#x7684;HTML&#x6587;&#x6863;&#x6362;&#x6210;&#x6811;&#x7ED3;&#x6784;&#xFF08;HTML DOM&#xFF09;&#xFF0C;&#x8FD9;&#x4E2A;&#x7ED3;&#x6784;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x662F;&#x4E00;&#x4E2A;Python&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x5F52;&#x7EB3;&#x4E3A;&#x5982;&#x4E0B;&#x56DB;&#x79CD;&#xFF1A;</p>
+<ul>
+<li>bs4.BeautifulSoup&#x7C7B;&#xFF1A;&#x8868;&#x793A;HTML DOM&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x5185;&#x5BB9;&#xFF0C;&#x652F;&#x6301;&#x904D;&#x5386;&#x6587;&#x6863;&#x6811;&#x548C;&#x641C;&#x7D22;&#x6587;&#x6863;&#x6811;&#x7684;&#x5927;&#x90E8;&#x5206;&#x65B9;&#x6CD5;&#x3002;</li>
+<li>bs4.element.Tag&#x7C7B;&#xFF1A;&#x8868;&#x793A;HTML&#x4E2D;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x6700;&#x57FA;&#x672C;&#x7684;&#x4FE1;&#x606F;&#x7EC4;&#x7EC7;&#x5355;&#x5143;&#x3002;&#x5B83;&#x6709;&#x4E24;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5206;&#x522B;&#x4E3A;&#x8868;&#x793A;&#x6807;&#x7B7E;&#x540D;&#x5B57;&#x7684;name&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x793A;&#x6807;&#x7B7E;&#x5C5E;&#x6027;&#x7684;attrs&#x5C5E;&#x6027;&#x3002;</li>
+<li>bs4.element.NavigableString&#x7C7B;&#xFF1A;&#x8868;&#x793A;HTML&#x4E2D;&#x6807;&#x7B7E;&#x7684;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x975E;&#x5C5E;&#x6027;&#x5B57;&#x7B26;&#x4E32;&#xFF09;&#x3002;</li>
+<li>bs4.element.Comment&#x7C7B;&#xFF1A;&#x8868;&#x793A;&#x6807;&#x7B7E;&#x5185;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6CE8;&#x91CA;&#x90E8;&#x5206;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;NavigableString&#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+<h5 id="&#x6848;&#x4F8B;">&#x6848;&#x4F8B;:</h5>
+<ul>
+<li>&#x9996;&#x5148;&#x5B89;&#x88C5;bs4: </li>
+</ul>
+<pre><code>pip install bs4
+</code></pre><ul>
+<li>&#x5982;&#x679C;&#x5B89;&#x88C5;&#x65F6;&#x5019;&#x603B;&#x662F;Retry&#x53EF;&#x4EE5;&#x4FEE;&#x6539;pip&#x6E90;&#x8FDB;&#x884C;&#x5B89;&#x88C5;: </li>
+</ul>
+<pre><code>pip install -i https://pypi.tuna.tsinghua.edu.cn/simple bs4
+</code></pre><p>&#x6CE8;&#x610F;: &#x5982;&#x679C;pip&#x662F;&#x5B89;&#x88C5;&#x5728;python2&#x4E0A;&#x4E86;, &#x53EF;&#x4EE5;&#x4F7F;&#x7528;pip3&#x5B89;&#x88C5;&#x5230;python3&#x4E0A;.</p>
+<pre><code class="lang-py"><span class="hljs-comment"># &#x5BFC;&#x5165;BeautifullSoup</span>
+<span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup
+
+<span class="hljs-comment"># &#x51C6;&#x5907;html&#x5B57;&#x7B26;&#x4E32;&#x6570;&#x636E;</span>
+html = <span class="hljs-string">&quot;&quot;&quot;
+&lt;html&gt;&lt;head&gt;&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;p class=&quot;title&quot; name=&quot;dromouse&quot;&gt;&lt;b&gt;The Dormouse&apos;s story&lt;/b&gt;&lt;/p&gt;
+&lt;p class=&quot;story&quot;&gt;Once upon a time there were three little sisters; and their names were
+&lt;a href=&quot;http://example.com/elsie&quot; class=&quot;sister&quot; id=&quot;link1&quot;&gt;&lt;!-- Elsie --&gt;&lt;/a&gt;,
+&lt;a href=&quot;http://example.com/lacie&quot; class=&quot;sister&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt; and
+&lt;a href=&quot;http://example.com/tillie&quot; class=&quot;sister&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;;
+and they lived at the bottom of a well.&lt;/p&gt;
+&lt;p class=&quot;story&quot;&gt;...&lt;/p&gt;
+&quot;&quot;&quot;</span>
+
+<span class="hljs-comment"># &#x56DB;&#x5927;&#x5BF9;&#x8C61;</span>
+<span class="hljs-comment"># 1. bs4.BeautifulSoup&#x7C7B;&#xFF1A;&#x8868;&#x793A;HTML DOM&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x5185;&#x5BB9;&#xFF0C;&#x652F;&#x6301;&#x904D;&#x5386;&#x6587;&#x6863;&#x6811;&#x548C;&#x641C;&#x7D22;&#x6587;&#x6863;&#x6811;&#x7684;&#x5927;&#x90E8;&#x5206;&#x65B9;&#x6CD5;&#x3002;</span>
+<span class="hljs-comment"># &#x6839;&#x636E;&#x6587;&#x6863;&#x5B57;&#x7B26;&#x4E32;&#x521B;&#x5EFA;BeautifulSoup&#x5BF9;&#x8C61;&#x6027;</span>
+bs = BeautifulSoup(html, <span class="hljs-string">&apos;xml&apos;</span>)
+<span class="hljs-comment"># print(bs)</span>
+print(type(bs)) <span class="hljs-comment"># &lt;class &apos;bs4.BeautifulSoup&apos;&gt;</span>
+
+<span class="hljs-comment"># 2. bs4.element.Tag&#x7C7B;&#xFF1A;&#x8868;&#x793A;HTML&#x4E2D;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x6700;&#x57FA;&#x672C;&#x7684;&#x4FE1;&#x606F;&#x7EC4;&#x7EC7;&#x5355;&#x5143;&#x3002;&#x5B83;&#x6709;&#x4E24;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5206;&#x522B;&#x4E3A;&#x8868;&#x793A;&#x6807;&#x7B7E;&#x540D;&#x5B57;&#x7684;name&#x5C5E;&#x6027;&#xFF0C;&#x8868;&#x793A;&#x6807;&#x7B7E;&#x5C5E;&#x6027;&#x7684;attrs&#x5C5E;&#x6027;&#x3002;</span>
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x6807;&#x7B7E;</span>
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x6587;&#x6863;&#x7B2C;&#x4E00;&#x4E2A;title&#x6807;&#x7B7E;</span>
+print(bs.title)
+print(type(bs.title)) <span class="hljs-comment"># &lt;class &apos;bs4.element.Tag&apos;&gt;</span>
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x6587;&#x6863;&#x7B2C;&#x4E00;&#x4E2A;p&#x6807;&#x7B7E;</span>
+print(bs.p)
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x6587;&#x6863;&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;a&#x6807;&#x7B7E;</span>
+print(bs.a)
+<span class="hljs-comment"># &#x6253;&#x5370;a&#x6807;&#x7B7E;&#x7684;&#x6807;&#x7B7E;&#x540D;</span>
+print(bs.a.name)
+<span class="hljs-comment"># &#x6253;&#x5370;a&#x4E0A;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;</span>
+print(bs.a.attrs)
+
+<span class="hljs-comment"># 3. bs4.element.NavigableString&#x7C7B;&#xFF1A;&#x8868;&#x793A;HTML&#x4E2D;&#x6807;&#x7B7E;&#x7684;&#x6587;&#x672C;&#xFF08;&#x975E;&#x5C5E;&#x6027;&#x5B57;&#x7B26;&#x4E32;&#xFF09;&#x3002;</span>
+<span class="hljs-comment"># NavigableString &#x662F;str&#x4E0E;PageElement&#x7684;&#x5B50;&#x7C7B;, &#x6709;str&#x548C;&#x64CD;&#x4F5C;&#x6587;&#x6863;&#x7684;&#x529F;&#x80FD;</span>
+print(bs.p.string)
+print(type(bs.p.string)) <span class="hljs-comment"># &lt;class &apos;bs4.element.NavigableString&apos;&gt;</span>
+
+<span class="hljs-comment"># 4. bs4.element.Comment&#x7C7B;&#xFF1A;&#x8868;&#x793A;&#x6807;&#x7B7E;&#x5185;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6CE8;&#x91CA;&#x90E8;&#x5206;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;NavigableString&#x5BF9;&#x8C61;&#x3002;</span>
+print(bs.a.string)
+print(type(bs.a.string)) <span class="hljs-comment"># &lt;class &apos;bs4.element.Comment&apos;&gt;</span>
+</code></pre>
+<h4 id="&#x4F7F;&#x7528;bs4&#x7684;&#x4E00;&#x822C;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;">&#x4F7F;&#x7528;bs4&#x7684;&#x4E00;&#x822C;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</h4>
+<ul>
+<li>&#x7B2C;1&#x6B65;&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;BeautifulSoup&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;<ul>
+<li>&#x6839;&#x636E;HTML&#x6216;&#x8005;&#x6587;&#x4EF6;&#x521B;&#x5EFA;BeautifulSoup&#x5BF9;&#x8C61;&#x3002;</li>
+</ul>
+</li>
+<li>&#x7B2C;2&#x6B65;&#xFF1A;&#x901A;&#x8FC7;&#x4E0A;&#x8FF0;&#x5BF9;&#x8C61;&#x7684;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x89E3;&#x8BFB;&#x641C;&#x7D22;<ul>
+<li>&#x6839;&#x636E;DOM&#x6811;&#x8FDB;&#x884C;&#x5404;&#x79CD;&#x8282;&#x70B9;&#x7684;&#x641C;&#x7D22;&#xFF08;&#x6BD4;&#x5982;&#xFF0C;find_all&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x641C;&#x7D22;&#x51FA;&#x6240;&#x6709;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#x7684;&#x8282;&#x70B9;&#xFF0C;find&#x65B9;&#x6CD5;&#x53EA;&#x4F1A;&#x641C;&#x7D22;&#x51FA;&#x7B2C;&#x4E00;&#x4E2A;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#x7684;&#x8282;&#x70B9;&#xFF09;&#xFF0C;&#x53EA;&#x8981;&#x83B7;&#x5F97;&#x4E86;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8282;&#x70B9;&#x7684;&#x540D;&#x79F0;&#x3001;&#x5C5E;&#x6027;&#x548C;&#x6587;&#x672C;&#x3002;</li>
+</ul>
+</li>
+<li>&#x7B2C;3&#x6B65;&#xFF1A;&#x5229;&#x7528;DOM&#x6811;&#x7ED3;&#x6784;&#x6807;&#x7B7E;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x8FDB;&#x884C;&#x66F4;&#x4E3A;&#x8BE6;&#x7EC6;&#x7684;&#x8282;&#x70B9;&#x4FE1;&#x606F;&#x63D0;&#x53D6;<ul>
+<li>&#x5728;&#x641C;&#x7D22;&#x8282;&#x70B9;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x8282;&#x70B9;&#x7684;&#x540D;&#x79F0;&#x3001;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x8282;&#x70B9;&#x7684;&#x6587;&#x5B57;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<p>&#x4E0A;&#x8FF0;&#x6D41;&#x7A0B;&#x5982;&#x56FE;&#x6240;&#x793A;&#x3002;
+<img src="images/BeautifulSoup&#x4F7F;&#x7528;&#x57FA;&#x672C;&#x6D41;&#x7A0B;.png" alt="bs4&#x5E93;&#x7684;&#x4F7F;&#x7528;&#x6D41;&#x7A0B;"></p>
+<h2 id="&#x6848;&#x4F8B;">&#x6848;&#x4F8B;</h2>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x4F7F;&#x7528;bs4&#x7684;&#x4E00;&#x822C;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;</span>
+<span class="hljs-comment"># - &#x7B2C;1&#x6B65;&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;BeautifulSoup&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;</span>
+<span class="hljs-comment">#    - &#x6839;&#x636E;HTML&#x6216;&#x8005;&#x6587;&#x4EF6;&#x521B;&#x5EFA;BeautifulSoup&#x5BF9;&#x8C61;&#x3002;</span>
+bs = BeautifulSoup(html, <span class="hljs-string">&apos;lxml&apos;</span>)
+<span class="hljs-comment"># - &#x7B2C;2&#x6B65;&#xFF1A;&#x901A;&#x8FC7;&#x4E0A;&#x8FF0;&#x5BF9;&#x8C61;&#x7684;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x89E3;&#x8BFB;&#x641C;&#x7D22;</span>
+<span class="hljs-comment">#    - &#x6839;&#x636E;DOM&#x6811;&#x8FDB;&#x884C;&#x5404;&#x79CD;&#x8282;&#x70B9;&#x7684;&#x641C;&#x7D22;&#xFF08;&#x6BD4;&#x5982;&#xFF0C;find_all&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x641C;&#x7D22;&#x51FA;&#x6240;&#x6709;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#x7684;&#x8282;&#x70B9;&#xFF0C;find&#x65B9;&#x6CD5;&#x53EA;&#x4F1A;&#x641C;&#x7D22;&#x51FA;&#x7B2C;&#x4E00;&#x4E2A;&#x6EE1;&#x8DB3;&#x8981;&#x6C42;&#x7684;&#x8282;&#x70B9;&#xFF09;&#xFF0C;&#x53EA;&#x8981;&#x83B7;&#x5F97;&#x4E86;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x8282;&#x70B9;&#x7684;&#x540D;&#x79F0;&#x3001;&#x5C5E;&#x6027;&#x548C;&#x6587;&#x672C;&#x3002;</span>
+<span class="hljs-comment"># &#x4F7F;&#x7528;find()&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;a</span>
+a = bs.find(<span class="hljs-string">&apos;a&apos;</span>)
+print(a)
+print(type(a))
+
+
+<span class="hljs-comment"># &#x4F7F;&#x7528;findall()&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x6240;&#x6709;a&#x6807;&#x7B7E;</span>
+a_s = bs.find_all(<span class="hljs-string">&apos;a&apos;</span>)
+print(a_s)
+print(type(a_s))<span class="hljs-comment"># &lt;class &apos;bs4.element.ResultSet&apos;&gt; &#x7EE7;&#x627F;list,&#x6240;&#x4EE5;&#x5177;&#x6709;list&#x7684;&#x6240;&#x6709;&#x529F;&#x80FD;</span>
+
+<span class="hljs-comment"># - &#x7B2C;3&#x6B65;&#xFF1A;&#x5229;&#x7528;DOM&#x6811;&#x7ED3;&#x6784;&#x6807;&#x7B7E;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x8FDB;&#x884C;&#x66F4;&#x4E3A;&#x8BE6;&#x7EC6;&#x7684;&#x8282;&#x70B9;&#x4FE1;&#x606F;&#x63D0;&#x53D6;</span>
+<span class="hljs-comment">#    - &#x5728;&#x641C;&#x7D22;&#x8282;&#x70B9;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x8282;&#x70B9;&#x7684;&#x540D;&#x79F0;&#x3001;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x6216;&#x8005;&#x8282;&#x70B9;&#x7684;&#x6587;&#x5B57;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#x3002;</span>
+<span class="hljs-comment"># &#x904D;&#x5386;&#x83B7;&#x53D6;a&#x6807;&#x7B7E;, &#x83B7;&#x53D6;&#x6587;&#x672C;&#x548C;&#x5C5E;&#x6027;</span>
+<span class="hljs-keyword">for</span> a <span class="hljs-keyword">in</span> a_s:
+   <span class="hljs-comment"># &#x83B7;&#x53D6;&#x8282;&#x70B9;&#x540D;&#x79F0;</span>
+   print(a.name)
+   <span class="hljs-comment"># &#x83B7;&#x53D6;a&#x6807;&#x7B7E;&#x7684;&#x6587;&#x672C;&#x5B57;&#x7B26;&#x4E32;, &#x5982;&#x679C;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</span>
+   print(a.get_text())
+   <span class="hljs-comment"># &#x83B7;&#x53D6;a&#x6807;&#x7B7E;&#x7684;href&#x5C5E;&#x6027;</span>
+   print(a.get(<span class="hljs-string">&apos;href&apos;</span>))
+</code></pre>
+<h2 id="2-&#x4F7F;&#x7528;-find-&#x4E0E;-findall-&#x65B9;&#x6CD5;-&#x8FDB;&#x884C;&#x67E5;&#x627E;">2. &#x4F7F;&#x7528; find &#x4E0E; find_all &#x65B9;&#x6CD5; &#x8FDB;&#x884C;&#x67E5;&#x627E;</h2>
+<p>&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x7F51;&#x9875;&#x4E2D;&#x6709;&#x7528;&#x7684;&#x4FE1;&#x606F;&#x90FD;&#x5B58;&#x5728;&#x4E8E;&#x7F51;&#x9875;&#x4E2D;&#x7684;&#x6587;&#x672C;&#x6216;&#x8005;&#x5404;&#x79CD;&#x4E0D;&#x540C;&#x6807;&#x7B7E;&#x7684;&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x4E3A;&#x4E86;&#x80FD;&#x83B7;&#x5F97;&#x8FD9;&#x4E9B;&#x6709;&#x7528;&#x7684;&#x7F51;&#x9875;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x4E9B;&#x67E5;&#x627E;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x6587;&#x672C;&#x6216;&#x8005;&#x6807;&#x7B7E;&#x5C5E;&#x6027;&#x3002;&#x56E0;&#x6B64;&#xFF0C; bs4&#x5E93;&#x5185;&#x7F6E;&#x4E86;&#x4E00;&#x4E9B;&#x67E5;&#x627E;&#x65B9;&#x6CD5;&#xFF0C;&#x5176;&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x529F;&#x80FD;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ul>
+<li>find()&#x65B9;&#x6CD5;&#xFF1A;&#x7528;&#x4E8E;&#x67E5;&#x627E;&#x7B26;&#x5408;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x8282;&#x70B9;&#xFF1B;</li>
+<li>find_all()&#x65B9;&#x6CD5;&#xFF1A;&#x67E5;&#x627E;&#x6240;&#x6709;&#x7B26;&#x5408;&#x67E5;&#x8BE2;&#x6761;&#x4EF6;&#x7684;&#x6807;&#x7B7E;&#x8282;&#x70B9;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x3002;
+&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x7528;&#x5230;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x4EE5;find_all()&#x65B9;&#x6CD5;&#x4E3A;&#x4F8B;&#xFF0C;&#x4ECB;&#x7ECD;&#x5728;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x4E2D;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x7684;&#x4F7F;&#x7528;&#x3002;find_all()&#x65B9;&#x6CD5;&#x7684;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-py">find_all(self, name=<span class="hljs-keyword">None</span>, attrs={}, recursive=<span class="hljs-keyword">True</span>, text=<span class="hljs-keyword">None</span>,
+limit=<span class="hljs-keyword">None</span>, **kwargs)
+</code></pre>
+<p>&#x4E0A;&#x8FF0;&#x65B9;&#x6CD5;&#x4E2D;&#x4E00;&#x4E9B;&#x91CD;&#x8981;&#x53C2;&#x6570;&#x6240;&#x8868;&#x793A;&#x7684;&#x542B;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>&#x8BF4;&#x660E;: &#x6587;&#x6863;&#x5185;&#x5BB9;&#x4E3A;</p>
+</blockquote>
+<pre><code class="lang-html">    <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>The Dormouse&apos;s story<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-foo</span>=<span class="hljs-value">&quot;value&quot;</span>&gt;</span>foo!<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;title&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;dromouse&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>The Dormouse&apos;s story<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;story&quot;</span>&gt;</span>Once upon a time there were three little sisters; and their names were
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://example.com/elsie&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sister&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;link1&quot;</span>&gt;</span><span class="hljs-comment">&lt;!-- Elsie --&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>,
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://example.com/lacie&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sister&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;link2&quot;</span>&gt;</span>Lacie<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span> and
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://example.com/tillie&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sister&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;link3&quot;</span>&gt;</span>Tillie<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>;
+        and they lived at the bottom of a well.
+    <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;story&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+<h4 id="1----name&#x53C2;&#x6570;">1.    name&#x53C2;&#x6570;</h4>
+<p>&#x67E5;&#x627E;&#x6240;&#x6709;&#x540D;&#x5B57;&#x4E3A;name&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x4E0D;&#x8FC7;&#x5B57;&#x7B26;&#x4E32;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x5FFD;&#x7565;&#x6389;&#x3002;&#x4E0B;&#x9762;&#x662F;name&#x53C2;&#x6570;&#x7684;&#x51E0;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;</p>
+<h5 id="1-&#x4F20;&#x5165;&#x5B57;&#x7B26;&#x4E32;">(1) &#x4F20;&#x5165;&#x5B57;&#x7B26;&#x4E32;</h5>
+<p>&#x5728;&#x641C;&#x7D22;&#x7684;&#x65B9;&#x6CD5;&#x4E2D;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;BeautifulSoup&#x5BF9;&#x8C61;&#x4F1A;&#x67E5;&#x627E;&#x4E0E;&#x5B57;&#x7B26;&#x4E32;&#x5B8C;&#x5168;&#x5339;&#x914D;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5177;&#x4F53;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<blockquote>
+<p>soup.find_all(&apos;b&apos;)</p>
+</blockquote>
+<p>&#x4E0A;&#x8FF0;&#x793A;&#x4F8B;&#x7528;&#x4E8E;&#x67E5;&#x627E;&#x6587;&#x6863;&#x4E2D;&#x6240;&#x6709;&#x7684;<b>&#x6807;&#x7B7E;&#x3002;</b></p>
+<h5 id="2-&#x4F20;&#x5165;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;">(2) &#x4F20;&#x5165;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</h5>
+<p>&#x5982;&#x679C;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x90A3;&#x4E48;BeautifulSoup&#x5BF9;&#x8C61;&#x4F1A;&#x901A;&#x8FC7;re&#x6A21;&#x5757;&#x7684;match()&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x5339;&#x914D;&#x3002;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x201C;^b&#x201D;&#x5339;&#x914D;&#x6240;&#x6709;&#x4EE5;&#x5B57;&#x6BCD;b&#x5F00;&#x5934;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-py"><span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">for</span> tag <span class="hljs-keyword">in</span> soup.find_all(re.compile(<span class="hljs-string">&quot;^b&quot;</span>)):
+    print(tag.name)
+<span class="hljs-comment"># &#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;</span>
+body
+</code></pre>
+<h5 id="3-&#x4F20;&#x5165;&#x5217;&#x8868;">(3) &#x4F20;&#x5165;&#x5217;&#x8868;</h5>
+<p>&#x5982;&#x679C;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#xFF0C;&#x90A3;&#x4E48;BeautifulSoup&#x5BF9;&#x8C61;&#x4F1A;&#x5C06;&#x4E0E;&#x5217;&#x8868;&#x4E2D;&#x4EFB;&#x4E00;&#x5143;&#x7D20;&#x5339;&#x914D;&#x7684;&#x5185;&#x5BB9;&#x8FDB;&#x884C;&#x8FD4;&#x56DE;&#x3002;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x627E;&#x5230;&#x4E86;&#x6587;&#x6863;&#x4E2D;&#x6240;&#x6709;&#x7684;<code>&lt;a&gt;</code>&#x6807;&#x7B7E;&#x548C;<code>&lt;b&gt;</code>&#x6807;&#x7B7E;&#xFF0C;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-py">soup.find_all([&quot;a&quot;, &quot;b&quot;])
+# &#x90E8;&#x5206;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;
+[&lt;b&gt;The Dormouse&apos;s story&lt;/b&gt;,
+&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;,
+</code></pre>
+<h4 id="2----keyword&#x53C2;&#x6570;">2.    keyword&#x53C2;&#x6570;</h4>
+<p>&#x5982;&#x679C;&#x67D0;&#x4E2A;&#x6307;&#x5B9A;&#x540D;&#x5B57;&#x7684;&#x53C2;&#x6570;&#x4E0D;&#x662F;&#x641C;&#x7D22;&#x65B9;&#x6CD5;&#x4E2D;&#x5185;&#x7F6E;&#x7684;&#x53C2;&#x6570;&#x540D;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#x65F6;&#xFF0C;&#x4F1A;&#x628A;&#x8BE5;&#x53C2;&#x6570;&#x5F53;&#x4F5C;&#x6307;&#x5B9A;&#x540D;&#x79F0;&#x7684;&#x6807;&#x7B7E;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#x6765;&#x641C;&#x7D22;&#x3002;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x5728;find_all()&#x65B9;&#x6CD5;&#x4E2D;&#x4F20;&#x5165;&#x540D;&#x79F0;&#x4E3A;id&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x8FD9;&#x65F6;BeautifulSoup&#x5BF9;&#x8C61;&#x4F1A;&#x641C;&#x7D22;&#x6BCF;&#x4E2A;&#x6807;&#x7B7E;&#x7684;id&#x5C5E;&#x6027;&#xFF0C;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-py">soup.find_all(id=&apos;link2&apos;)
+# &#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x662F;&#xFF1A;
+[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;]
+</code></pre>
+<p>&#x82E5;&#x4F20;&#x5165;&#x591A;&#x4E2A;&#x6307;&#x5B9A;&#x540D;&#x5B57;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x8FC7;&#x6EE4;&#x51FA;&#x6807;&#x7B7E;&#x4E2D;&#x7684;&#x591A;&#x4E2A;&#x5C5E;&#x6027;&#x3002;&#x5728;&#x4E0B;&#x9762;&#x7684;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x641C;&#x7D22;&#x6BCF;&#x4E2A;&#x6807;&#x7B7E;&#x7684;id&#x5C5E;&#x6027;&#xFF0C;&#x540C;&#x65F6;&#x53C8;&#x53EF;&#x4EE5;&#x641C;&#x7D22;href&#x5C5E;&#x6027;&#xFF0C;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-py">import re
+soup.find_all(href=re.compile(&quot;elsie&quot;), id=&apos;link1&apos;)
+# &#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x662F;&#xFF1A;
+[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;]
+</code></pre>
+<p>&#x5982;&#x679C;&#x8981;&#x641C;&#x7D22;&#x7684;&#x6807;&#x7B7E;&#x540D;&#x79F0;&#x4E3A;class&#xFF0C;&#x7531;&#x4E8E;class&#x5C5E;&#x4E8E;Python&#x7684;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x5728;class&#x7684;&#x540E;&#x9762;&#x52A0;&#x4E0A;&#x4E00;&#x4E2A;&#x4E0B;&#x5212;&#x7EBF;&#xFF0C;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-py">soup.find_all(<span class="hljs-string">&quot;a&quot;</span>, class_=<span class="hljs-string">&quot;sister&quot;</span>)
+<span class="hljs-comment"># &#x90E8;&#x5206;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</span>
+<span class="hljs-comment"># [&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;,</span>
+</code></pre>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x6709;&#x4E9B;&#x6807;&#x7B7E;&#x7684;&#x5C5E;&#x6027;&#x540D;&#x79F0;&#x662F;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x6BD4;&#x5982;HTML5&#x4E2D;&#x7684;&#x201C;data-&#x201D;&#x5C5E;&#x6027;&#x3002;&#x5728;&#x7A0B;&#x5E8F;&#x4E2D;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;SyntaxError&#x5F02;&#x5E38;&#x4FE1;&#x606F;&#x3002;&#x8FD9;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;find_all()&#x65B9;&#x6CD5;&#x7684;attrs&#x53C2;&#x6570;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5B57;&#x5178;&#x6765;&#x641C;&#x7D22;&#x5305;&#x542B;&#x7279;&#x6B8A;&#x5C5E;&#x6027;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x5177;&#x4F53;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-py">data_soup = BeautifulSoup(<span class="hljs-string">&apos;&lt;div data-foo=&quot;value&quot;&gt;foo!&lt;/div&gt;&apos;</span> ,<span class="hljs-string">&apos;lxml&apos;</span>)
+data_soup.find_all(data-foo=<span class="hljs-string">&quot;value&quot;</span>)
+<span class="hljs-comment"># &#x7A0B;&#x5E8F;&#x8F93;&#x51FA;&#x5982;&#x4E0B;&#x62A5;&#x9519;&#x4FE1;&#x606F;&#xFF1A;</span>
+<span class="hljs-comment"># SyntaxError: keyword can&apos;t be an expression</span>
+data_soup.find_all(attrs={<span class="hljs-string">&quot;data-foo&quot;</span>: <span class="hljs-string">&quot;value&quot;</span>})
+<span class="hljs-comment"># &#x7A0B;&#x5E8F;&#x53EF;&#x5339;&#x914D;&#x7684;&#x7ED3;&#x679C;</span>
+<span class="hljs-comment"># [&lt;div data-foo=&quot;value&quot;&gt;foo!&lt;/div&gt;]</span>
+</code></pre>
+<h4 id="3----text&#x53C2;&#x6570;">3.    text&#x53C2;&#x6570;</h4>
+<p>&#x901A;&#x8FC7;&#x5728;find_all()&#x65B9;&#x6CD5;&#x4E2D;&#x4F20;&#x5165;text&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x641C;&#x7D22;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5185;&#x5BB9;&#x3002;&#x8DDF;name&#x53C2;&#x6570;&#x7684;&#x53EF;&#x9009;&#x503C;&#x4E00;&#x6837;&#xFF0C;text&#x53C2;&#x6570;&#x4E5F;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x548C;&#x5217;&#x8868;&#x7B49;&#xFF0C;&#x5177;&#x4F53;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-py">soup.find_all(text=<span class="hljs-string">&quot;Elsie&quot;</span>)
+<span class="hljs-comment"># [u&apos;Elsie&apos;]</span>
+soup.find_all(text=[<span class="hljs-string">&quot;Tillie&quot;</span>, <span class="hljs-string">&quot;Elsie&quot;</span>, <span class="hljs-string">&quot;Lacie&quot;</span>])
+<span class="hljs-comment"># [u&apos;Elsie&apos;, u&apos;Lacie&apos;, u&apos;Tillie&apos;]</span>
+</code></pre>
+<p>&#x9664;&#x4E86;&#x4E0A;&#x8FF0;&#x4E24;&#x4E2A;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x4EE5;&#x5916;&#xFF0C;bs4&#x5E93;&#x4E2D;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x901A;&#x8FC7;&#x8282;&#x70B9;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x7531;&#x4E8E;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x548C;&#x7528;&#x6CD5;&#x8DDF;find_all()&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x518D;&#x53E6;&#x884C;&#x4ECB;&#x7ECD;&#x4E86;&#xFF0C;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x4E3E;&#x4E00;&#x53CD;&#x4E09;&#x3002;</p>
+<h2 id="3-&#x901A;&#x8FC7;css&#x9009;&#x62E9;&#x5668;&#x8FDB;&#x884C;&#x641C;&#x7D22;">3. &#x901A;&#x8FC7;CSS&#x9009;&#x62E9;&#x5668;&#x8FDB;&#x884C;&#x641C;&#x7D22;</h2>
+<p>&#x9664;&#x4E86;bs4&#x5E93;&#x63D0;&#x4F9B;&#x7684;&#x64CD;&#x4F5C;&#x65B9;&#x6CD5;&#x4EE5;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;CSS&#x9009;&#x62E9;&#x5668;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x3002;
+&#x4E3A;&#x4E86;&#x4F7F;&#x7528;CSS&#x9009;&#x62E9;&#x5668;&#x8FBE;&#x5230;&#x7B5B;&#x9009;&#x8282;&#x70B9;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x5728;bs4&#x5E93;&#x7684;BeautifulSoup&#x7C7B;&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;select()&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x5C06;&#x641C;&#x7D22;&#x5230;&#x7684;&#x7ED3;&#x679C;&#x653E;&#x5230;&#x5217;&#x8868;&#x4E2D;&#x3002;
+CSS&#x9009;&#x62E9;&#x5668;&#x7684;&#x67E5;&#x627E;&#x65B9;&#x5F0F;&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;&#x5982;&#x4E0B;&#x51E0;&#x79CD;&#xFF1A;</p>
+<ol>
+<li>&#x901A;&#x8FC7;&#x6807;&#x7B7E;&#x67E5;&#x627E;</li>
+<li>&#x901A;&#x8FC7;&#x7C7B;&#x540D;(class)&#x67E5;&#x627E;</li>
+<li>&#x901A;&#x8FC7;id&#x540D;&#x67E5;&#x627E;</li>
+<li>&#x901A;&#x8FC7;&#x7EC4;&#x5408;&#x7684;&#x5F62;&#x5F0F;&#x67E5;&#x627E;</li>
+<li>&#x901A;&#x8FC7;&#x5C5E;&#x6027;&#x67E5;&#x627E;</li>
+</ol>
+<blockquote>
+<p>&#x6848;&#x4F8B;html</p>
+</blockquote>
+<pre><code class="lang-html">    <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>The Dormouse&apos;s story<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-foo</span>=<span class="hljs-value">&quot;value&quot;</span>&gt;</span>foo!<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;title&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;dromouse&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>The Dormouse&apos;s story<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;story&quot;</span>&gt;</span>Once upon a time there were three little sisters; and their names were
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://example.com/elsie&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sister&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;link1&quot;</span>&gt;</span><span class="hljs-comment">&lt;!-- Elsie --&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>,
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://example.com/lacie&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sister&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;link2&quot;</span>&gt;</span>Lacie<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span> and
+        <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;http://example.com/tillie&quot;</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sister&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;link3&quot;</span>&gt;</span>Tillie<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>;
+        and they lived at the bottom of a well.
+    <span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;story&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<h4 id="1----&#x901A;&#x8FC7;&#x6807;&#x7B7E;&#x540D;&#x67E5;&#x627E;">1.    &#x901A;&#x8FC7;&#x6807;&#x7B7E;&#x540D;&#x67E5;&#x627E;</h4>
+<p>&#x5728;&#x7F16;&#x5199;CSS&#x65F6;&#xFF0C;&#x6807;&#x7B7E;&#x7684;&#x540D;&#x79F0;&#x4E0D;&#x7528;&#x52A0;&#x4EFB;&#x4F55;&#x4FEE;&#x9970;&#x3002;&#x8C03;&#x7528;select()&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x5305;&#x542B;&#x67D0;&#x4E2A;&#x6807;&#x7B7E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F7F;&#x7528;CSS&#x9009;&#x62E9;&#x5668;&#x67E5;&#x627E;&#x6807;&#x7B7E;&#x7684;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-py">soup.select(<span class="hljs-string">&quot;title&quot;</span>)
+<span class="hljs-comment"># &#x67E5;&#x627E;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x4E3A;</span>
+<span class="hljs-comment"># [&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;]</span>
+</code></pre>
+<h4 id="2----&#x901A;&#x8FC7;&#x7C7B;&#x540D;class&#x67E5;&#x627E;">2.    &#x901A;&#x8FC7;&#x7C7B;&#x540D;(class)&#x67E5;&#x627E;</h4>
+<p>&#x5728;&#x7F16;&#x5199;CSS&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x7C7B;&#x540D;&#x7684;&#x524D;&#x9762;&#x52A0;&#x4E0A;&#x201C;.&#x201D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x67E5;&#x627E;&#x7C7B;&#x540D;&#x4E3A;sister&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x5177;&#x4F53;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-py">soup.select(&apos;.sister&apos;)
+# &#x67E5;&#x627E;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x4E3A;
+#[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;
+&lt;!-- Elsie --&gt;&lt;/a&gt;, &lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot;
+id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;, &lt;a class=&quot;sister&quot; href=&quot;http://example.com/tillie&quot;
+id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;]
+</code></pre>
+<h4 id="3----&#x901A;&#x8FC7;id&#x540D;&#x67E5;&#x627E;">3.    &#x901A;&#x8FC7;id&#x540D;&#x67E5;&#x627E;</h4>
+<p>&#x5728;&#x7F16;&#x5199;CSS&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5728;id&#x540D;&#x79F0;&#x7684;&#x524D;&#x9762;&#x52A0;&#x4E0A;&#x201C;#&#x201D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x67E5;&#x627E;id&#x540D;&#x4E3A;link1&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x5177;&#x4F53;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-py">soup.select(<span class="hljs-string">&quot;#link1&quot;</span>)
+<span class="hljs-comment"># &#x67E5;&#x627E;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x4E3A;</span>
+<span class="hljs-comment"># [&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;]</span>
+</code></pre>
+<h4 id="4----&#x901A;&#x8FC7;&#x7EC4;&#x5408;&#x7684;&#x5F62;&#x5F0F;&#x67E5;&#x627E;">4.    &#x901A;&#x8FC7;&#x7EC4;&#x5408;&#x7684;&#x5F62;&#x5F0F;&#x67E5;&#x627E;</h4>
+<p>&#x7EC4;&#x5408;&#x67E5;&#x627E;&#x4E0E;&#x7F16;&#x5199;class&#x6587;&#x4EF6;&#x65F6;&#x6807;&#x7B7E;&#x540D;&#x3001;&#x7C7B;&#x540D;&#x3001;id&#x540D;&#x7684;&#x7EC4;&#x5408;&#x539F;&#x7406;&#x4E00;&#x6837;&#xFF0C;&#x4E8C;&#x8005;&#x9700;&#x8981;&#x7528;&#x7A7A;&#x683C;&#x5206;&#x5F00;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5728;&#x6807;&#x7B7E;p&#x4E2D;&#xFF0C;&#x67E5;&#x627E;id&#x503C;&#x7B49;&#x4E8E;link1&#x7684;&#x5185;&#x5BB9;&#xFF0C;</p>
+<pre><code class="lang-py">soup.select(<span class="hljs-string">&apos;p #link1&apos;</span>)
+<span class="hljs-comment"># &#x67E5;&#x627E;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x4E3A;</span>
+<span class="hljs-comment">#[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;]</span>
+&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x201C;&gt;&#x201D;&#x5C06;&#x6807;&#x7B7E;&#x4E0E;&#x5B50;&#x6807;&#x7B7E;&#x5206;&#x9694;&#xFF0C;&#x4ECE;&#x800C;&#x627E;&#x5230;&#x67D0;&#x4E2A;&#x6807;&#x7B7E;&#x4E0B;&#x7684;&#x76F4;&#x63A5;&#x5B50;&#x6807;&#x7B7E;&#xFF0C;&#x5177;&#x4F53;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x3002;
+soup.select(<span class="hljs-string">&quot;head &gt; title&quot;</span>)
+<span class="hljs-comment"># &#x67E5;&#x627E;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x4E3A;</span>
+<span class="hljs-comment"># [&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;]</span>
+</code></pre>
+<h4 id="5----&#x901A;&#x8FC7;&#x5C5E;&#x6027;&#x67E5;&#x627E;">5.    &#x901A;&#x8FC7;&#x5C5E;&#x6027;&#x67E5;&#x627E;</h4>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5C5E;&#x6027;&#x5143;&#x7D20;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#xFF0C;&#x5C5E;&#x6027;&#x9700;&#x8981;&#x7528;&#x4E2D;&#x62EC;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x5C5E;&#x6027;&#x548C;&#x6807;&#x7B7E;&#x5C5E;&#x4E8E;&#x540C;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x5B83;&#x4EEC;&#x4E2D;&#x95F4;&#x4E0D;&#x80FD;&#x52A0;&#x7A7A;&#x683C;&#xFF0C;&#x5426;&#x5219;&#x5C06;&#x65E0;&#x6CD5;&#x5339;&#x914D;&#x5230;&#xFF0C;&#x5177;&#x4F53;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code class="lang-py">soup.select(<span class="hljs-string">&apos;a[href=&quot;http://example.com/elsie&quot;]&apos;</span>)
+<span class="hljs-comment"># &#x67E5;&#x627E;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x4E3A;</span>
+<span class="hljs-comment">#[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;]</span>
+&#x540C;&#x6837;&#xFF0C;&#x5C5E;&#x6027;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x4E0E;&#x4E0A;&#x8FF0;&#x67E5;&#x627E;&#x65B9;&#x5F0F;&#x7EC4;&#x5408;&#xFF0C;&#x5373;&#x4E0D;&#x5728;&#x540C;&#x4E00;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x4F7F;&#x7528;&#x7A7A;&#x683C;&#x9694;&#x5F00;&#xFF0C;&#x540C;&#x4E00;&#x8282;&#x70B9;&#x7684;&#x5C5E;&#x6027;&#x4E4B;&#x95F4;&#x4E0D;&#x52A0;&#x7A7A;&#x683C;&#xFF0C;&#x5177;&#x4F53;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#x3002;
+soup.select(<span class="hljs-string">&apos;p a[href=&quot;http://example.com/elsie&quot;]&apos;</span>)
+<span class="hljs-comment"># &#x67E5;&#x627E;&#x7684;&#x7ED3;&#x679C;&#x53EF;&#x80FD;&#x4E3A;</span>
+<span class="hljs-comment">#[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;]</span>
+&#x4E0A;&#x8FF0;&#x8FD9;&#x4E9B;&#x67E5;&#x627E;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x3002;&#x904D;&#x5386;&#x8FD9;&#x4E2A;&#x5217;&#x8868;&#xFF0C;&#x53EF;&#x4EE5;&#x8C03;&#x7528; get_text() &#x65B9;&#x6CD5;&#x6765;&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5177;&#x4F53;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#x3002;
+soup = BeautifulSoup(html_doc, <span class="hljs-string">&apos;lxml&apos;</span>)
+<span class="hljs-keyword">for</span> element <span class="hljs-keyword">in</span> soup.select(<span class="hljs-string">&apos;a&apos;</span>):
+    print(element.get_text())  <span class="hljs-comment"># &#x83B7;&#x53D6;&#x8282;&#x70B9;&#x7684;&#x5185;&#x5BB9;</span>
+<span class="hljs-comment"># &#x83B7;&#x53D6;&#x5230;&#x8282;&#x70B9;&#x7684;&#x5185;&#x5BB9;&#x53EF;&#x80FD;&#x4E3A;</span>
+Elsie
+Lacie
+Tillie
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../day04/贴吧爬虫.html" class="navigation navigation-prev " aria-label="Previous page: 数据提取-贴吧爬虫"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../day04/糗事百科爬虫.html" class="navigation navigation-next " aria-label="Next page: 糗事百科爬虫"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"expandable-chapters-small":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

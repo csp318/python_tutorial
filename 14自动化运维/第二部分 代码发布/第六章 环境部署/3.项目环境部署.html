@@ -1,0 +1,887 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>项目环境部署 | SHELL自动化运维</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../第二部分 代码发布/第七章 手工代码发布/index.html" />
+    
+    
+    <link rel="prev" href="../../第二部分 代码发布/第六章 环境部署/2.方案分析.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="2.2.3"
+        data-chapter-title="项目环境部署"
+        data-filepath="第二部分 代码发布/第六章 环境部署/3.项目环境部署.md"
+        data-basepath="../.."
+        data-revision="Mon Jul 30 2018 08:27:28 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="第一部分 shell/index.html">
+            
+                
+                    <a href="../../第一部分 shell/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        第一部分 shell
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="第一部分 shell/第一章 shell快速入门/index.html">
+            
+                
+                    <a href="../../第一部分 shell/第一章 shell快速入门/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        第一章 shell快速入门
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="第一部分 shell/第一章 shell快速入门/1.运维简介.html">
+            
+                
+                    <a href="../../第一部分 shell/第一章 shell快速入门/1.运维简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                        运维简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="第一部分 shell/第一章 shell快速入门/2.shell简介.html">
+            
+                
+                    <a href="../../第一部分 shell/第一章 shell快速入门/2.shell简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                        shell简介
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="第一部分 shell/第二章 shell基础知识/index.html">
+            
+                
+                    <a href="../../第一部分 shell/第二章 shell基础知识/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        第二章 shell基础知识
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="第一部分 shell/第二章 shell基础知识/shell脚本.html">
+            
+                
+                    <a href="../../第一部分 shell/第二章 shell基础知识/shell脚本.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.1.</b>
+                        
+                        shell脚本
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="第一部分 shell/第二章 shell基础知识/变量.html">
+            
+                
+                    <a href="../../第一部分 shell/第二章 shell基础知识/变量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.2.</b>
+                        
+                        变量
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="第一部分 shell/第三章 shell进阶/index.html">
+            
+                
+                    <a href="../../第一部分 shell/第三章 shell进阶/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        第三章 shell进阶
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="第一部分 shell/第三章 shell进阶/3.1 表达式.html">
+            
+                
+                    <a href="../../第一部分 shell/第三章 shell进阶/3.1 表达式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.1.</b>
+                        
+                        表达式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="第一部分 shell/第三章 shell进阶/3.2 linux常见符号.html">
+            
+                
+                    <a href="../../第一部分 shell/第三章 shell进阶/3.2 linux常见符号.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.2.</b>
+                        
+                        linux常见符号
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="第一部分 shell/第三章 shell进阶/3.3 常见命令详解.html">
+            
+                
+                    <a href="../../第一部分 shell/第三章 shell进阶/3.3 常见命令详解.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.</b>
+                        
+                        常见命令详解
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第一部分 shell/第四章 shell流程控制/index.html">
+            
+                
+                    <a href="../../第一部分 shell/第四章 shell流程控制/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        第四章 shell流程控制
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="第一部分 shell/第四章 shell流程控制/1.简单流程控制语句.html">
+            
+                
+                    <a href="../../第一部分 shell/第四章 shell流程控制/1.简单流程控制语句.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.1.</b>
+                        
+                        简单流程控制语句
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="第一部分 shell/第四章 shell流程控制/2.函数.html">
+            
+                
+                    <a href="../../第一部分 shell/第四章 shell流程控制/2.函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.2.</b>
+                        
+                        函数
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="第二部分 代码发布/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        第二部分 代码发布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="第二部分 代码发布/第五章 代码发布/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第五章 代码发布/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        第五章 代码发布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="第二部分 代码发布/第五章 代码发布/1.代码发布简介.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第五章 代码发布/1.代码发布简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.</b>
+                        
+                        代码发布简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="第二部分 代码发布/第五章 代码发布/2.代码发布流程.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第五章 代码发布/2.代码发布流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.2.</b>
+                        
+                        代码发布流程
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="第二部分 代码发布/第六章 环境部署/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第六章 环境部署/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        第六章 环境部署
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="第二部分 代码发布/第六章 环境部署/1.基础环境.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第六章 环境部署/1.基础环境.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.1.</b>
+                        
+                        基础环境
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="第二部分 代码发布/第六章 环境部署/2.方案分析.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第六章 环境部署/2.方案分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.2.</b>
+                        
+                        方案分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2.3" data-path="第二部分 代码发布/第六章 环境部署/3.项目环境部署.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第六章 环境部署/3.项目环境部署.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.3.</b>
+                        
+                        项目环境部署
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="第二部分 代码发布/第七章 手工代码发布/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第七章 手工代码发布/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        第七章 手工代码发布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="第二部分 代码发布/第七章 手工代码发布/1.方案分析.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第七章 手工代码发布/1.方案分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                        方案分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="第二部分 代码发布/第七章 手工代码发布/2.方案实施.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第七章 手工代码发布/2.方案实施.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.2.</b>
+                        
+                        方案实施
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="第二部分 代码发布/第八章 脚本代码发布/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        第八章 脚本代码发布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="第二部分 代码发布/第八章 脚本代码发布/1.简单脚本编写.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/1.简单脚本编写.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        简单脚本编写
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="第二部分 代码发布/第八章 脚本代码发布/2.大型脚本编写.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/2.大型脚本编写.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.2.</b>
+                        
+                        大型脚本编写
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="第二部分 代码发布/第八章 脚本代码发布/3.脚本调试功能.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/3.脚本调试功能.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.3.</b>
+                        
+                        脚本调试功能
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="第二部分 代码发布/第八章 脚本代码发布/4.生产脚本编写总结.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/4.生产脚本编写总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.4.</b>
+                        
+                        生产脚本编写总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >SHELL自动化运维</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="63-&#x9879;&#x76EE;&#x73AF;&#x5883;&#x90E8;&#x7F72;">6.3 &#x9879;&#x76EE;&#x73AF;&#x5883;&#x90E8;&#x7F72;</h2>
+<p><strong>&#x5B66;&#x4E60;&#x76EE;&#x6807;&#xFF1A;</strong></p>
+<ol>
+<li>&#x4E86;&#x89E3; source&#x7684;&#x672C;&#x8D28;&#x548C;&#x6548;&#x679C;</li>
+<li>&#x4E86;&#x89E3; python&#x7C7B;&#x578B;&#x8F6F;&#x4EF6;&#x7684;&#x5B89;&#x88C5;&#x6D41;&#x7A0B;</li>
+<li>&#x4E86;&#x89E3; linux&#x7C7B;&#x578B;&#x8F6F;&#x4EF6;&#x7684;&#x5B89;&#x88C5;&#x6D41;&#x7A0B;</li>
+<li>&#x8BB0;&#x4F4F; &#x4EE3;&#x7406;&#x7684;&#x539F;&#x7406;&#x548C;&#x76EE;&#x7684;</li>
+</ol>
+<hr>
+<ol>
+<li>python&#x865A;&#x62DF;&#x73AF;&#x5883;
+&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;
+&#x5B89;&#x88C5;&#x865A;&#x62DF;&#x73AF;&#x5883;&#x8F6F;&#x4EF6;<pre><code>sudo pip install virtualenv
+sudo pip install virtualenvwrapper
+</code></pre>&#x865A;&#x62DF;&#x73AF;&#x5883;&#x57FA;&#x672C;&#x64CD;&#x4F5C;<ol>
+<li>&#x521B;&#x5EFA;<pre><code>mkvirtualenv &#x865A;&#x62DF;&#x73AF;&#x5883;&#x540D;&#x79F0;
+</code></pre></li>
+<li>&#x8FDB;&#x5165;<pre><code>workon &#x865A;&#x62DF;&#x73AF;&#x5883;&#x540D;&#x79F0;
+</code></pre></li>
+<li>&#x9000;&#x51FA;<pre><code>deactivate
+</code></pre></li>
+<li>&#x5220;&#x9664;<pre><code>remove &#x865A;&#x62DF;&#x73AF;&#x5883;&#x540D;&#x79F0;
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<p>&#x5B89;&#x88C5;django</p>
+<pre><code>&#x89E3;&#x538B;
+cd /data/soft
+tar xf Django-1.10.7.tar.gz
+
+&#x67E5;&#x770B;INSTALL&#x83B7;&#x53D6;&#x5B89;&#x88C5;&#x65B9;&#x5F0F;
+cd Django-1.10.7
+cat INSTALL
+
+&#x5B89;&#x88C5;
+python setup.py install
+
+&#x62D3;&#x5C55;&#x77E5;&#x8BC6;&#x70B9;&#xFF1A;
+    python&#x7C7B;&#x578B;&#x8F6F;&#x4EF6;&#x7684;&#x5B89;&#x88C5;&#x6D41;&#x7A0B;
+        &#x666E;&#x901A;&#xFF1A;
+            &#x89E3;&#x538B;   &#x5B89;&#x88C5;
+        &#x7279;&#x6B8A;&#xFF1A;
+            &#x89E3;&#x538B;    &#x7F16;&#x8BD1;     &#x5B89;&#x88C5;
+
+            &#x7F16;&#x8BD1;&#xFF1A;python setup.py build
+</code></pre><p>django&#x9879;&#x76EE;&#x64CD;&#x4F5C;
+    &#x521B;&#x5EFA;&#x9879;&#x76EE;</p>
+<pre><code>cd /data/server
+django-admin startproject itcast
+</code></pre><p>django&#x5E94;&#x7528;&#x64CD;&#x4F5C;
+    &#x521B;&#x5EFA;&#x5E94;&#x7528;</p>
+<pre><code>cd /data/server/itcast
+python manage.py startapp test1
+</code></pre><p>&#x6CE8;&#x518C;&#x5E94;&#x7528;</p>
+<pre><code>vim itcast/settings.py
+
+INSTALL_APP = [
+    ...
+    &apos;test1&apos;,
+]
+</code></pre><p>view&#x548C;url&#x914D;&#x7F6E;
+&#x9700;&#x6C42;&#xFF1A;
+&#x8BBF;&#x95EE;django&#x7684;&#x9875;&#x9762;&#x8BF7;&#x6C42;&#x4E3A;&#xFF1A;127.0.0.1:8000/hello/,&#x9875;&#x9762;&#x8FD4;&#x56DE;&#x6548;&#x679C;&#x4E3A;&#xFF1A;itcast v1.0
+&#x5206;&#x6790;&#xFF1A;views&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x89C6;&#x56FE;&#x51FD;&#x6570;</p>
+<ul>
+<li>&#x63A5;&#x6536;&#x8BF7;&#x6C42;&#xFF0C;&#x8FD4;&#x56DE;&#x5B57;&#x7B26;&#x4E32;
+urls&#x6587;&#x4EF6;&#x5B9A;&#x5236;&#x8DEF;&#x7531;&#x8DF3;&#x8F6C;&#x529F;&#x80FD;</li>
+<li>&#x63A5;&#x6536;&#x8BF7;&#x6C42;&#xFF0C;&#x8F6C;&#x4EA4;&#x7ED9;&#x4E00;&#x4E2A;view&#x51FD;&#x6570;</li>
+</ul>
+<p>view &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x751F;&#x6548;
+&#x4FEE;&#x6539;&#x89C6;&#x56FE;&#x6587;&#x4EF6; /data/server/itcast/test1/views.py</p>
+<pre><code>from django.shortcuts import render
+from django.http import HttpResponse
+def hello(resquest):
+   return HttpResponse(&quot;itcast V1.0&quot;)
+</code></pre><p>url&#x6587;&#x4EF6;&#x914D;&#x7F6E;
+/data/server/itcast/itcast/urls.py</p>
+<pre><code>from test1.views import *
+urlpatterns = [
+    url(r&apos;^admin/&apos;, admin.site.urls),
+    url(r&apos;^hello/$&apos;, hello),
+]
+</code></pre><p>&#x542F;&#x52A8;django</p>
+<pre><code>cd /data/server/itcast
+python  manage.py runserver    &gt;&gt; /dev/null 2&gt;&amp;1 &amp;
+</code></pre><p>6.3.3 nginx&#x73AF;&#x5883;
+pcre&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;
+&#x89E3;&#x538B;</p>
+<pre><code>cd /data/soft/
+tar xf pcre-8.39.tar.gz
+</code></pre><p>&#x914D;&#x7F6E;</p>
+<pre><code>./configure
+</code></pre><p>&#x7F16;&#x8BD1;</p>
+<pre><code>make
+</code></pre><p>&#x5B89;&#x88C5;</p>
+<pre><code>make install
+</code></pre><p>&#x62D3;&#x5C55;&#x77E5;&#x8BC6;&#x70B9;&#xFF1A;
+linux&#x4E2D;&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;&#x7684;&#x4E00;&#x822C;&#x6D41;&#x7A0B;
+    &#x89E3;&#x538B;
+        tar
+            &#x89E3;&#x538B;&#x6587;&#x4EF6;&#xFF0C;&#x83B7;&#x53D6;&#x771F;&#x6B63;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+    &#x914D;&#x7F6E;
+        configure
+            &#x6839;&#x636E;&#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x6216;&#x8005;&#x66F4;&#x6539;&#x914D;&#x7F6E;&#x9879;&#xFF0C;&#x751F;&#x6210;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;&#x6587;&#x4EF6;(Makefile)
+    &#x7F16;&#x8BD1;
+        make
+            &#x6839;&#x636E; Makefile &#x5185;&#x5BB9;&#xFF0C;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x6307;&#x5B9A;&#x7684;&#x8F6F;&#x4EF6;&#x6240;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;
+    &#x5B89;&#x88C5;
+        make install
+            &#x5C06;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF0C;&#x8F6C;&#x79FB;&#x5230;&#x8F6F;&#x4EF6;&#x6307;&#x5B9A;&#x5B89;&#x88C5;&#x7684;&#x76EE;&#x5F55;&#x4E0B;&#x9762;
+                                            --prefix
+ nginx&#x8F6F;&#x4EF6;&#x5B89;&#x88C5;
+&#x89E3;&#x538B;</p>
+<pre><code>cd /data/soft/
+tar xf nginx-1.10.2.tar.gz
+</code></pre><p>&#x914D;&#x7F6E;</p>
+<pre><code>cd nginx-1.10.2/
+./configure --prefix=/data/server/nginx --without-http_gzip_module
+</code></pre><p>&#x7F16;&#x8BD1;</p>
+<pre><code>make
+</code></pre><p>&#x5B89;&#x88C5;</p>
+<pre><code>make install
+</code></pre><p>nginx&#x7B80;&#x5355;&#x64CD;&#x4F5C;
+&#x68C0;&#x67E5;</p>
+<pre><code>/data/server/nginx/sbin/nginx -t
+</code></pre><p>&#x5F00;&#x542F;</p>
+<pre><code>/data/server/nginx/sbin/nginx
+</code></pre><p>&#x5173;&#x95ED;</p>
+<pre><code>/data/server/nginx/sbin/nginx -s stop
+</code></pre><p>&#x91CD;&#x8F7D;</p>
+<pre><code>/data/server/nginx/sbin/nginx -s reload
+</code></pre><p>&#x5E38;&#x89C1;&#x95EE;&#x9898;</p>
+<pre><code>&#x7A81;&#x53D1;&#x95EE;&#x9898;&#xFF1A;
+admin-1@ubuntu:/data/server/nginx# ./sbin/nginx -t
+./sbin/nginx: error while loading shared libraries: libpcre.so.1: cannot open shared object file: No such file or directory
+        &#x5206;&#x6790;&#xFF1A;
+            1&#x3001;&#x5148;&#x770B;&#x62A5;&#x9519;
+            2&#x3001;&#x601D;&#x8003;&#xFF0C;&#x662F;&#x5426;&#x62A5;&#x9519;&#x771F;&#x5B9E;&#x6709;&#x6548;
+                &#x5206;&#x6790;&#xFF1A;    &#x8C01;&#x9519;&#x4E86;
+            3&#x3001;&#x67E5;&#x627E;&#x6587;&#x4EF6;
+                &#x5168;&#x540D;&#x627E;&#x4E0D;&#x5230;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x6B63;&#x5219;
+            4&#x3001;&#x627E;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x6211;&#x6CA1;&#x6709;&#x95EE;&#x9898;
+                nginx&#x9ED8;&#x8BA4;&#x627E;&#x5E93;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x6709;&#x95EE;&#x9898;
+            5&#x3001;&#x89E3;&#x51B3;
+&#x89E3;&#x51B3;&#xFF1A;
+admin-1@ubuntu:/data/soft/nginx-1.10.2# ldd /data/server/nginx/sbin/nginx
+    linux-vdso.so.1 =&gt;  (0x00007ffdb9154000)
+    libdl.so.2 =&gt; /lib/x86_64-linux-gnu/libdl.so.2 (0x00007fa59379b000)
+    libpthread.so.0 =&gt; /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007fa59357e000)
+    libcrypt.so.1 =&gt; /lib/x86_64-linux-gnu/libcrypt.so.1 (0x00007fa593345000)
+    libpcre.so.1 =&gt; not found
+    libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00007fa592f7c000)
+    /lib64/ld-linux-x86-64.so.2 (0x0000564bfef41000)
+
+&#x67E5;&#x627E;&#x6587;&#x4EF6;&#xFF1A;
+admin-1@ubuntu:/data/soft/nginx-1.10.2# find / -name &quot;libpcre.so.1&quot;
+/data/soft/pcre-8.39/.libs/libpcre.so.1
+/usr/local/lib/libpcre.so.1
+...
+
+&#x94FE;&#x63A5;&#x8BE5;&#x6587;&#x4EF6;
+
+admin-1@ubuntu:/data/soft/nginx-1.10.2# ln -s /usr/local/lib/libpcre.so.1 /lib/x86_64-linux-gnu/
+
+&#x518D;&#x6B21;&#x68C0;&#x67E5;&#x4E00;&#x4E0B;nginx&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+
+admin-1@ubuntu:/data/soft/nginx-1.10.2# /data/server/nginx/sbin/nginx -t
+nginx: the configuration file /data/server/nginx/conf/nginx.conf syntax is ok
+nginx: configuration file /data/server/nginx/conf/nginx.conf test is successful
+</code></pre><p>6.3.4 nginx&#x4EE3;&#x7406;django
+nginx&#x914D;&#x7F6E;&#x7B80;&#x4ECB;
+    nginx&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;</p>
+<pre><code>admin-1@ubuntu:/data/server/nginx# tree -L 2 /data/server/nginx/
+/data/server/nginx/
+&#x251C;&#x2500;&#x2500; ...
+&#x251C;&#x2500;&#x2500; conf                &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x76EE;&#x5F55;
+&#x2502;   ...
+&#x2502;   &#x251C;&#x2500;&#x2500; nginx.conf        &#x9ED8;&#x8BA4;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;
+&#x2502;   ...
+&#x251C;&#x2500;&#x2500; ...
+&#x251C;&#x2500;&#x2500; html                &#x7F51;&#x9875;&#x6587;&#x4EF6;
+&#x2502;   &#x251C;&#x2500;&#x2500; 50x.html
+&#x2502;   &#x2514;&#x2500;&#x2500; index.html
+&#x251C;&#x2500;&#x2500; logs                &#x65E5;&#x5FD7;&#x76EE;&#x5F55;
+&#x2502;   &#x251C;&#x2500;&#x2500; access.log
+&#x2502;   &#x2514;&#x2500;&#x2500; error.log
+&#x251C;&#x2500;&#x2500; ...
+&#x251C;&#x2500;&#x2500; sbin                &#x6267;&#x884C;&#x6587;&#x4EF6;&#x76EE;&#x5F55;
+&#x2502;   &#x2514;&#x2500;&#x2500; nginx
+&#x251C;&#x2500;&#x2500; ...
+</code></pre><p>nginx&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4ECB;&#x7ECD;
+    &#x5168;&#x5C40;&#x914D;&#x7F6E;&#x6BB5;<br>    http&#x914D;&#x7F6E;&#x6BB5;
+        server&#x914D;&#x7F6E;&#x6BB5;            &#x9879;&#x76EE;&#x6216;&#x8005;&#x5E94;&#x7528;
+            location&#x914D;&#x7F6E;&#x6BB5;        url&#x914D;&#x7F6E;
+nginx&#x4EE3;&#x7406;&#x914D;&#x7F6E;
+&#x6848;&#x4F8B;&#x9700;&#x6C42;&#xFF1A;
+    &#x8BBF;&#x95EE; 192.168.8.14/hello/ &#xFF0C;&#x80FD;&#x770B;&#x5230;django&#x7684; 127.0.0.1:8000/hello/&#x7684;&#x6548;&#x679C;&#x3002;
+&#x7F16;&#x8F91;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x5B9E;&#x73B0;&#x4EE3;&#x7406;&#x529F;&#x80FD;
+    &#x914D;&#x7F6E;&#x5185;&#x5BB9;</p>
+<pre><code>62:    location /hello/ {
+63:        proxy_pass http://127.0.0.1:8000;
+64:    }
+</code></pre><pre><code>/data/server/nginx/sbin/nginx -t
+/data/server/nginx/sbin/nginx -s reload
+</code></pre><h3 id="63&#x5C0F;&#x7ED3;&#xFF1A;">6.3&#x5C0F;&#x7ED3;&#xFF1A;</h3>
+<ol>
+<li>&#x4E86;&#x89E3; source&#x7684;&#x672C;&#x8D28;&#x548C;&#x6548;&#x679C;</li>
+<li>&#x4E86;&#x89E3; python&#x7C7B;&#x578B;&#x8F6F;&#x4EF6;&#x7684;&#x5B89;&#x88C5;&#x6D41;&#x7A0B;</li>
+<li>&#x4E86;&#x89E3; linux&#x7C7B;&#x578B;&#x8F6F;&#x4EF6;&#x7684;&#x5B89;&#x88C5;&#x6D41;&#x7A0B;</li>
+<li>&#x8BB0;&#x4F4F; &#x4EE3;&#x7406;&#x7684;&#x539F;&#x7406;&#x548C;&#x76EE;&#x7684;</li>
+</ol>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../第二部分 代码发布/第六章 环境部署/2.方案分析.html" class="navigation navigation-prev " aria-label="Previous page: 方案分析"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../第二部分 代码发布/第七章 手工代码发布/index.html" class="navigation navigation-next " aria-label="Next page: 第七章 手工代码发布"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

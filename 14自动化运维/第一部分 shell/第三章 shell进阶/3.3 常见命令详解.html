@@ -1,0 +1,930 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>常见命令详解 | SHELL自动化运维</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../第一部分 shell/第四章 shell流程控制/index.html" />
+    
+    
+    <link rel="prev" href="../../第一部分 shell/第三章 shell进阶/3.2 linux常见符号.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.3.3"
+        data-chapter-title="常见命令详解"
+        data-filepath="第一部分 shell/第三章 shell进阶/3.3 常见命令详解.md"
+        data-basepath="../.."
+        data-revision="Mon Jul 30 2018 08:27:28 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="第一部分 shell/index.html">
+            
+                
+                    <a href="../../第一部分 shell/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        第一部分 shell
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="第一部分 shell/第一章 shell快速入门/index.html">
+            
+                
+                    <a href="../../第一部分 shell/第一章 shell快速入门/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        第一章 shell快速入门
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="第一部分 shell/第一章 shell快速入门/1.运维简介.html">
+            
+                
+                    <a href="../../第一部分 shell/第一章 shell快速入门/1.运维简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                        运维简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="第一部分 shell/第一章 shell快速入门/2.shell简介.html">
+            
+                
+                    <a href="../../第一部分 shell/第一章 shell快速入门/2.shell简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                        shell简介
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="第一部分 shell/第二章 shell基础知识/index.html">
+            
+                
+                    <a href="../../第一部分 shell/第二章 shell基础知识/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        第二章 shell基础知识
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="第一部分 shell/第二章 shell基础知识/shell脚本.html">
+            
+                
+                    <a href="../../第一部分 shell/第二章 shell基础知识/shell脚本.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.1.</b>
+                        
+                        shell脚本
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="第一部分 shell/第二章 shell基础知识/变量.html">
+            
+                
+                    <a href="../../第一部分 shell/第二章 shell基础知识/变量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.2.</b>
+                        
+                        变量
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="第一部分 shell/第三章 shell进阶/index.html">
+            
+                
+                    <a href="../../第一部分 shell/第三章 shell进阶/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        第三章 shell进阶
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="第一部分 shell/第三章 shell进阶/3.1 表达式.html">
+            
+                
+                    <a href="../../第一部分 shell/第三章 shell进阶/3.1 表达式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.1.</b>
+                        
+                        表达式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="第一部分 shell/第三章 shell进阶/3.2 linux常见符号.html">
+            
+                
+                    <a href="../../第一部分 shell/第三章 shell进阶/3.2 linux常见符号.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.2.</b>
+                        
+                        linux常见符号
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="第一部分 shell/第三章 shell进阶/3.3 常见命令详解.html">
+            
+                
+                    <a href="../../第一部分 shell/第三章 shell进阶/3.3 常见命令详解.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.</b>
+                        
+                        常见命令详解
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第一部分 shell/第四章 shell流程控制/index.html">
+            
+                
+                    <a href="../../第一部分 shell/第四章 shell流程控制/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        第四章 shell流程控制
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="第一部分 shell/第四章 shell流程控制/1.简单流程控制语句.html">
+            
+                
+                    <a href="../../第一部分 shell/第四章 shell流程控制/1.简单流程控制语句.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.1.</b>
+                        
+                        简单流程控制语句
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="第一部分 shell/第四章 shell流程控制/2.函数.html">
+            
+                
+                    <a href="../../第一部分 shell/第四章 shell流程控制/2.函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.2.</b>
+                        
+                        函数
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="第二部分 代码发布/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        第二部分 代码发布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="第二部分 代码发布/第五章 代码发布/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第五章 代码发布/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        第五章 代码发布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="第二部分 代码发布/第五章 代码发布/1.代码发布简介.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第五章 代码发布/1.代码发布简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.</b>
+                        
+                        代码发布简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="第二部分 代码发布/第五章 代码发布/2.代码发布流程.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第五章 代码发布/2.代码发布流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.2.</b>
+                        
+                        代码发布流程
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="第二部分 代码发布/第六章 环境部署/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第六章 环境部署/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        第六章 环境部署
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="第二部分 代码发布/第六章 环境部署/1.基础环境.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第六章 环境部署/1.基础环境.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.1.</b>
+                        
+                        基础环境
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="第二部分 代码发布/第六章 环境部署/2.方案分析.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第六章 环境部署/2.方案分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.2.</b>
+                        
+                        方案分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="第二部分 代码发布/第六章 环境部署/3.项目环境部署.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第六章 环境部署/3.项目环境部署.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.3.</b>
+                        
+                        项目环境部署
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="第二部分 代码发布/第七章 手工代码发布/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第七章 手工代码发布/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        第七章 手工代码发布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="第二部分 代码发布/第七章 手工代码发布/1.方案分析.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第七章 手工代码发布/1.方案分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                        方案分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="第二部分 代码发布/第七章 手工代码发布/2.方案实施.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第七章 手工代码发布/2.方案实施.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.2.</b>
+                        
+                        方案实施
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="第二部分 代码发布/第八章 脚本代码发布/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        第八章 脚本代码发布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="第二部分 代码发布/第八章 脚本代码发布/1.简单脚本编写.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/1.简单脚本编写.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        简单脚本编写
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="第二部分 代码发布/第八章 脚本代码发布/2.大型脚本编写.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/2.大型脚本编写.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.2.</b>
+                        
+                        大型脚本编写
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="第二部分 代码发布/第八章 脚本代码发布/3.脚本调试功能.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/3.脚本调试功能.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.3.</b>
+                        
+                        脚本调试功能
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="第二部分 代码发布/第八章 脚本代码发布/4.生产脚本编写总结.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/4.生产脚本编写总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.4.</b>
+                        
+                        生产脚本编写总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >SHELL自动化运维</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="33-&#x5E38;&#x89C1;&#x547D;&#x4EE4;&#x8BE6;&#x89E3;">3.3 &#x5E38;&#x89C1;&#x547D;&#x4EE4;&#x8BE6;&#x89E3;</h2>
+<p><strong>&#x5B66;&#x4E60;&#x76EE;&#x6807;&#xFF1A;</strong></p>
+<ol>
+<li>&#x638C;&#x63E1; grep &#x547D;&#x4EE4;&#x7684;&#x683C;&#x5F0F;&#x548C;&#x5E38;&#x7528;&#x53C2;&#x6570;&#x610F;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x573A;&#x666F;</li>
+<li>&#x638C;&#x63E1; sed  &#x547D;&#x4EE4;&#x7684;&#x683C;&#x5F0F;&#x548C;&#x5E38;&#x7528;&#x53C2;&#x6570;&#x610F;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x573A;&#x666F;</li>
+<li>&#x638C;&#x63E1; awk  &#x547D;&#x4EE4;&#x7684;&#x683C;&#x5F0F;&#x548C;&#x5E38;&#x7528;&#x53C2;&#x6570;&#x610F;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x573A;&#x666F;</li>
+<li>&#x638C;&#x63E1; find &#x547D;&#x4EE4;&#x7684;&#x683C;&#x5F0F;&#x548C;&#x5E38;&#x7528;&#x53C2;&#x6570;&#x610F;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x573A;&#x666F;</li>
+</ol>
+<hr>
+<h3 id="331-grep&#x547D;&#x4EE4;&#x8BE6;&#x89E3;">3.3.1 grep&#x547D;&#x4EE4;&#x8BE6;&#x89E3;</h3>
+<p>grep&#x547D;&#x4EE4;&#x662F;&#x6211;&#x4EEC;&#x5E38;&#x7528;&#x7684;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x6587;&#x672C;&#x641C;&#x7D22;&#x547D;&#x4EE4;&#x3002;
+&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#x8BE6;&#x89E3;</p>
+<pre><code>grep [&#x53C2;&#x6570;] [&#x5173;&#x952E;&#x5B57;] &lt;&#x6587;&#x4EF6;&#x540D;&gt;
+</code></pre><p>&#x6CE8;&#x610F;&#xFF1A;
+&#x6211;&#x4EEC;&#x5728;&#x67E5;&#x770B;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x662F;&#x9700;&#x8981;&#x6709;&lt;&#x6587;&#x4EF6;&#x540D;&gt;
+grep&#x547D;&#x4EE4;&#x5728;&#x7ED3;&#x5408;|(&#x7BA1;&#x9053;&#x7B26;)&#x4F7F;&#x7528;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x540E;&#x9762;&#x7684;&lt;&#x6587;&#x4EF6;&#x540D;&gt;&#x662F;&#x6CA1;&#x6709;&#x7684;<br>
+<br>
+&#x53C2;&#x6570;&#x8BE6;&#x89E3;&#xFF1A;</p>
+<ul>
+<li>-c&#xFF1A;&#x53EA;&#x8F93;&#x51FA;&#x5339;&#x914D;&#x884C;&#x7684;&#x8BA1;&#x6570;&#x3002;</li>
+<li>-n&#xFF1A;&#x663E;&#x793A;&#x5339;&#x914D;&#x884C;&#x53CA;&#x884C;&#x53F7;&#x3002;</li>
+<li>-v&#xFF1A;&#x663E;&#x793A;&#x4E0D;&#x5305;&#x542B;&#x5339;&#x914D;&#x6587;&#x672C;&#x7684;&#x6240;&#x6709;&#x884C;&#x3002;</li>
+</ul>
+<p>&#x6A21;&#x677F;&#x6587;&#x4EF6;</p>
+<pre><code>admin-1@ubuntu:~$ cat find.txt
+nihao aaa
+nihao AAA
+NiHao bbb
+nihao CCC
+</code></pre><ul>
+<li>-c:     &#x8F93;&#x51FA;&#x5339;&#x914D;&#x5230;aaa&#x7684;&#x4E2A;&#x6570;<pre><code>admin-1@ubuntu:~$ grep -c aaa find.txt
+1
+</code></pre></li>
+<li>-n:        &#x8F93;&#x51FA;&#x5339;&#x914D;&#x5185;&#x5BB9;&#xFF0C;&#x540C;&#x65F6;&#x663E;&#x793A;&#x884C;&#x53F7;<pre><code>admin-1@ubuntu:~$ grep -n CCC find.txt
+4:nihao CCC
+</code></pre></li>
+<li>-v:     &#x5339;&#x914D;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x90E8;&#x8F93;&#x51FA;&#xFF0C;&#x8F93;&#x51FA;&#x4E0D;&#x5339;&#x914D;&#x7684;&#x5185;&#x5BB9;<pre><code>admin-1@ubuntu:~$ grep -v ni find.txt
+NiHao bbb
+</code></pre></li>
+<li>&#x5C0F;&#x6280;&#x5DE7;&#xFF1A;
+&#x7CBE;&#x786E;&#x5B9A;&#x4F4D;&#x9519;&#x8BEF;&#x4EE3;&#x7801;
+<br>
+grep -nr [&#x9519;&#x8BEF;&#x5173;&#x952E;&#x5B57;] *</li>
+</ul>
+<h3 id="332-sed&#x547D;&#x4EE4;&#x8BE6;&#x89E3;">3.3.2 sed&#x547D;&#x4EE4;&#x8BE6;&#x89E3;</h3>
+<p>sed &#x884C;&#x6587;&#x4EF6;&#x7F16;&#x8F91;&#x5DE5;&#x5177;&#x3002;&#x56E0;&#x4E3A;&#x5B83;&#x7F16;&#x8F91;&#x6587;&#x4EF6;&#x662F;&#x4EE5;&#x884C;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#x3002;<br>
+&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#xFF1A;sed [&#x53C2;&#x6570;] &apos;&lt;&#x5339;&#x914D;&#x6761;&#x4EF6;&gt; [&#x52A8;&#x4F5C;]&apos; [&#x6587;&#x4EF6;&#x540D;]<br>
+&#x53C2;&#x6570;&#x8BE6;&#x89E3;&#xFF1A;</p>
+<ul>
+<li>-i            &#x8868;&#x793A;&#x5BF9;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x7F16;&#x8F91;(&#x4E0D;&#x6DFB;&#x52A0;-i&#x53C2;&#x6570;&#xFF0C;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;&#x76F4;&#x63A5;&#x5F80;&#x5C4F;&#x5E55;&#x8F93;&#x51FA;&#xFF0C;&#x4E0D;&#x4FEE;&#x6539;&#x539F;&#x6587;&#x4EF6;)
+<br>
+&#x6CE8;&#x610F;&#xFF1A;mac&#x7248;&#x672C;&#x7684;bash&#x4E2D;&#x4F7F;&#x7528; -i&#x53C2;&#x6570;&#xFF0C;&#x5FC5;&#x987B;&#x5728;&#x540E;&#x9762;&#x5355;&#x72EC;&#x52A0;&#x4E2A;&#x4E1C;&#x897F;&#xFF1A; -i &apos;&apos;</li>
+</ul>
+<p>&#x5339;&#x914D;&#x6761;&#x4EF6;&#x5206;&#x4E3A;&#x4E24;&#x79CD;&#xFF1A;&#x6570;&#x5B57;&#x884C;&#x53F7;&#x6216;&#x8005;&#x5173;&#x952E;&#x5B57;&#x5339;&#x914D;<br>
+&#x5173;&#x952E;&#x5B57;&#x5339;&#x914D;&#x683C;&#x5F0F;&#xFF1A;&apos;/&#x5173;&#x952E;&#x5B57;/&apos;<br>
+&#x6CE8;&#x610F;&#xFF1A;&#x5173;&#x952E;&#x5B57;&#x4E24;&#x8FB9;&#x7684;&#x9694;&#x79BB;&#x7B26;&#x53F7; / &#x53EF;&#x4EE5;&#x66F4;&#x6362;&#x6210; @&#x3001;#&#x3001;&#xFF01;&#x7B49;&#x7B26;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x5173;&#x952E;&#x5B57;&#x548C;&#x9694;&#x79BB;&#x7B26;&#x53F7;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x5C31;&#x66F4;&#x6362;&#x6210;&#x5176;&#x4ED6;&#x7684;&#x7B26;&#x53F7;&#x5373;&#x53EF;&#x3002;<br></p>
+<ol>
+<li>&#x52A8;&#x4F5C;&#x8BE6;&#x89E3;<ul>
+<li>-a        &#x5728;&#x5339;&#x914D;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x4E0B;&#x4E00;&#x884C;&#x589E;&#x52A0;&#x5185;&#x5BB9;</li>
+<li>-i        &#x5728;&#x5339;&#x914D;&#x5230;&#x7684;&#x5185;&#x5BB9;&#x4E0A;&#x4E00;&#x884C;&#x589E;&#x52A0;&#x5185;&#x5BB9;</li>
+<li>-d        &#x5220;&#x9664;&#x5339;&#x914D;&#x5230;&#x7684;&#x5185;&#x5BB9;</li>
+<li>-s        &#x66FF;&#x6362;&#x5339;&#x914D;&#x5230;&#x7684;&#x5185;&#x5BB9;<br>
+&#x6CE8;&#x610F;&#xFF1A;&#x4E0A;&#x9762;&#x7684;&#x52A8;&#x4F5C;&#x5E94;&#x8BE5;&#x5728;&#x53C2;&#x6570;&#x4E3A;-i&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x7136;&#x7684;&#x8BDD;&#x4E0D;&#x4F1A;&#x4FEE;&#x6539;&#x539F;&#x6587;&#x4EF6;<br><br></li>
+</ul>
+</li>
+<li><p>&#x66FF;&#x6362;&#x64CD;&#x4F5C;
+&#x4E3B;&#x8981;&#x53C2;&#x6570;&#xFF1A;&#x884C;&#x53F7;&#xFF0C;&#x5217;&#x53F7;&#xFF0C;&#x5168;&#x4F53;<br><br>
+&#x683C;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#xFF1A;sed -i [&#x66FF;&#x6362;&#x683C;&#x5F0F;] [&#x6587;&#x4EF6;&#x540D;]<br></li>
+<li>&#x66FF;&#x6362;&#x683C;&#x5F0F;&#xFF1A;&apos;s#&#x539F;&#x5185;&#x5BB9;#&#x66FF;&#x6362;&#x540E;&#x5185;&#x5BB9;#&apos;<br></li>
+<li>&#x51C6;&#x5907;&#x6587;&#x4EF6;<pre><code>admin-1@ubuntu:~$ cat sed.txt
+nihao sed sed sed
+nihao sed sed sed
+nihao sed sed sed
+</code></pre></li>
+<li>&#x66FF;&#x6362;&#x6BCF;&#x884C;&#x9996;&#x4E2A;&#x5339;&#x914D;&#x5185;&#x5BB9;&#xFF1A;sed -i &apos;s#&#x539F;&#x5185;&#x5BB9;#&#x66FF;&#x6362;&#x540E;&#x5185;&#x5BB9;#&apos; &#x6587;&#x4EF6;&#x540D;<br>
+&#x793A;&#x4F8B;&#xFF1A;&#x66FF;&#x6362;&#x9996;&#x6BCF;&#x884C;&#x7684;&#x7B2C;1&#x4E2A;sed&#x4E3A;SED<pre><code>admin-1@ubuntu:~$ sed -i &apos;s#sed#SED#&apos; sed.txt
+admin-1@ubuntu:~$ cat sed.txt
+nihao SED sed sed
+nihao SED sed sed
+nihao SED sed sed
+</code></pre></li>
+<li>&#x66FF;&#x6362;&#x5168;&#x90E8;&#x5339;&#x914D;&#x5185;&#x5BB9;&#xFF1A;sed -i &apos;s#&#x539F;&#x5185;&#x5BB9;#&#x66FF;&#x6362;&#x540E;&#x5185;&#x5BB9;#g&apos; &#x6587;&#x4EF6;&#x540D;<br>
+&#x793A;&#x4F8B;&#xFF1A;&#x66FF;&#x6362;&#x5168;&#x90E8;sed&#x4E3A;des<pre><code>admin-1@ubuntu:~$ sed -i &apos;s#sed#SED#g&apos; sed.txt
+admin-1@ubuntu:~$ cat sed.txt
+nihao SED SED SED
+nihao SED SED SED
+nihao SED SED SED
+</code></pre></li>
+<li>&#x6307;&#x5B9A;&#x884C;&#x53F7;&#x66FF;&#x6362;&#x9996;&#x4E2A;&#x5339;&#x914D;&#x5185;&#x5BB9;&#xFF1A;sed -i &apos;&#x884C;&#x53F7;s#&#x539F;&#x5185;&#x5BB9;#&#x66FF;&#x6362;&#x540E;&#x5185;&#x5BB9;#&apos; &#x6587;&#x4EF6;&#x540D;<br>
+&#x793A;&#x4F8B;&#xFF1A;&#x66FF;&#x6362;&#x7B2C;2&#x884C;&#x7684;&#x9996;&#x4E2A;SED&#x4E3A;sed<pre><code>admin-1@ubuntu:~$ sed -i &apos;2s#SED#sed#&apos; sed.txt
+admin-1@ubuntu:~$ cat sed.txt
+nihao SED SED SED
+nihao sed SED SED
+nihao SED SED SED
+</code></pre></li>
+<li>&#x9996;&#x884C;&#x6307;&#x5B9A;&#x5217;&#x53F7;&#x66FF;&#x6362;&#x5339;&#x914D;&#x5185;&#x5BB9;&#xFF1A;sed -i &apos;s#&#x539F;&#x5185;&#x5BB9;#&#x66FF;&#x6362;&#x540E;&#x5185;&#x5BB9;#&#x5217;&#x53F7;&apos; &#x6587;&#x4EF6;&#x540D;<br>
+&#x793A;&#x4F8B;&#xFF1A;&#x66FF;&#x6362;&#x6BCF;&#x884C;&#x7684;&#x7B2C;2&#x4E2A;SED&#x4E3A;sed<pre><code>admin-1@ubuntu:~$ sed -i &apos;s#SED#sed#2&apos; sed.txt
+admin-1@ubuntu:~$ cat sed.txt
+nihao SED sed SED
+nihao sed SED sed
+nihao SED sed SED
+</code></pre></li>
+<li>&#x6307;&#x5B9A;&#x884C;&#x53F7;&#x5217;&#x53F7;&#x5339;&#x914D;&#x5185;&#x5BB9;&#xFF1A;sed -i &apos;&#x884C;&#x53F7;s#&#x539F;&#x5185;&#x5BB9;#&#x66FF;&#x6362;&#x540E;&#x5185;&#x5BB9;#&#x5217;&#x53F7;&apos; &#x6587;&#x4EF6;&#x540D;<br>
+&#x793A;&#x4F8B;&#xFF1A;&#x66FF;&#x6362;&#x7B2C;3&#x884C;&#x7684;&#x7B2C;2&#x4E2A;SED&#x4E3A;sed<pre><code>admin-1@ubuntu:~$ sed -i &apos;3s#SED#sed#2&apos; sed.txt
+admin-1@ubuntu:~$ cat sed.txt
+nihao SED sed SED
+nihao sed SED sed
+nihao SED sed sed
+</code></pre></li>
+</ul>
+</li>
+<li><p>&#x8FFD;&#x52A0;&#x64CD;&#x4F5C;
+&#x4F5C;&#x7528;&#xFF1A;&#x5728;&#x6307;&#x5B9A;&#x884C;&#x53F7;&#x7684;&#x4E0B;&#x4E00;&#x884C;&#x589E;&#x52A0;&#x5185;&#x5BB9;<br>
+&#x683C;&#x5F0F;&#xFF1A;sed -i &apos;&#x884C;&#x53F7;a\&#x589E;&#x52A0;&#x7684;&#x5185;&#x5BB9;&apos; &#x6587;&#x4EF6;&#x540D;<br>
+&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x589E;&#x52A0;&#x591A;&#x884C;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x884C;&#x53F7;&#x4F4D;&#x7F6E;&#x5199;&#x4E2A;&#x8303;&#x56F4;&#x503C;&#xFF0C;&#x5F7C;&#x6B64;&#x95F4;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;<br></p>
+<pre><code>sed -i &apos;1,3a\&#x589E;&#x52A0;&#x5185;&#x5BB9;&apos; &#x6587;&#x4EF6;&#x540D;
+</code></pre><p>&#x6307;&#x5B9A;&#x884C;&#x53F7;&#x589E;&#x52A0;&#x5185;&#x5BB9;</p>
+<pre><code>admin-1@ubuntu:~$ sed -i &apos;2a\zengjia-2&apos; sed.txt
+admin-1@ubuntu:~$ cat sed.txt
+nihao SED sed SED
+nihao sed SED sed
+zengjia-2
+nihao SED sed sed
+</code></pre><p>&#x6307;&#x5B9A;1~3&#x6BCF;&#x884C;&#x90FD;&#x589E;&#x52A0;&#x5185;&#x5BB9;</p>
+<pre><code>admin-1@ubuntu:~$ sed -i &apos;1,3a\tongshi-2&apos; sed.txt
+admin-1@ubuntu:~$ cat sed.txt
+nihao SED sed SED
+tongshi-2
+nihao sed SED sed
+tongshi-2
+zengjia-2
+tongshi-2
+nihao SED sed sed
+</code></pre></li>
+<li><p>&#x63D2;&#x5165;&#x64CD;&#x4F5C;
+&#x4F5C;&#x7528;&#xFF1A;&#x5728;&#x6307;&#x5B9A;&#x884C;&#x53F7;&#x7684;&#x5F53;&#x884C;&#x589E;&#x52A0;&#x5185;&#x5BB9;<br>
+&#x683C;&#x5F0F;&#xFF1A;sed -i &apos;&#x884C;&#x53F7;i\&#x589E;&#x52A0;&#x7684;&#x5185;&#x5BB9;&apos; &#x6587;&#x4EF6;&#x540D;<br>
+&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x589E;&#x52A0;&#x591A;&#x884C;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x884C;&#x53F7;&#x4F4D;&#x7F6E;&#x5199;&#x4E2A;&#x8303;&#x56F4;&#x503C;&#xFF0C;&#x5F7C;&#x6B64;&#x95F4;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;<br></p>
+<ul>
+<li>&#x6307;&#x5B9A;&#x884C;&#x53F7;&#x589E;&#x52A0;&#x5185;&#x5BB9;<pre><code>admin-1@ubuntu:~$ sed -i &apos;1i\insert-1&apos; sed.txt
+admin-1@ubuntu:~$ cat sed.txt
+insert-1
+nihao SED sed SED
+tongshi-2
+nihao sed SED sed
+tongshi-2
+zengjia-2
+tongshi-2
+nihao SED sed sed
+</code></pre></li>
+</ul>
+</li>
+<li><p>&#x5220;&#x9664;&#x64CD;&#x4F5C;</p>
+</li>
+</ol>
+<p>&#x4F5C;&#x7528;&#xFF1A;&#x6307;&#x5B9A;&#x884C;&#x53F7;&#x5220;&#x9664;<br>
+&#x683C;&#x5F0F;&#xFF1A;sed -i &apos;&#x884C;&#x53F7;d&apos; &#x6587;&#x4EF6;&#x540D;<br>
+&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x5220;&#x9664;&#x591A;&#x884C;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x884C;&#x53F7;&#x4F4D;&#x7F6E;&#x591A;&#x5199;&#x51E0;&#x4E2A;&#x884C;&#x53F7;&#xFF0C;&#x5F7C;&#x6B64;&#x95F4;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#x9694;&#x5F00;</p>
+<ul>
+<li>&#x5220;&#x9664;&#x7B2C;4&#x884C;&#x5185;&#x5BB9;<pre><code>admin-1@ubuntu:~$ sed -i &apos;4d&apos; sed.txt
+admin-1@ubuntu:~$ cat sed.txt
+insert-1
+nihao SED sed SED
+tongshi-2
+tongshi-2
+zengjia-2
+tongshi-2
+nihao SED sed sed
+</code></pre>&#x5220;&#x9664;&#x591A;&#x884C;(3-5&#x884C;)&#x5185;&#x5BB9;<pre><code>admin-1@ubuntu:~$ sed -i &apos;3,5d&apos; sed.txt
+admin-1@ubuntu:~$ cat sed.txt
+insert-1
+nihao SED sed SED
+tongshi-2
+nihao SED sed sed
+</code></pre></li>
+</ul>
+<h3 id="333-awk&#x547D;&#x4EE4;&#x8BE6;&#x89E3;">3.3.3 awk&#x547D;&#x4EE4;&#x8BE6;&#x89E3;</h3>
+<h5 id="awk&#x662F;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#x7684;&#x6587;&#x6863;&#x7F16;&#x8F91;&#x5DE5;&#x5177;&#xFF0C;&#x5B83;&#x4E0D;&#x4EC5;&#x80FD;&#x4EE5;&#x884C;&#x4E3A;&#x5355;&#x4F4D;&#x8FD8;&#x80FD;&#x4EE5;&#x5217;&#x4E3A;&#x5355;&#x4F4D;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x3002;">awk&#x662F;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#x7684;&#x6587;&#x6863;&#x7F16;&#x8F91;&#x5DE5;&#x5177;&#xFF0C;&#x5B83;&#x4E0D;&#x4EC5;&#x80FD;&#x4EE5;&#x884C;&#x4E3A;&#x5355;&#x4F4D;&#x8FD8;&#x80FD;&#x4EE5;&#x5217;&#x4E3A;&#x5355;&#x4F4D;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x3002;</h5>
+<p><br>
+&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#xFF1A;
+awk [&#x53C2;&#x6570;] &apos;[ &#x52A8;&#x4F5C;]&apos; [&#x6587;&#x4EF6;&#x540D;]
+<br>
+&#x5E38;&#x89C1;&#x53C2;&#x6570;&#xFF1A;</p>
+<ul>
+<li>-F        &#x6307;&#x5B9A;&#x884C;&#x7684;&#x5206;&#x9694;&#x7B26;</li>
+</ul>
+<p>&#x5E38;&#x89C1;&#x52A8;&#x4F5C;&#xFF1A;</p>
+<ul>
+<li>print    &#x663E;&#x793A;&#x5185;&#x5BB9;</li>
+<li>$0        &#x663E;&#x793A;&#x5F53;&#x524D;&#x884C;&#x6240;&#x6709;&#x5185;&#x5BB9;</li>
+<li>$n        &#x663E;&#x793A;&#x5F53;&#x524D;&#x884C;&#x7684;&#x7B2C;n&#x5217;&#x5185;&#x5BB9;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x591A;&#x4E2A;$n&#xFF0C;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x4F7F;&#x7528;&#x9017;&#x53F7;(,)&#x9694;&#x5F00;</li>
+</ul>
+<p>&#x5E38;&#x89C1;&#x5185;&#x7F6E;&#x53D8;&#x91CF;</p>
+<ul>
+<li>FILENAME     &#x5F53;&#x524D;&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x662F;&#x53EA;&#x8BFB;&#x7684;</li>
+<li>NR             &#x6307;&#x5B9A;&#x663E;&#x793A;&#x884C;&#x7684;&#x884C;&#x53F7;</li>
+<li>NF             &#x8F93;&#x51FA; &#x6700;&#x540E;&#x4E00;&#x5217;&#x7684;&#x5185;&#x5BB9;</li>
+<li>OFS         &#x8F93;&#x51FA;&#x683C;&#x5F0F;&#x7684;&#x5217;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x7F3A;&#x7701;&#x662F;&#x7A7A;&#x683C;</li>
+<li>FS             &#x8F93;&#x5165;&#x6587;&#x4EF6;&#x7684;&#x5217;&#x5206;&#x878D;&#x7B26;&#xFF0C;&#x7F3A;&#x7701;&#x662F;&#x8FDE;&#x7EED;&#x7684;&#x7A7A;&#x683C;&#x548C;Tab
+&#x6A21;&#x677F;&#x6587;&#x4EF6;&#x5185;&#x5BB9;<pre><code>admin-1@ubuntu:~$ cat awk.txt
+nihao awk awk awk
+nihao awk awk awk
+</code></pre>&#x6253;&#x5370;&#x7B2C;1&#x5217;&#x7684;&#x5185;&#x5BB9;<pre><code>admin-1@ubuntu:~$ awk &apos;{print $1}&apos; awk.txt
+nihao
+nihao
+</code></pre>&#x6253;&#x5370;&#x7B2C;&#x4E00;&#x884C;&#x7B2C;1&#x548C;&#x7B2C;3&#x5217;&#x5185;&#x5BB9;<pre><code>admin-1@ubuntu:~$ awk  &apos;NR==1 {print $1,$3}&apos; awk.txt
+nihao awk
+</code></pre>&#x6307;&#x5B9A;&#x9694;&#x79BB;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x67E5;&#x770B;&#x5185;&#x5BB9;<pre><code>admin-1@ubuntu:~$ cat linshi.txt
+root:x:0:0:root:/root:/bin/bash
+admin-1@ubuntu:~$ awk -F &apos;:&apos; &apos;{print $1,$7}&apos; linshi.txt
+root /bin/bash
+</code></pre>&#x8BBE;&#x7F6E;&#x663E;&#x793A;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x663E;&#x793A;&#x5185;&#x5BB9;<pre><code>admin-1@ubuntu:~$ awk &apos;BEGIN{OFS=&quot;:&quot;} {print NR,$0}&apos; awk.txt
+1:nihao awk awk awk
+2:nihao awk awk awk
+</code></pre><h3 id="334-find&#x547D;&#x4EE4;&#x8BE6;&#x89E3;">3.3.4 find&#x547D;&#x4EE4;&#x8BE6;&#x89E3;</h3>
+&#x547D;&#x4EE4;&#x683C;&#x5F0F;&#xFF1A;
+find [&#x8DEF;&#x5F84;] [&#x53C2;&#x6570;] [&#x5173;&#x952E;&#x5B57;]
+&#x53C2;&#x6570;&#x8BE6;&#x89E3;</li>
+<li>-name &#x6309;&#x7167;&#x6587;&#x4EF6;&#x540D;&#x67E5;&#x627E;&#x6587;&#x4EF6;&#x3002;</li>
+<li>-perm &#x6309;&#x7167;&#x6587;&#x4EF6;&#x6743;&#x9650;&#x6765;&#x67E5;&#x627E;&#x6587;&#x4EF6;&#x3002;</li>
+<li>-user &#x6309;&#x7167;&#x6587;&#x4EF6;&#x5C5E;&#x4E3B;&#x6765;&#x67E5;&#x627E;&#x6587;&#x4EF6;&#x3002;</li>
+<li>-group &#x6309;&#x7167;&#x6587;&#x4EF6;&#x6240;&#x5C5E;&#x7684;&#x7EC4;&#x6765;&#x67E5;&#x627E;&#x6587;&#x4EF6;&#x3002;</li>
+<li>-type &#x67E5;&#x627E;&#x67D0;&#x4E00;&#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;
+&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x8BF8;&#x5982;&#xFF1A;<ul>
+<li>b - &#x5757;&#x8BBE;&#x5907;&#x6587;&#x4EF6;        </li>
+<li>d - &#x76EE;&#x5F55;            </li>
+<li>c - &#x5B57;&#x7B26;&#x8BBE;&#x5907;&#x6587;&#x4EF6;</li>
+<li>p - &#x7BA1;&#x9053;&#x6587;&#x4EF6;        </li>
+<li>l - &#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6587;&#x4EF6;</li>
+<li>f - &#x666E;&#x901A;&#x6587;&#x4EF6;&#x3002;</li>
+</ul>
+</li>
+<li>-size n&#xFF1A;[c] &#x67E5;&#x627E;&#x6587;&#x4EF6;&#x957F;&#x5EA6;&#x4E3A;n&#x5757;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x5E26;&#x6709;c&#x65F6;&#x8868;&#x793A;&#x6587;&#x4EF6;&#x957F;&#x5EA6;&#x4EE5;&#x5B57;&#x8282;&#x8BA1;&#x3002;</li>
+<li>-depth&#xFF1A;&#x5728;&#x67E5;&#x627E;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x67E5;&#x627E;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5728;&#x5176;&#x5B50;&#x76EE;&#x5F55;&#x4E2D;&#x67E5;&#x627E;&#x3002;</li>
+<li>-mindepth n&#xFF1A;&#x5728;&#x67E5;&#x627E;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x67E5;&#x627E;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x7B2C;n&#x5C42;&#x76EE;&#x5F55;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5728;&#x5176;&#x5B50;&#x76EE;&#x5F55;&#x4E2D;&#x67E5;&#x627E;&#x3002;</li>
+<li>! :    &#x8868;&#x793A;&#x53D6;&#x53CD;
+&#x547D;&#x4EE4;&#x6F14;&#x793A;:
+&#x5728;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x4E2D;&#x67E5;&#x627E;&#x4E00;&#x4E2A;&#x53EB;awk&#x7684;&#x6587;&#x4EF6;<pre><code>admin-1@ubuntu:~$ sudo find /home/admin-1/ -name &quot;awk.txt&quot;
+/home/admin-1/awk.txt
+</code></pre>&#x5728;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x4E2D;&#x67E5;&#x627E;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x4E3A;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;<pre><code>admin-1@ubuntu:~$ find /tmp -type f
+/tmp/.X0-lock
+/tmp/vgauthsvclog.txt.0
+/tmp/unity_support_test.0
+/tmp/config-err-4igbXW
+</code></pre></li>
+</ul>
+<h3 id="33&#x5C0F;&#x7ED3;">3.3&#x5C0F;&#x7ED3;</h3>
+<ol>
+<li>&#x638C;&#x63E1; grep &#x547D;&#x4EE4;&#x7684;&#x683C;&#x5F0F;&#x548C;&#x5E38;&#x7528;&#x53C2;&#x6570;&#x610F;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x573A;&#x666F;</li>
+<li>&#x638C;&#x63E1; sed  &#x547D;&#x4EE4;&#x7684;&#x683C;&#x5F0F;&#x548C;&#x5E38;&#x7528;&#x53C2;&#x6570;&#x610F;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x573A;&#x666F;</li>
+<li>&#x638C;&#x63E1; awk  &#x547D;&#x4EE4;&#x7684;&#x683C;&#x5F0F;&#x548C;&#x5E38;&#x7528;&#x53C2;&#x6570;&#x610F;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x573A;&#x666F;</li>
+<li>&#x638C;&#x63E1; find &#x547D;&#x4EE4;&#x7684;&#x683C;&#x5F0F;&#x548C;&#x5E38;&#x7528;&#x53C2;&#x6570;&#x610F;&#x4E49;&#x548C;&#x4F7F;&#x7528;&#x573A;&#x666F;</li>
+</ol>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../第一部分 shell/第三章 shell进阶/3.2 linux常见符号.html" class="navigation navigation-prev " aria-label="Previous page: linux常见符号"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../第一部分 shell/第四章 shell流程控制/index.html" class="navigation navigation-next " aria-label="Next page: 第四章 shell流程控制"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

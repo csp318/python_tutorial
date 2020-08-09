@@ -1,0 +1,810 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>shell脚本 | SHELL自动化运维</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../../第一部分 shell/第二章 shell基础知识/变量.html" />
+    
+    
+    <link rel="prev" href="../../第一部分 shell/第二章 shell基础知识/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="1.2.1"
+        data-chapter-title="shell脚本"
+        data-filepath="第一部分 shell/第二章 shell基础知识/shell脚本.md"
+        data-basepath="../.."
+        data-revision="Mon Jul 30 2018 08:27:28 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="第一部分 shell/index.html">
+            
+                
+                    <a href="../../第一部分 shell/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        第一部分 shell
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="第一部分 shell/第一章 shell快速入门/index.html">
+            
+                
+                    <a href="../../第一部分 shell/第一章 shell快速入门/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        第一章 shell快速入门
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="第一部分 shell/第一章 shell快速入门/1.运维简介.html">
+            
+                
+                    <a href="../../第一部分 shell/第一章 shell快速入门/1.运维简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.1.</b>
+                        
+                        运维简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="第一部分 shell/第一章 shell快速入门/2.shell简介.html">
+            
+                
+                    <a href="../../第一部分 shell/第一章 shell快速入门/2.shell简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.2.</b>
+                        
+                        shell简介
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="第一部分 shell/第二章 shell基础知识/index.html">
+            
+                
+                    <a href="../../第一部分 shell/第二章 shell基础知识/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        第二章 shell基础知识
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="第一部分 shell/第二章 shell基础知识/shell脚本.html">
+            
+                
+                    <a href="../../第一部分 shell/第二章 shell基础知识/shell脚本.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.1.</b>
+                        
+                        shell脚本
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="第一部分 shell/第二章 shell基础知识/变量.html">
+            
+                
+                    <a href="../../第一部分 shell/第二章 shell基础知识/变量.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.2.</b>
+                        
+                        变量
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="第一部分 shell/第三章 shell进阶/index.html">
+            
+                
+                    <a href="../../第一部分 shell/第三章 shell进阶/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        第三章 shell进阶
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="第一部分 shell/第三章 shell进阶/3.1 表达式.html">
+            
+                
+                    <a href="../../第一部分 shell/第三章 shell进阶/3.1 表达式.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.1.</b>
+                        
+                        表达式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="第一部分 shell/第三章 shell进阶/3.2 linux常见符号.html">
+            
+                
+                    <a href="../../第一部分 shell/第三章 shell进阶/3.2 linux常见符号.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.2.</b>
+                        
+                        linux常见符号
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="第一部分 shell/第三章 shell进阶/3.3 常见命令详解.html">
+            
+                
+                    <a href="../../第一部分 shell/第三章 shell进阶/3.3 常见命令详解.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.3.</b>
+                        
+                        常见命令详解
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第一部分 shell/第四章 shell流程控制/index.html">
+            
+                
+                    <a href="../../第一部分 shell/第四章 shell流程控制/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        第四章 shell流程控制
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="第一部分 shell/第四章 shell流程控制/1.简单流程控制语句.html">
+            
+                
+                    <a href="../../第一部分 shell/第四章 shell流程控制/1.简单流程控制语句.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.1.</b>
+                        
+                        简单流程控制语句
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="第一部分 shell/第四章 shell流程控制/2.函数.html">
+            
+                
+                    <a href="../../第一部分 shell/第四章 shell流程控制/2.函数.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.2.</b>
+                        
+                        函数
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="第二部分 代码发布/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        第二部分 代码发布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="第二部分 代码发布/第五章 代码发布/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第五章 代码发布/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        第五章 代码发布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="第二部分 代码发布/第五章 代码发布/1.代码发布简介.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第五章 代码发布/1.代码发布简介.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.1.</b>
+                        
+                        代码发布简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="第二部分 代码发布/第五章 代码发布/2.代码发布流程.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第五章 代码发布/2.代码发布流程.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.2.</b>
+                        
+                        代码发布流程
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="第二部分 代码发布/第六章 环境部署/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第六章 环境部署/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        第六章 环境部署
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="第二部分 代码发布/第六章 环境部署/1.基础环境.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第六章 环境部署/1.基础环境.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.1.</b>
+                        
+                        基础环境
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="第二部分 代码发布/第六章 环境部署/2.方案分析.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第六章 环境部署/2.方案分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.2.</b>
+                        
+                        方案分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="第二部分 代码发布/第六章 环境部署/3.项目环境部署.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第六章 环境部署/3.项目环境部署.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.3.</b>
+                        
+                        项目环境部署
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="第二部分 代码发布/第七章 手工代码发布/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第七章 手工代码发布/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        第七章 手工代码发布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="第二部分 代码发布/第七章 手工代码发布/1.方案分析.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第七章 手工代码发布/1.方案分析.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.1.</b>
+                        
+                        方案分析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="第二部分 代码发布/第七章 手工代码发布/2.方案实施.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第七章 手工代码发布/2.方案实施.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.2.</b>
+                        
+                        方案实施
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="第二部分 代码发布/第八章 脚本代码发布/index.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        第八章 脚本代码发布
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="第二部分 代码发布/第八章 脚本代码发布/1.简单脚本编写.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/1.简单脚本编写.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        简单脚本编写
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.2" data-path="第二部分 代码发布/第八章 脚本代码发布/2.大型脚本编写.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/2.大型脚本编写.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.2.</b>
+                        
+                        大型脚本编写
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.3" data-path="第二部分 代码发布/第八章 脚本代码发布/3.脚本调试功能.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/3.脚本调试功能.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.3.</b>
+                        
+                        脚本调试功能
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4.4" data-path="第二部分 代码发布/第八章 脚本代码发布/4.生产脚本编写总结.html">
+            
+                
+                    <a href="../../第二部分 代码发布/第八章 脚本代码发布/4.生产脚本编写总结.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.4.</b>
+                        
+                        生产脚本编写总结
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../" >SHELL自动化运维</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="21-shell&#x811A;&#x672C;">2.1 shell&#x811A;&#x672C;</h2>
+<p>&#x5B66;&#x4E60;&#x76EE;&#x6807;&#xFF1A;</p>
+<ol>
+<li><p>&#x4E86;&#x89E3; shell&#x811A;&#x672C;&#x7684;&#x5185;&#x5BB9;&#x5C0F;&#x6280;&#x5DE7;</p>
+</li>
+<li><p>&#x638C;&#x63E1; shell&#x811A;&#x672C;&#x7684;&#x6807;&#x51C6;&#x6267;&#x884C;&#x65B9;&#x6CD5;</p>
+</li>
+<li>&#x638C;&#x63E1; shell&#x811A;&#x672C;&#x7684;&#x5F00;&#x53D1;&#x89C4;&#x8303;&#x548C;&#x5F00;&#x53D1;&#x5C0F;&#x6280;&#x5DE7;</li>
+</ol>
+<hr>
+<h3 id="211-&#x521B;&#x5EFA;&#x811A;&#x672C;">2.1.1 &#x521B;&#x5EFA;&#x811A;&#x672C;</h3>
+<p><strong>&#x811A;&#x672C;&#x521B;&#x5EFA;&#x5DE5;&#x5177;&#xFF1A;</strong></p>
+<p>&#x2002;&#x2002;&#x2002;&#x2002;&#x521B;&#x5EFA;&#x811A;&#x672C;&#x7684;&#x5E38;&#x89C1;&#x7F16;&#x8F91;&#x5668;&#x662F;   vi/vim</p>
+<p><strong>&#x811A;&#x672C;&#x547D;&#x540D;&#xFF1A;</strong></p>
+<p>&#x2002;&#x2002;&#x2002;&#x2002;shell&#x811A;&#x672C;&#x7684;&#x547D;&#x540D;&#x7B80;&#x5355;&#x6765;&#x8BF4;&#x5C31;&#x662F;&#x8981;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x65B9;&#x4FBF;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x811A;&#x672C;&#x540D;&#xFF0C;&#x6765;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x662F;&#x5E72;&#x4EC0;&#x4E48;&#x7528;&#x7684;</p>
+<p> <strong>&#x811A;&#x672C;&#x5185;&#x5BB9;&#xFF1A;</strong></p>
+<p>&#x2002;&#x2002;&#x2002;&#x2002;&#x5404;&#x79CD;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;</p>
+<p> <strong>&#x6CE8;&#x91CA;&#x5185;&#x5BB9;&#xFF1A;</strong></p>
+<ul>
+<li>&#x5355;&#x884C;&#x6CE8;&#x91CA;&#xFF1A;</li>
+</ul>
+<p>&#x2002;&#x2002;&#x2002;&#x2002;&#x9664;&#x4E86;&#x9996;&#x884C;&#x7684;#&#x4E0D;&#x662F;&#x6CE8;&#x91CA;&#x5916;&#xFF0C;&#x5176;&#x4ED6;&#x6240;&#x6709;&#x884C;&#x5185;&#x5BB9;&#xFF0C;&#x53EA;&#x8981;&#x9996;&#x4E2A;&#x5B57;&#x7B26;&#x662F;#,&#x90A3;&#x4E48;&#x5C31;&#x8868;&#x793A;&#x8BE5;&#x884C;&#x662F;&#x6CE8;&#x91CA;</p>
+<pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;1&apos;</span>
+<span class="hljs-comment"># echo &apos;2&apos;           # &#x8FD9;&#x4E00;&#x884C;&#x5C31;&#x8868;&#x793A;&#x6CE8;&#x91CA;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;3&apos;</span>
+</code></pre>
+<ul>
+<li>&#x591A;&#x884C;&#x6CE8;&#x91CA;&#xFF1A;</li>
+</ul>
+<p>&#x2002;&#x2002;&#x2002;&#x2002;&#x591A;&#x884C;&#x6CE8;&#x91CA;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#xFF1A;:&lt;&lt;! ... !  &#x548C; :&lt;&lt;&#x5B57;&#x7B26; ... &#x5B57;&#x7B26;</p>
+<pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;1&apos;</span>
+:&lt;&lt;! <span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;2&apos;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;3&apos;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;4&apos;</span>
+!
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;5&apos;</span>
+</code></pre>
+<h3 id="212-&#x811A;&#x672C;&#x6267;&#x884C;">2.1.2 &#x811A;&#x672C;&#x6267;&#x884C;</h3>
+<p><strong>shell&#x6267;&#x884C;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</strong></p>
+<p>Shell&#x811A;&#x672C;&#x7684;&#x6267;&#x884C;&#x901A;&#x5E38;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;</p>
+<pre><code class="lang-bash">bash /path/to/script-name  &#x6216;   /bin/bash /path/to/script-name    &#xFF08;&#x5F3A;&#x70C8;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF09;
+/path/to/script-name   &#x6216;  ./script-name    &#xFF08;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#x4E0B;&#x6267;&#x884C;&#x811A;&#x672C;&#xFF09;
+<span class="hljs-built_in">source</span> script-name  &#x6216;  . script-name    &#xFF08;&#x6CE8;&#x610F;&#x201C;.&#x201C;&#x70B9;&#x53F7;&#x540E;&#x9762;&#x6709;&#x7A7A;&#x683C;&#xFF09;
+</code></pre>
+<p><strong>&#x6267;&#x884C;&#x65B9;&#x5F0F;&#x8BF4;&#x660E;&#xFF1A;</strong></p>
+<ol>
+<li><p>&#x811A;&#x672C;&#x6587;&#x4EF6;&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x53EF;&#x6267;&#x884C;&#x6743;&#x9650;&#x6216;&#x8005;&#x811A;&#x672C;&#x9996;&#x884C;&#x6CA1;&#x6709;&#x547D;&#x4EE4;&#x89E3;&#x91CA;&#x5668;&#x65F6;&#x4F7F;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x63A8;&#x8350;&#x7528;bash&#x6267;&#x884C;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x9891;&#x7387;&#xFF1A;&#x2606;&#x2606;&#x2606;&#x2606;&#x2606;</p>
+</li>
+<li><p>&#x811A;&#x672C;&#x6587;&#x4EF6;&#x5177;&#x6709;&#x53EF;&#x6267;&#x884C;&#x6743;&#x9650;&#x65F6;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x9891;&#x7387;&#xFF1A;&#x2606;&#x2606;&#x2606;&#x2606;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;source&#x6216;&#x8005;.&#x70B9;&#x53F7;&#xFF0C;&#x52A0;&#x8F7D;shell&#x811A;&#x672C;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#xFF0C;&#x4F7F;shell&#x811A;&#x672C;&#x5185;&#x5BB9;&#x73AF;&#x5883;&#x548C;&#x5F53;&#x524D;&#x7528;&#x6237;&#x73AF;&#x5883;&#x4E00;&#x81F4;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x9891;&#x7387;&#xFF1A;&#x2606;&#x2606;&#x2606;</p>
+<p>&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF1A;&#x73AF;&#x5883;&#x4E00;&#x81F4;&#x6027;</p>
+</li>
+</ol>
+<p>&#x533A;&#x522B;&#xFF1A;source&#x6216;&#x8005;.&#x70B9;&#x53F7;&#x4E0E;&#x5176;&#x4ED6;&#x6267;&#x884C;&#x65B9;&#x5F0F;&#x7684;&#x6BD4;&#x8F83;</p>
+<pre><code class="lang-bash">  test.sh &#x811A;&#x672C;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;
+  <span class="hljs-comment">#!/bin/bash</span>
+  ps
+
+  &#x7EC8;&#x7AEF;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x5982;&#x4E0B;&#xFF1A;
+  python@ubuntu:~/Desktop$ ps  <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x7EC8;&#x7AEF;&#x8FD0;&#x884C;&#x7684;&#x8FDB;&#x7A0B;</span>
+   PID TTY          TIME CMD
+  <span class="hljs-number">34863</span> pts/<span class="hljs-number">1</span>    <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> bash  <span class="hljs-comment"># &#x5F53;&#x524D;&#x7EC8;&#x7AEF;&#x5F00;&#x542F;&#x7684;bash&#x8FDB;&#x7A0B;</span>
+  <span class="hljs-number">34891</span> pts/<span class="hljs-number">1</span>    <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> ps
+  python@ubuntu:~/Desktop$ bash test.sh 
+   PID TTY          TIME CMD
+  <span class="hljs-number">34863</span> pts/<span class="hljs-number">1</span>    <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> bash  <span class="hljs-comment"># &#x5F53;&#x524D;&#x7EC8;&#x7AEF;&#x5F00;&#x542F;&#x7684;bash&#x8FDB;&#x7A0B;</span>
+  <span class="hljs-number">34894</span> pts/<span class="hljs-number">1</span>    <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> bash  <span class="hljs-comment"># &#x6267;&#x884C;bash test.sh&#x547D;&#x4EE4;&#x65F6;&#x5F00;&#x542F;&#x4E86;&#x4E00;&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;</span>
+  <span class="hljs-number">34895</span> pts/<span class="hljs-number">1</span>    <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> ps
+  python@ubuntu:~/Desktop$ <span class="hljs-built_in">source</span> test.sh 
+   PID TTY          TIME CMD
+  <span class="hljs-number">34863</span> pts/<span class="hljs-number">1</span>    <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> bash  <span class="hljs-comment"># &#x53EA;&#x6709;&#x5F53;&#x524D;&#x7EC8;&#x7AEF;&#x5F00;&#x542F;&#x7684;bash&#x8FDB;&#x7A0B;&#xFF0C;&#x6267;&#x884C;</span>
+  <span class="hljs-number">34900</span> pts/<span class="hljs-number">1</span>    <span class="hljs-number">00</span>:<span class="hljs-number">00</span>:<span class="hljs-number">00</span> ps
+</code></pre>
+<pre><code class="lang-bash">  test.sh &#x811A;&#x672C;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;
+  <span class="hljs-comment">#!/bin/bash</span>
+  <span class="hljs-built_in">echo</span> <span class="hljs-variable">$user</span>
+
+  &#x7EC8;&#x7AEF;&#x6267;&#x884C;&#x547D;&#x4EE4;&#x5982;&#x4E0B;&#xFF1A;
+  python@ubuntu:~/Desktop$ user=python  <span class="hljs-comment"># &#x5F53;&#x524D;&#x7EC8;&#x7AEF;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;</span>
+  python@ubuntu:~/Desktop$ <span class="hljs-built_in">echo</span> <span class="hljs-variable">$user</span>  <span class="hljs-comment"># &#x6253;&#x5370;&#x53D8;&#x91CF;</span>
+  python
+  python@ubuntu:~/Desktop$ bash test.sh  <span class="hljs-comment"># &#x4F7F;&#x7528;bash&#x65B9;&#x5F0F;&#x4F1A;&#x5F00;&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x7EC8;&#x7AEF;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;</span>
+
+  python@ubuntu:~/Desktop$ <span class="hljs-built_in">source</span> test.sh <span class="hljs-comment"># &#x4F7F;&#x7528;source&#x65B9;&#x5F0F;&#x4E0D;&#x4F1A;&#x5F00;&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C;&#x80FD;&#x4F7F;&#x7528;&#x5F53;&#x524D;&#x7EC8;&#x7AEF;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;</span>
+  python
+</code></pre>
+<p>&#x603B;&#x7ED3;&#xFF1A;source&#x6216;&#x8005;.&#x70B9;&#x53F7;&#x6267;&#x884C;&#x65B9;&#x5F0F;&#x4E0D;&#x4F1A;&#x5F00;&#x542F;&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C;&#x80FD;&#x5171;&#x4EAB;&#x5F53;&#x524D;&#x7EC8;&#x7AEF;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5176;&#x4ED6;&#x6267;&#x884C;&#x65B9;&#x5F0F;&#x4F1A;&#x5F00;&#x542F;&#x5B50;&#x8FDB;&#x7A0B;</p>
+<h3 id="212-&#x811A;&#x672C;&#x5F00;&#x53D1;&#x89C4;&#x8303;">2.1.2 &#x811A;&#x672C;&#x5F00;&#x53D1;&#x89C4;&#x8303;</h3>
+<ol>
+<li><p>&#x811A;&#x672C;&#x547D;&#x540D;&#x8981;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#x662F;.sh</p>
+</li>
+<li><p>&#x811A;&#x672C;&#x6587;&#x4EF6;&#x9996;&#x884C;<strong>&#x662F;&#x800C;&#x4E14;&#x5FC5;&#x987B;&#x662F;</strong>&#x811A;&#x672C;&#x89E3;&#x91CA;&#x5668;</p>
+<pre><code class="lang-bash"><span class="hljs-shebang">#!/bin/bash
+</span></code></pre>
+</li>
+<li><p>&#x811A;&#x672C;&#x6587;&#x4EF6;&#x89E3;&#x91CA;&#x5668;&#x540E;&#x9762;&#x8981;&#x6709;&#x811A;&#x672C;&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#x7B49;&#x5185;&#x5BB9;</p>
+</li>
+<li><p>&#x811A;&#x672C;&#x6587;&#x4EF6;&#x4E2D;&#x5C3D;&#x91CF;&#x4E0D;&#x7528;&#x4E2D;&#x6587;&#x6CE8;&#x91CA;</p>
+<pre><code class="lang-bash">&#x5C3D;&#x91CF;&#x7528;&#x82F1;&#x6587;&#x6CE8;&#x91CA;&#xFF0C;&#x9632;&#x6B62;&#x672C;&#x673A;&#x6216;&#x5207;&#x6362;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x540E;&#x4E2D;&#x6587;&#x4E71;&#x7801;&#x7684;&#x56F0;&#x6270;
+&#x5E38;&#x89C1;&#x7684;&#x6CE8;&#x91CA;&#x4FE1;&#x606F;&#xFF1A;&#x811A;&#x672C;&#x540D;&#x79F0;&#x3001;&#x811A;&#x672C;&#x529F;&#x80FD;&#x63CF;&#x8FF0;&#x3001;&#x811A;&#x672C;&#x7248;&#x672C;&#x3001;&#x811A;&#x672C;&#x4F5C;&#x8005;&#x3001;&#x8054;&#x7CFB;&#x65B9;&#x5F0F;&#x7B49;
+</code></pre>
+</li>
+<li><p>&#x811A;&#x672C;&#x6587;&#x4EF6;&#x5E38;&#x89C1;&#x6267;&#x884C;&#x65B9;&#x5F0F;&#xFF1A;bash &#x811A;&#x672C;&#x540D;</p>
+</li>
+<li><p>&#x811A;&#x672C;&#x5185;&#x5BB9;&#x6267;&#x884C;&#xFF1A;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#xFF0C;&#x4F9D;&#x6B21;&#x6267;&#x884C;</p>
+</li>
+<li><p>&#x4EE3;&#x7801;&#x4E66;&#x5199;&#x4F18;&#x79C0;&#x4E60;&#x60EF;</p>
+<pre><code class="lang-bash"><span class="hljs-number">1</span>. &#x6210;&#x5BF9;&#x5185;&#x5BB9;&#x7684;&#x4E00;&#x6B21;&#x6027;&#x5199;&#x51FA;&#x6765;,&#x9632;&#x6B62;&#x9057;&#x6F0F;&#x3002;
+   &#x5982;&#xFF1A;()&#x3001;{}&#x3001;[]&#x3001;<span class="hljs-string">&apos;&apos;</span>&#x3001;``&#x3001;<span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-number">2</span>. []&#x4E2D;&#x62EC;&#x53F7;&#x4E24;&#x7AEF;&#x8981;&#x6709;&#x7A7A;&#x683C;,&#x4E66;&#x5199;&#x65F6;&#x5373;&#x53EF;&#x7559;&#x51FA;&#x7A7A;&#x683C;[    ],&#x7136;&#x540E;&#x518D;&#x9000;&#x683C;&#x4E66;&#x5199;&#x5185;&#x5BB9;
+<span class="hljs-number">3</span>. &#x6D41;&#x7A0B;&#x63A7;&#x5236;&#x8BED;&#x53E5;&#x4E00;&#x6B21;&#x6027;&#x4E66;&#x5199;&#x5B8C;&#xFF0C;&#x518D;&#x6DFB;&#x52A0;&#x5185;&#x5BB9;
+</code></pre>
+</li>
+<li><p>&#x901A;&#x8FC7;&#x7F29;&#x8FDB;&#x8BA9;&#x4EE3;&#x7801;&#x6613;&#x8BFB;(&#x5373;&#x8BE5;&#x6709;&#x7A7A;&#x683C;&#x7684;&#x5730;&#x65B9;&#x5C31;&#x8981;&#x6709;&#x7A7A;&#x683C;)</p>
+</li>
+</ol>
+<p><strong>&#x5C0F;&#x7ED3;&#xFF1A;</strong></p>
+<ol>
+<li><p>shell&#x811A;&#x672C;&#x547D;&#x540D;&#xFF1A;&#x6709;&#x610F;&#x4E49;&#xFF0C;&#x4FBF;&#x4E8E;&#x77E5;&#x9053;&#x811A;&#x672C;&#x7684;&#x76EE;&#x7684;</p>
+</li>
+<li><p>shell&#x811A;&#x672C;&#x7684;&#x6CE8;&#x91CA;&#xFF1A;&#x5355;&#x884C;(#)&#x3001;&#x591A;&#x884C;(:&lt;&lt;&#x5B57;&#x7B26; ... &#x5B57;&#x7B26;)</p>
+</li>
+<li><p>shell&#x811A;&#x672C;&#x6807;&#x51C6;&#x6267;&#x884C;&#x65B9;&#x6CD5;&#xFF1A; /bin/bash /path/to/script-name</p>
+</li>
+<li><p>shell&#x811A;&#x672C;&#x5F00;&#x53D1;&#x89C4;&#x8303;&#x91CD;&#x70B9;&#xFF1A;2-4-5</p>
+</li>
+<li><p>shell&#x811A;&#x672C;&#x5F00;&#x53D1;&#x5C0F;&#x6280;&#x5DE7;&#xFF1A;6-7</p>
+</li>
+</ol>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../../第一部分 shell/第二章 shell基础知识/index.html" class="navigation navigation-prev " aria-label="Previous page: 第二章 shell基础知识"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../../第一部分 shell/第二章 shell基础知识/变量.html" class="navigation navigation-next " aria-label="Next page: 变量"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
